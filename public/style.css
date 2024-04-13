@@ -1,0 +1,154 @@
+* {
+  box-sizing: border-box; /* 모든 요소의 박스 크기를 내부 패딩 및 테두리를 포함한 크기로 설정 */
+}
+
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  margin-right: 30px;
+  font-size: 24px;
+}
+
+nav ul {
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline-block; /* 항목들을 가로로 배열 */
+  margin-right: 150px; /* 간격 조정 */
+}
+
+nav ul li:last-child {
+  margin-right: 0; /* 마지막 메뉴 항목의 간격 조정 */
+}
+
+nav ul li a {
+  color: #ffd7fc; /* 메뉴 항목의 텍스트 색상 */
+  text-decoration: none; /* 밑줄 제거 */
+}
+
+.banner-section {
+  display: flex;
+  flex-direction: column; /* 배너를 세로로 쌓기 위해 column 방향으로 설정 */
+  align-items: center; /* 가운데 정렬 */
+}
+
+.banner {
+  max-width: 600px;
+  width: 100%; /* 배너의 가로 너비를 화면 너비에 맞춤 */
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+.banner1 {
+  background-color: #f0f0f0;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 0; /* 배너 사이의 간격 제거 */
+  width: 100%; /* 화면 너비에 꽉 차게 설정 */
+  height: 550px
+}
+.banner2 {
+  background-color: #ffd900;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 0; /* 배너 사이의 간격 제거 */
+  width: 100%;/* 화면 너비에 꽉 차게 설정 */
+  height: 400px
+}
+.banner3 {
+  background-color: yellowgreen;
+  background-image: url(img/banner1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 120px;
+  text-align: center;
+  margin-bottom: 0; /* 배너 사이의 간격 제거 */
+  width: 100%;/* 화면 너비에 꽉 차게 설정 */
+  height: 400px
+}
+
+.myButton {
+  box-shadow:inset 0px 7px 24px -3px #f2fadc;
+  background:linear-gradient(to bottom, #dbe6c4 5%, #9ba892 100%);
+  background-color:#dbe6c4;
+  border-radius:13px;
+  display:inline-block;
+  cursor:pointer;
+  color:#757d6f;
+  font-family:Arial;
+  font-size:15px;
+  font-weight:bold;
+  padding:12px 36px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #ced9bf;
+}
+.myButton:hover {
+  background:linear-gradient(to bottom, #9ba892 5%, #dbe6c4 100%);
+  background-color:#9ba892;
+}
+.myButton:active {
+  position:relative;
+  top:1px;
+}
+
+.banner4 {
+  background-color: #00f2ff;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 0; /* 배너 사이의 간격 제거 */
+  width: 100%;/* 화면 너비에 꽉 차게 설정 */
+  height: 400px
+}
+.banner5 {
+  background-color: #6159ff;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 0; /* 배너 사이의 간격 제거 */
+  width: 100%;/* 화면 너비에 꽉 차게 설정 */
+  height: 400px
+}
+.banner6 {
+  background-color: #9742ff;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 0; /* 배너 사이의 간격 제거 */
+  width: 100%;/* 화면 너비에 꽉 차게 설정 */
+  height: 400px
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  width: 100%; /* 푸터 영역의 가로 너비를 화면 너비에 맞춤 */
+}
+
+body {
+  height: 100vh;
+  overflow-y: auto;
+}
