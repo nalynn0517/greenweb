@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kakao Map</title>
+    <style>
+        /* 지도를 담을 컨테이너의 스타일 설정 */
+        #map {
+            width: 100%;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- 필요 시 헤더 내용 추가 -->
+    </header>
+
+    <div id="map"></div> <!-- 카카오맵 표시를 위한 컨테이너 -->
+
+    <footer>
+        <!-- 필요 시 푸터 내용 추가 -->
+    </footer>
+
+    <!-- 카카오맵 API 스크립트 로드 -->
+    <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=8948120168a32c7a96068b04adbb1558"></script>
+    <script>
+        // 카카오맵 API 로드 후 실행될 콜백 함수
+        function initMap() {
+            var container = document.getElementById('map'); // 지도를 담을 컨테이너
+            var options = {
+                center: new kakao.maps.LatLng(37.566826, 126.9786567), // 서울 시청을 중심으로 설정
+                level: 3 // 지도의 확대 레벨
+            };
+            var map = new kakao.maps.Map(container, options); // 지도 생성
+        }
+    </script>
+    <script>
+        // 카카오맵 API 로드 완료 후 initMap 함수 호출
+        kakao.maps.load(initMap);
+    </script>
+</body>
+</html>

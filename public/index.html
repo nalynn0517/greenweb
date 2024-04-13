@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Web</title>
+    <title>환경</title>
     <link rel="stylesheet" type="text/css" href="./style.css">
     
     <style>
@@ -21,7 +21,7 @@
             <ul> <!-- 메뉴 4개 -->
                 <li><a href="#section1">재활용 통계</a></li>
                 <li><a href="#section2">분리수거 정보</a></li>
-                <li><a href="#" id="map-link">오프라인 제로웨이스트샵</a></li>
+                <li><a href="map.html" target="_blank">오프라인 제로웨이스트샵</a></li>
                 <li><a href="#section4">자주 묻는 질문</a></li>
             </ul>
         </nav>
@@ -73,27 +73,6 @@
     <footer>
         푸터 영역
     </footer>
-
-    <div id="map"></div> <!-- 카카오맵 표시를 위한 컨테이너 -->
-
-    <script async defer src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=8948120168a32c7a96068b04adbb1558"></script>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // 메뉴 3인 오프라인 제로웨이스트샵 클릭 시 카카오맵 표시
-            document.getElementById('map-link').addEventListener('click', function(event) {
-                event.preventDefault(); // 링크 기본 동작 방지
-
-                // 카카오맵 API를 사용하여 지도 표시
-                var container = document.getElementById('map'); // 지도를 담을 영역의 DOM 노드
-                var options = {
-                    center: new kakao.maps.LatLng(37.566826, 126.9786567), // 지도의 중심 좌표
-                    level: 3 // 지도의 확대 레벨
-                };
-                var map = new kakao.maps.Map(container, options); // 지도 생성
-            });
-        });
-    </script>
 
     <script>
         // 슬라이더 자동 슬라이드 기능 추가
