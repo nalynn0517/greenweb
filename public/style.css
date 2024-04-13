@@ -22,13 +22,16 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed; /* 메뉴 탭 고정 */
+  top: 0; /* 화면의 맨 위에 위치하도록 설정 */
+  width: 100%; /* 화면 너비에 맞게 설정 */
+  z-index: 1000; /* 다른 요소 위에 표시되도록 설정 */
 }
 
 .logo {
   margin-right: 30px;
   font-size: 24px;
 }
-
 nav ul {
   padding: 0;
   margin: 0;
@@ -139,13 +142,26 @@ nav ul li a {
   width: 1200px;/* 화면 너비에 꽉 차게 설정 */
   height: 400px
 }
-
+.slider{
+  overflow: hidden;
+  width: 1000px;
+  height: 300px;
+  position: relative;
+  left: 80px;
+  top: 30px;
+}
+.slide-container{
+  display: flex;
+  width: 3000px;
+  transition: transform 0.5s ease-in-out;
+}
 footer {
-  background-color: #333;
-  color: #fff;
-  padding: 20px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #a6a6a6;
+  padding: 20px 0;
   text-align: center;
-  width: 100%; /* 푸터 영역의 가로 너비를 화면 너비에 맞춤 */
 }
 
 body {
