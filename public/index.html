@@ -26,15 +26,66 @@
 
     <div class="banner-section">
         <div class="banner1">배너1</div>
-        <div class="banner2">배너2</div>
+        <div class="banner2">
+            <div class="banner-content">
+              <img src="graph2.png" alt="쓰레기 총량 그래프">
+              <p>쓰레기 총량</p>
+            </div>
+        </div>
         <div class="banner3">
             <a href="#" class="myButton">자세히보기</a>
         </div>
         <div class="banner4">배너4</div>
-        <div class="banner5">배너5</div>
-        <div class="banner6">배너6</div>
+        <div class="banner5">
+            <div class="slider">
+                <div class="slide-container">
+                    <img src="./images/ex_slideimg.jpg" alt="slideimage1">
+                    <img src="./images/ex_slideimg2.png" alt="slideimage2">
+                    <img src="./images/ex_slideimg3.png" alt="slideimage3">
+                </div>
+            </div>
+        </div>
+        <div class="banner6">
+            <div class="slider">
+                <div class="slide-container">
+                    <img src="./images/ex_slideimg.jpg" alt="slideimage4">
+                    <img src="./images/ex_slideimg2.png" alt="slideimage5">
+                    <img src="./images/ex_slideimg3.png" alt="slideimage6">
+                </div>
+            </div>
+        </div>
     </div>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const slideContainers = document.querySelectorAll(".slider .slide-container");
+        let slideIndexes = [0, 0];
 
+        setInterval(function() {
+            slideIndexes[0]++;
+            slideContainers[0].style.transition = "margin-left 0.6s"
+            slideContainers[0].style.marginLeft = `${-1000 * slideIndexes[0]}px`;
+
+            if (slideIndexes[0] === 3) {
+                setTimeout(function() {
+                    slideContainers[0].style.marginLeft = "0";
+                    slideIndexes[0] = 0;
+                }, 0);
+            }   
+
+            slideIndexes[1]++;
+            slideContainers[1].style.transition = "margin-left 0.6s"
+            slideContainers[1].style.marginLeft = `${-1000 * slideIndexes[1]}px`;
+
+            if (slideIndexes[1] === 3) {
+                setTimeout(function() {
+                    slideContainers[1].style.marginLeft = "0";
+                    slideIndexes[1] = 0;
+                }, 0);
+            }
+        }, 3000);
+    });
+
+</script>
     <footer>
         푸터 영역
     </footer>
