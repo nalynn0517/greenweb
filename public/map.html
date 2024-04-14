@@ -29,7 +29,7 @@
         <!-- 검색창 추가 -->
         <div class="search-bar">
             <input type="text" placeholder="검색어를 입력하세요">
-            <button type="submit">검색</button>
+            <button><img src="./img/search.png" alt="Search"></button>
         </div>
     </header>
 
@@ -160,34 +160,59 @@
                     { name: "그냥, 거기 (가정, 생활용품)", address: "경상북도 포항시 남구 연일읍 원서길 144", latitude: 35.999038, longitude: 129.424953 }
                 ]
             };
-            
-            var iconColors = {
-                "경기": "img/m1.png", 
-                "서울": "img/m2.png",
-                "충청": ".img/m3.png",
-                "전라": ".img/m4.png",
-                "강원": ".img/m5.png",
-                "경상": ".img/m6.png",
-            };
-            
+            // 마커 이미지를 생성합니다
+            var markerImage = new kakao.maps.MarkerImage(
+                'http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png',
+                new kakao.maps.Size(24, 35),
+                { offset: new kakao.maps.Point(13, 35) }
+            );
 
-             // 각 지역별 스토어에 대해 마커 생성
-             for (var region in storesByRegion) {
+            // 가게 정보를 바탕으로 마커를 생성하고 지도에 표시합니다
+            Object.keys(storesByRegion).forEach(function(region) {
                 storesByRegion[region].forEach(function(store) {
                     var markerPosition = new kakao.maps.LatLng(store.latitude, store.longitude);
+
+                    // 마커를 생성하고 지도에 표시합니다
                     var marker = new kakao.maps.Marker({
                         position: markerPosition,
-                        map: map,
-                        title: store.name,
-                        image: new kakao.maps.MarkerImage(iconColors[region], new kakao.maps.Size(40, 40))
+                        image: markerImage, // 마커 이미지 설정
+                        map: map // 지도 설정
+                    });
+
+                    // 마커에 클릭 이벤트를 등록합니다
+                    kakao.maps.event.addListener(marker, 'click', function() {
+                        displayStoreInfo(store, marker);
                     });
                 });
+            });
+
+            // 마커를 클릭했을 때 가게 정보를 표시하는 함수
+            function displayStoreInfo(store, marker) {
+                // 가게 정보를 표시할 HTML 코드 작성
+                var infoHtml = '<div style="padding:10px;">' +
+                    '<h4>' + store.name + '</h4>' +
+                    '<p>' + store.address + '</p>' +
+                    '<button class="close-button" onclick="closeInfoWindow()">X</button>' +
+                    '</div>';
+
+                // 인포윈도우 생성
+                var infowindow = new kakao.maps.InfoWindow({
+                    content: infoHtml // 표시할 내용 설정
+                });
+
+                // 인포윈도우 지도에 표시
+                infowindow.open(map, marker);
+
+                // 인포윈도우 닫기 함수
+                window.closeInfoWindow = function() {
+                    infowindow.close();
+                }
             }
         }
     </script>
     <script>
-        // 카카오맵 API 로드 완료 후 initMap 함수 호출
-        kakao.maps.load(initMap);
+        // initMap 함수 호출
+        initMap();
     </script>
 </body>
 </html>
