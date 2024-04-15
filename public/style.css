@@ -48,15 +48,6 @@ header {
   margin-top: 3px;
 }
 
-.kakao-infowindow {
-  width: auto; /* 인포윈도우의 너비 자동 조정 */
-}
-
-.kakao-infowindow.infowindow-content {
-  height: 500px; /* 원하는 높이로 설정 (예시로 200px로 설정) */
-  overflow-y: auto; /* 내용이 넘칠 경우 수직 스크롤바 표시 */
-}
-
 .logo {
   margin-right: 30px;
   font-size: 24px;
@@ -84,6 +75,12 @@ nav ul li a {
   display: flex;
   flex-direction: column; /* 배너를 세로로 쌓기 위해 column 방향으로 설정 */
   align-items: center; /* 가운데 정렬 */
+}
+
+.kakao-infowindow.infowindow-content {
+  width: 300px; /* 원하는 너비로 설정 */
+  height: 200px; /* 원하는 높이로 설정 */
+  overflow-y: auto; /* 내용이 넘칠 경우 수직 스크롤바 표시 */
 }
 
 .banner {
