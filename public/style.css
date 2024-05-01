@@ -182,7 +182,6 @@ nav ul li a {
   transition: transform 0.5s ease-in-out;
 }
 footer {
-  position: fixed;
   bottom: 0;
   width: 100%;
   background-color: #a6a6a6;
