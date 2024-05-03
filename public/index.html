@@ -10,7 +10,7 @@
         /* 지도를 담을 컨테이너의 스타일 설정 */
         #map {
             width: 100%;
-            height: 100%;
+            height: 400px;
         }
     </style>
 </head>
@@ -19,10 +19,10 @@
         <div class="logo">로고</div> <!-- 로고 -->
         <nav>
             <ul> <!-- 메뉴 4개 -->
-                <li><a href="#section1">재활용 통계</a></li>
+                <li><a href="statistics.html" target="_parent">재활용 통계</a></li>
                 <li><a href="#section2">분리수거 정보</a></li>
-                <li><a href="map.html" id="showMap">오프라인 제로웨이스트샵</a></li> <!-- ID 추가 -->
-                <li><a href="quest.html">자주 묻는 질문</a></li>
+                <li><a href="map.html" target="_blank">오프라인 제로웨이스트샵</a></li>
+                <li><a href="#section4">자주 묻는 질문</a></li>
             </ul>
         </nav>
         <!-- 검색창 추가 -->
@@ -43,7 +43,65 @@
         </div>
 
         <div class="banner3">
-            <a href="#" class="myButton">자세히보기</a>
+            <h1 style="color: #004d40; font-size: 38px;">올바른 분리수거 배출 가이드</h1>
+            <div class="category-container">
+                <!-- 카테고리 1 -->
+                <div class="category-box" onclick="window.location.href='다른페이지의URL1'">
+                    <div class="category-title">종이</div>
+                    <img class="image" src="img/paper.png" alt="paper">
+       
+                </div>
+                
+                <!-- 카테고리 2 -->
+                <div class="category-box" onclick="window.location.href='다른페이지의URL1'">
+                    <div class="category-title">플라스틱</div>
+                    <img class="image" src="img/plastic.png" alt="plastic">
+               
+                </div>
+                
+                <!-- 카테고리 3 -->
+                <div class="category-box" onclick="window.location.href='다른페이지의URL1'">
+                    <div class="category-title">금속</div>
+                    <img class="image" src="img/metal.png" alt="metal">
+                  
+                </div>
+                
+                <!-- 카테고리 4 -->
+                <div class="category-box" onclick="window.location.href='다른페이지의URL1'">
+                    <div class="category-title">유리</div>
+                    <img class="image" src="img/glass.png" alt="glass">
+                
+                </div>
+                
+                <!-- 카테고리 5 -->
+                <div class="category-box" onclick="window.location.href='다른페이지의URL1'">
+                    <div class="category-title">비닐</div>
+                    <img class="image" src="img/vinlybag.png" alt="plasticbag">
+
+                </div>
+                
+                <!-- 카테고리 6 -->
+                <div class="category-box" onclick="window.location.href='다른페이지의URL1'">
+                    <div class="category-title">음식물</div>
+                    <img class="image" src="img/organic.png" alt="organic">
+                
+                </div>
+                
+                <!-- 카테고리 7 -->
+                <div class="category-box"onclick="window.location.href='다른페이지의URL1'">
+                    <div class="category-title">의약품</div>
+                    <img class="image" src="img/Medicine.png" alt="Medicine">
+                
+                </div>
+                
+                <!-- 카테고리 8 -->
+                <div class="category-box" onclick="window.location.href='다른페이지의URL6'">
+                    <div class="category-title">기타</div>
+                    <img class="image" src="img/battery.png" alt="battery">
+                 
+                </div>
+            </div>
+            
         </div>
 
         <div class="banner4">배너4</div>
@@ -67,6 +125,7 @@
                 </div>
             </div>
         </div>
+
     </div>
 
     <footer>
