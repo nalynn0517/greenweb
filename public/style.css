@@ -115,7 +115,6 @@ nav ul li a {
   text-align: center;
   width: 100%;/* 화면 너비에 꽉 차게 설정 */
   height: 630px;
-  border: 2px solid rgb(185, 198, 164);
 }
 
 .category-container {
