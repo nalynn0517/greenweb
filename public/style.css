@@ -115,7 +115,6 @@ nav ul li a {
   text-align: center;
   width: 100%;/* 화면 너비에 꽉 차게 설정 */
   height: 630px;
-  border: 2px solid rgb(185, 198, 164);
 }
 
 .category-container {
@@ -146,7 +145,7 @@ nav ul li a {
 .category-title {
   margin-bottom: auto; /* 아래 여백 자동으로 채우기 */
   font-size: 30px;
-  color: #235B36 ;
+  color: #235B36;
 }
 
 
