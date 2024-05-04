@@ -1,3 +1,10 @@
+function setupLogoClick() {
+  const logo = document.querySelector(".logo");
+  logo.addEventListener("click", function() {
+      window.location.href = "http://localhost:8080";
+  });
+}
+
 document.addEventListener("DOMContentLoaded", function() {
   const buttons = document.querySelectorAll(".recycleTab button");
   const contents = document.querySelectorAll(".recycleContent div");
@@ -38,8 +45,5 @@ document.addEventListener("DOMContentLoaded", function() {
 
     });
   });
-// recycleTab
-
-
-  
+  setupLogoClick(); 
 });

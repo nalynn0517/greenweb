@@ -1,10 +1,21 @@
+function setupLogoClick() {
+    const logo = document.querySelector(".logo");
+    logo.addEventListener("click", function() {
+        window.location.href = "http://localhost:8080";
+    });
+}
+
 document.addEventListener("DOMContentLoaded", function () {
+    // 각 페이지에서 로고 클릭 이벤트 설정
+    setupLogoClick();
+
     // 카카오맵 API 키
     const kakaoApiKey = '8948120168a32c7a96068b04adbb1558';
     
     // 카카오맵 API를 비동기로 로드
     loadKakaoMapAPI(kakaoApiKey);
 });
+
 
 // 카카오맵 API를 비동기로 로드하는 함수
 function loadKakaoMapAPI(apiKey) {

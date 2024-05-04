@@ -13,6 +13,8 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  margin-top: 58px; /* header의 높이만큼 여백 추가 */
+
 }
 
 header {
@@ -27,6 +29,7 @@ header {
   width: 100%; /* 화면 너비에 맞게 설정 */
   z-index: 1000; /* 다른 요소 위에 표시되도록 설정 */
 }
+
 .search-bar {
   display: flex; /* 입력 필드와 버튼을 옆으로 나란히 표시 */
 }
@@ -109,7 +112,7 @@ nav ul li a {
   height: 400px
 }
 .banner3 {
-  background-color: #f0f0f0;
+  background-color: #c5d4c9;
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
@@ -145,10 +148,8 @@ nav ul li a {
 .category-title {
   margin-bottom: auto; /* 아래 여백 자동으로 채우기 */
   font-size: 30px;
-  color: #235B36 ;
+  color: #2a6b40 ;
 }
-
-
 
 .image {
   position: absolute;
@@ -160,31 +161,56 @@ nav ul li a {
   height: 76px; /* 이미지가 사각형을 넘어가지 않도록 최대 높이 설정 */
 }
 
-
 .banner4 {
-  background-color: #f0f0f0;
-  padding: 20px;
+  background-image: url("img/game.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 0;
   text-align: center;
-  margin-bottom: 0; /* 배너 사이의 간격 제거 */
-  width: 100%;/* 화면 너비에 꽉 차게 설정 */
-  height: 400px
+  margin-top: 0;
+  margin-bottom: 0;
+  width: 100%;
+  height: 630px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white; /* 텍스트 색상을 흰색으로 설정 */
 }
+
+.banner4 .banner-text {
+  margin-top: 20px; /* 텍스트와 이미지 간의 여백 조절 */
+}
+
+.banner4 .banner-text h2 {
+  font-size: 30px;
+  margin-bottom: 50px; /* 각 요소의 아래쪽 여백 조절 */
+}
+
+.banner4 .banner-text p{
+  margin-bottom: 20px;
+}
+.banner4 .banner-text button {
+  margin-bottom: 30px; /* 각 요소의 아래쪽 여백 조절 */
+}
+
 .banner5 {
-  background-color: #f0f0f0;
+  background-color: #ffffff;
   padding: 20px;
   text-align: center;
   margin-bottom: 0; /* 배너 사이의 간격 제거 */
   width: 1200px;/* 화면 너비에 꽉 차게 설정 */
   height: 400px
 }
+
 .banner6 {
-  background-color: #f0f0f0;
+  background-color: #ffffff;
   padding: 20px;
   text-align: center;
   margin-bottom: 0; /* 배너 사이의 간격 제거 */
   width: 1200px;/* 화면 너비에 꽉 차게 설정 */
   height: 400px
 }
+
 .slider{
   overflow: hidden;
   width: 1000px;
@@ -193,11 +219,13 @@ nav ul li a {
   left: 80px;
   top: 30px;
 }
+
 .slide-container{
   display: flex;
   width: 3000px;
   transition: transform 0.5s ease-in-out;
 }
+
 footer {
   bottom: 0;
   width: 100%;
