@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
-  const buttons = document.querySelectorAll(".recycleTab button");
-  const contents = document.querySelectorAll(".recycleContent div");
-  const subBtns = document.querySelectorAll(".recycleSubTab li");
+  const buttons = document.querySelectorAll(".recycleTab button"); // 종이 등 버튼 불러오기
+  const contents = document.querySelectorAll(".recycleContent>div"); // 내용부분 불러오기
+  const subBtns = document.querySelectorAll(".recycleSubTab li"); // 재활용가능,불가능 버튼 불러오기
 
   contents.forEach(content=>{
     content.style.display = "none";
@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
     button.style.display = "none";
   });
   
+
   contents[0].style.display = "block";
   subBtns[0].style.display = "block";
 
@@ -29,12 +30,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
       subBtns.forEach(button=>{
         button.style.display = "none";
+        // button.classList.remove("active");
       });
       subBtns[currentIndex].style.display = "block";
 
-      //subTab
-
-      //button click event listener
+    
 
     });
   });
