@@ -119,7 +119,7 @@ nav ul li a {
 .recycleSubTab button.active{
   background: #fff;
   color: #64884A;
-  transition: 0.5s;
+  transition: 0.2s;
 }
 .recycleContent{
   width: 65%;
