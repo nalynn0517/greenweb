@@ -11,16 +11,19 @@ document.addEventListener("DOMContentLoaded", function() {
   subBtns.forEach(button=>{
     button.style.display = "none";
   });
+  subCtns.forEach(ctn=>{
+    ctn.style.display = "none";
+  })
   
-
   contents[0].style.display = "block";
   subBtns[0].style.display = "block";
+  subCtns[0].style.display = "block";
   
   buttons.forEach((button, index)=>{
     button.addEventListener("click", function(){
       const currentIndex = index;
 
-      buttons.forEach(btn=>{
+      buttons.forEach(btn=>{ //큰 버튼 클릭했을때
         btn.classList.remove("active");
       });
       button.classList.add("active");
@@ -35,9 +38,6 @@ document.addEventListener("DOMContentLoaded", function() {
       });
       subBtns[currentIndex].style.display = "block";
 
-      subCtns.forEach(content=>{
-
-      });
 
       // 해당 메인 버튼의 첫 번째 서브버튼을 활성화
       const firstSubBtn = subBtns[currentIndex].querySelector('button');
@@ -58,9 +58,10 @@ document.addEventListener("DOMContentLoaded", function() {
       subCtns.forEach(content=>{
         content.style.display = "none";
       });
-      subCtns.style.display = "block";
+      subCtns[currentIndex].style.display = "block";
+
     });
   });
 
-  
+    
 });
