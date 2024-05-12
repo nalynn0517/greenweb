@@ -111,46 +111,34 @@ nav ul li a {
   background-color: white;
   padding: 20px 0; /* 상하 여백은 그대로 두고 좌우 여백만 없앰 */
   width: calc(100% - 40px); /* 좌우 여백을 고려하여 너비 설정 */
-  height: 400px;
+  height: 500px;
   display: flex;
   box-sizing: border-box; /* 패딩을 너비에 포함시킴 */
-  border-top: 1px solid #ccc; /* 위쪽에 1px 두께의 실선 추가 */
-  border-bottom: 1px solid #ccc; /* 아래쪽에 1px 두께의 실선 추가 */
 }
-
-.image-container {
+.banner2 div {
   flex: 1;
   display: flex;
   justify-content: center; /* 이미지를 수평으로 가운데 정렬 */
   align-items: center; /* 이미지를 수직으로 가운데 정렬 */
+}
+
+.image-container {
   border-right: 1px solid #ccc; /* 이미지 오른쪽에 1px 두께의 실선 추가 */
   padding-right: 10px; /* 이미지 오른쪽 패딩 추가 */
 }
 
-.image-container img {
-  max-width: 100%;
-  max-height: 100%;
-  width: auto;
-  height: auto;
-}
-
 .text-container {
-  flex: 1;
-  display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
   padding-left: 10px; /* 텍스트 왼쪽 패딩 추가 */
 }
 
 .text-container h2 {
   font-size: 24px;
-  margin: 0;
+  margin-top: 0;
 }
 
 .text-container p {
-  color: black;
+  color: #333;
   font-size: 20px;
   margin: 5px 0;
   white-space: nowrap; /* 줄바꿈 방지 */
