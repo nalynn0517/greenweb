@@ -46,7 +46,7 @@
             <h1 style="color: #004d40; font-size: 38px;">올바른 분리수거 배출 가이드</h1>
             <div class="category-container">
                 <!-- 카테고리 1 -->
-                <div class="category-box" onclick="window.location.href='recyclePage/recycle.html'">
+                <div class="category-box" onclick="window.location.href='다른페이지의URL1'">
                     <div class="category-title">종이</div>
                     <img class="image" src="img/paper.png" alt="paper">
                 </div>
@@ -129,7 +129,10 @@
     </footer>
 
     <script>
-        // 슬라이더 자동 슬라이드 기능 추가
+        // 분리수거 페이지로 연결
+
+
+        // 슬라이드 배너 자동 슬라이드 기능 추가
         document.addEventListener("DOMContentLoaded", function() {
             const slideContainers = document.querySelectorAll(".slider .slide-container");
             let slideIndexes = [0, 0];
@@ -144,7 +147,7 @@
                         slideContainers[0].style.marginLeft = "0";
                         slideIndexes[0] = 0;
                     }, 0);
-                }   
+                };   
     
                 slideIndexes[1]++;
                 slideContainers[1].style.transition = "margin-left 0.6s"
@@ -159,6 +162,7 @@
             }, 3000);
         });
     
+
     </script>
 </body>
 </html>
