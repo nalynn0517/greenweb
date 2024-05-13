@@ -1,6 +1,10 @@
 * {
   box-sizing: border-box; /* 모든 요소의 박스 크기를 내부 패딩 및 테두리를 포함한 크기로 설정 */
 }
+a {
+  text-decoration: none;
+  color: #333;
+}
 
 
 ul {
@@ -96,20 +100,83 @@ nav ul li a {
 }
 
 .banner1 {
-  background-color: #f0f0f0;
+  background-color: white;
   padding: 20px;
   text-align: center;
   margin-bottom: 0; /* 배너 사이의 간격 제거 */
   width: 100%; /* 화면 너비에 꽉 차게 설정 */
-  height: 550px
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 세로 가운데 정렬 */
+  align-items: center; /* 가로 가운데 정렬 */
 }
+
+.logo-container img {
+  max-width: 100%; /* 로고 이미지 너비 최대값 설정 */
+  max-height: 100%; /* 로고 이미지 높이 최대값 설정 */
+}
+
+.quick-recycle {
+  margin-top: 20px; /* "빠른 분리 바른 배출"과 로고 사이의 여백 조정 */
+  font-size: 24px; /* 텍스트 크기 설정 */
+}
+
 .banner2 {
-  background-color: #f0f0f0;
-  padding: 20px;
+  background-color: white;
+  padding: 20px 0; /* 상하 여백은 그대로 두고 좌우 여백만 없앰 */
+  width: calc(100% - 40px); /* 좌우 여백을 고려하여 너비 설정 */
+  height: 500px;
+  display: flex;
+  box-sizing: border-box; /* 패딩을 너비에 포함시킴 */
+  border-top: 1px solid #ccc; /* 위쪽에 1px 두께의 실선 추가 */
+  border-bottom: 1px solid #ccc; /* 아래쪽에 1px 두께의 실선 추가 */
+}
+
+.image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center; /* 이미지를 수평으로 가운데 정렬 */
+  align-items: center; /* 이미지를 수직으로 가운데 정렬 */
+  border-right: 1px solid #ccc; /* 이미지 오른쪽에 1px 두께의 실선 추가 */
+  padding-right: 10px; /* 이미지 오른쪽 패딩 추가 */
+}
+
+.image-container img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+}
+
+.text-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  margin-bottom: 0; /* 배너 사이의 간격 제거 */
-  width: 100%;/* 화면 너비에 꽉 차게 설정 */
-  height: 400px
+  padding-left: 10px; /* 텍스트 왼쪽 패딩 추가 */
+}
+
+.text-container h2 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.text-container p {
+  color: black;
+  font-size: 20px;
+  margin: 5px 0;
+  white-space: nowrap; /* 줄바꿈 방지 */
+}
+
+.banner2 img {
+  max-width: 100%; /* 이미지가 부모 요소의 너비에 맞게 조정됨 */
+  max-height: 100%; /* 이미지가 부모 요소의 높이에 맞게 조정됨 */
+  width: auto; /* 이미지의 비율을 유지하면서 너비 조정 */
+  height: auto; /* 이미지의 비율을 유지하면서 높이 조정 */
+  text-align: center;
 }
 .banner3 {
   background-color: #c5d4c9;
