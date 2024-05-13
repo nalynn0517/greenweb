@@ -16,10 +16,10 @@
 </head>
 <body>
     <header>
-        <div class="logo">로고</div> <!-- 로고 -->
+        <div class="logo"><a href="index.html">로고</a></div> <!-- 로고 -->
         <nav>
             <ul> <!-- 메뉴 4개 -->
-                <li><a href="./recyclechart/chart.html">재활용 통계</a></li>
+                <li><a href="#section1">재활용 통계</a></li>
                 <li><a href="./recyclePage/recycle.html">분리수거 정보</a></li>
                 <li><a href="map.html" id="showMap">오프라인 제로웨이스트샵</a></li> <!-- ID 추가 -->
                 <li><a href="quest.html">자주 묻는 질문</a></li>
@@ -33,13 +33,7 @@
     </header>
 
     <div class="banner-section">
-        <div class="banner1">
-            <div class="logo-container">
-              <img src="img/logo1.png">
-            </div>
-            <p class="quick-recycle">빠른 분리 바른 배출</p>
-           </div>  
-
+        <div class="banner1">배너1</div>
 
         <div class="banner2">
             <div class="image-container">
@@ -69,7 +63,7 @@
                 
                 <!-- 카테고리 3 -->
                 <div class="category-box" onclick="window.location.href='다른페이지의URL1'">
-                    <div class="category-title">금속</div>
+                    <div class="category-title">캔/고철</div>
                     <img class="image" src="img/metal.png" alt="metal">
                 </div>
                 
@@ -139,7 +133,10 @@
     </footer>
 
     <script>
-        // 슬라이더 자동 슬라이드 기능 추가
+        // 분리수거 페이지로 연결
+
+
+        // 슬라이드 배너 자동 슬라이드 기능 추가
         document.addEventListener("DOMContentLoaded", function() {
             const slideContainers = document.querySelectorAll(".slider .slide-container");
             let slideIndexes = [0, 0];
@@ -154,7 +151,7 @@
                         slideContainers[0].style.marginLeft = "0";
                         slideIndexes[0] = 0;
                     }, 0);
-                }   
+                };   
     
                 slideIndexes[1]++;
                 slideContainers[1].style.transition = "margin-left 0.6s"
@@ -169,6 +166,7 @@
             }, 3000);
         });
     
+
     </script>
 </body>
 </html>
