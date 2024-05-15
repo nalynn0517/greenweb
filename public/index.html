@@ -16,10 +16,10 @@
 </head>
 <body>
     <header>
-        <div class="logo"><a href="index.html">로고</a></div> <!-- 로고 -->
+        <div class="logo"><a href="index.html"><img src="img/logo1.png" alt="로고" width="60" height="40"></a></div>
         <nav>
             <ul> <!-- 메뉴 4개 -->
-                <li><a href="#section1">재활용 통계</a></li>
+                <li><a href="./recyclechart/chart.html">재활용 통계</a></li>
                 <li><a href="./recyclePage/recycle.html">분리수거 정보</a></li>
                 <li><a href="map.html" id="showMap">오프라인 제로웨이스트샵</a></li> <!-- ID 추가 -->
                 <li><a href="quest.html">자주 묻는 질문</a></li>
@@ -32,8 +32,13 @@
         </div>
     </header>
 
-    <div class="banner-section">
-        <div class="banner1">배너1</div>
+    <<div class="banner-section">
+        <div class="banner1">
+            <div class="logo-container">
+              <img src="img/logo1.png">
+            </div>
+            <p class="quick-recycle">빠른 분리 바른 배출</p>
+        </div>
 
         <div class="banner2">
             <div class="image-container">
@@ -103,7 +108,7 @@
             <div class="banner-text">
                 <h2>분리수거 게임</h2>
                 <p>간단한 게임에 참여해보세요!</p>
-                <button id="playButton">게임 플레이하기</button>
+                <button onclick="window.location.href='./gamepage/game.html'" class="start-game-button">게임 시작하기</button>
             </div>
         </div>
 
