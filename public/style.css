@@ -110,11 +110,31 @@ nav ul li a {
   flex-direction: column;
   justify-content: center; /* 세로 가운데 정렬 */
   align-items: center; /* 가로 가운데 정렬 */
+  position: relative; /* 상대적 위치 설정 */
+}
+
+.banner1::before,
+.banner1::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 20px; /* 세로선의 너비 */
+  background-color: #235B36; /* 세로선 색상 */
+  opacity: 0.7;
+}
+
+.banner1::before {
+  left: 50px; /* 왼쪽에 세로선 배치 */
+}
+
+.banner1::after {
+  right: 50px; /* 오른쪽에 세로선 배치 */
 }
 
 .logo-container img {
-  max-width: 100%; /* 로고 이미지 너비 최대값 설정 */
-  max-height: 100%; /* 로고 이미지 높이 최대값 설정 */
+  max-width: 65%; /* 로고 이미지 너비를 75%로 설정 */
+  max-height: auto; /* 높이는 자동으로 조정되도록 설정 */
 }
 
 .quick-recycle {
@@ -125,7 +145,7 @@ nav ul li a {
 .banner2 {
   background-color: white;
   padding: 20px 0; /* 상하 여백은 그대로 두고 좌우 여백만 없앰 */
-  width: calc(100% - 40px); /* 좌우 여백을 고려하여 너비 설정 */
+  width: 100%; /* 좌우 여백을 고려하여 너비 설정 */
   height: 500px;
   display: flex;
   box-sizing: border-box; /* 패딩을 너비에 포함시킴 */
@@ -260,38 +280,37 @@ nav ul li a {
   margin-bottom: 30px; /* 각 요소의 아래쪽 여백 조절 */
 }
 
+/* .banner6 {
+  background-color: #ffffff;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 0; 
+  width: 1200px;
+  height: 400px
+} */
+
 .banner5 {
   background-color: #ffffff;
-  padding: 20px;
+  padding: 0; /* 기존의 padding을 제거합니다. */
   text-align: center;
   margin-bottom: 0; /* 배너 사이의 간격 제거 */
-  width: 1200px;/* 화면 너비에 꽉 차게 설정 */
-  height: 400px
+  width: 1400px;
+  height: 400px;
+  overflow: hidden; /* 내용이 넘치는 경우를 대비하여 오버플로우를 숨깁니다. */
 }
 
-.banner6 {
-  background-color: #ffffff;
-  padding: 20px;
-  text-align: center;
-  margin-bottom: 0; /* 배너 사이의 간격 제거 */
-  width: 1200px;/* 화면 너비에 꽉 차게 설정 */
-  height: 400px
+.slider {
+  width: 1400px; /* 슬라이드 컨테이너의 너비를 100%로 설정합니다. */
+  height: 400px; /* 슬라이드 컨테이너의 높이를 100%로 설정합니다. */
+  display: flex; /* 슬라이드를 수평으로 배치하기 위해 flex로 설정합니다. */
 }
 
-.slider{
-  overflow: hidden;
-  width: 1000px;
-  height: 300px;
-  position: relative;
-  left: 80px;
-  top: 30px;
+.slide-container {
+  display: flex; /* 슬라이드를 수평으로 배치하기 위해 flex로 설정합니다. */
+  width: 4200px; /* 슬라이드 컨테이너의 전체 너비를 슬라이드 개수 * 슬라이드 너비로 설정합니다. */
+  transition: transform 0.5s ease-in-out; /* 슬라이드 전환에 사용할 트랜지션을 설정합니다. */
 }
 
-.slide-container{
-  display: flex;
-  width: 3000px;
-  transition: transform 0.5s ease-in-out;
-}
 
 footer {
   bottom: 0;

@@ -35,14 +35,14 @@
     <div class="banner-section">
         <div class="banner1">
             <div class="logo-container">
-              <img src="img/logo1.png">
+              <img src="img/logo3.png">
             </div>
-            <p class="quick-recycle">빠른 분리 바른 배출</p>
+            <!-- <p class="quick-recycle">빠른 분리 바른 배출</p> -->
           </div>          
 
         <div class="banner2">
             <div class="image-container">
-                <img src="img/grapht2.png" alt="쓰레기 총량 그래프">
+                <img src="img/graph3.png" alt="쓰레기 총량 그래프">
             </div>
             <div class="text-container">
                 <h2>쓰레기 총량 그래프</h2>
@@ -115,12 +115,12 @@
         <div class="banner5">
             <div class="slider">
                 <div class="slide-container">
-                    <img src="./img/ex_slideimg.jpg" alt="slideimage1">
-                    <img src="./img/ex_slideimg2.png" alt="slideimage2">
-                    <img src="./img/ex_slideimg3.png" alt="slideimage3">
+                    <a href="https://www.donggubat.co.kr/" target="_blank"><img src="./img/zero1.png" alt="slideimage1"></a>
+                    <a href="https://www.myansim.com/" target="_blank"><img src="./img/zero2.png" alt="slideimage2"></a>
+                    <a href="https://onlyeco.co.kr/" target="_blank"><img src="./img/zero3.jpg" alt="slideimage3"></a>
                 </div>
             </div>
-        </div>
+        </div>        
 
         <div class="banner6">
             <div class="slider">
@@ -149,7 +149,7 @@
             setInterval(function() {
                 slideIndexes[0]++;
                 slideContainers[0].style.transition = "margin-left 0.6s"
-                slideContainers[0].style.marginLeft = `${-1000 * slideIndexes[0]}px`;
+                slideContainers[0].style.marginLeft = `${-1400 * slideIndexes[0]}px`;
     
                 if (slideIndexes[0] === 3) {
                     setTimeout(function() {
@@ -160,7 +160,7 @@
     
                 slideIndexes[1]++;
                 slideContainers[1].style.transition = "margin-left 0.6s"
-                slideContainers[1].style.marginLeft = `${-1000 * slideIndexes[1]}px`;
+                slideContainers[1].style.marginLeft = `${-1400 * slideIndexes[1]}px`;
     
                 if (slideIndexes[1] === 3) {
                     setTimeout(function() {
@@ -168,7 +168,7 @@
                         slideIndexes[1] = 0;
                     }, 0);
                 }
-            }, 3000);
+            }, 4200);
         });
     
 
