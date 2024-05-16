@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>환경</title>
     <link rel="stylesheet" type="text/css" href="./style.css">
+    <script src="main.js"></script>
     
     <style>
         /* 지도를 담을 컨테이너의 스타일 설정 */
@@ -51,58 +52,67 @@
             </div>
         </div>  
 
+        
         <div class="banner3">
-            <h1 style="color: #004d40; font-size: 38px;">올바른 분리수거 배출 가이드</h1>
-            <div class="category-container">
-                <!-- 카테고리 1 -->
-                <div class="category-box" onclick="window.location.href='다른페이지의URL1'">
-                    <div class="category-title">종이</div>
-                    <img class="image" src="img/paper.png" alt="paper">
-                </div>
-                
-                <!-- 카테고리 2 -->
-                <div class="category-box" onclick="window.location.href='다른페이지의URL1'">
-                    <div class="category-title">플라스틱</div>
-                    <img class="image" src="img/plastic.png" alt="plastic">
-                </div>
-                
-                <!-- 카테고리 3 -->
-                <div class="category-box" onclick="window.location.href='다른페이지의URL1'">
-                    <div class="category-title">캔/고철</div>
-                    <img class="image" src="img/metal.png" alt="metal">
-                </div>
-                
-                <!-- 카테고리 4 -->
-                <div class="category-box" onclick="window.location.href='다른페이지의URL1'">
-                    <div class="category-title">유리</div>
-                    <img class="image" src="img/glass.png" alt="glass">
-                </div>
-                
-                <!-- 카테고리 5 -->
-                <div class="category-box" onclick="window.location.href='다른페이지의URL1'">
-                    <div class="category-title">비닐</div>
-                    <img class="image" src="img/vinlybag.png" alt="plasticbag">
-                </div>
-                
-                <!-- 카테고리 6 -->
-                <div class="category-box" onclick="window.location.href='다른페이지의URL1'">
-                    <div class="category-title">음식물</div>
-                    <img class="image" src="img/organic.png" alt="organic">
-                </div>
-                
-                <!-- 카테고리 7 -->
-                <div class="category-box"onclick="window.location.href='다른페이지의URL1'">
-                    <div class="category-title">의약품</div>
-                    <img class="image" src="img/Medicine.png" alt="Medicine">
-                </div>
-                
-                <!-- 카테고리 8 -->
-                <div class="category-box" onclick="window.location.href='다른페이지의URL6'">
-                    <div class="category-title">기타</div>
-                    <img class="image" src="img/battery.png" alt="battery">
-                </div>
-            </div>
-        </div>
+            <h1 style="color: #004d40; font-size: 40px;">올바른 분리수거 배출 가이드</h1>
+            <div class="category-container"></div>
+                    <!-- 종이 버튼 -->
+                    <button id="1" class="category-box" onclick="redirectToRecyclePage(1)">
+                        <div class="category-title">종이</div>
+                        <img class="image" src="img/paper.png" alt="paper">
+                    </button>
+
+                    <!-- 플라스틱 버튼 -->
+                    <button id="2" class="category-box" onclick="redirectToRecyclePage(2)">
+                        <div class="category-title">플라스틱</div>
+                        <img class="image" src="img/plastic.png" alt="plastic">
+                    </button>
+
+                    <!-- 캔/고철 버튼 -->
+                    <button id="3" class="category-box" onclick="redirectToRecyclePage(3)">
+                        <div class="category-title">캔/고철</div>
+                        <img class="image" src="img/metal.png" alt="metal">
+                    </button>
+
+                    <!-- 유리 버튼 -->
+                    <button id="4" class="category-box" onclick="redirectToRecyclePage(4)">
+                        <div class="category-title">유리</div>
+                        <img class="image" src="img/glass.png" alt="glass">
+                    </button>
+
+                    <!-- 비닐 버튼 -->
+                    <button id="5" class="category-box" onclick="redirectToRecyclePage(5)">
+                        <div class="category-title">비닐</div>
+                        <img class="image" src="img/vinlybag.png" alt="plastic_bag">
+                    </button>
+
+                    <!-- 음식물 버튼 -->
+                    <button id="6" class="category-box" onclick="redirectToRecyclePage(6)">
+                        <div class="category-title">음식물</div>
+                        <img class="image" src="img/organic.png" alt="food_waste">
+                    </button>
+
+                    <!-- 의약품 버튼 -->
+                    <button id="7" class="category-box" onclick="redirectToRecyclePage(7)">
+                        <div class="category-title">의약품</div>
+                        <img class="image" src="img/medicine.png" alt="medicine">
+                    </button>
+
+                    <!-- 기타 버튼 -->
+                    <button id="8" class="category-box" onclick="redirectToRecyclePage(8)">
+                        <div class="category-title">기타</div>
+                        <img class="image" src="img/battery.png" alt="other">
+                    </button>
+
+                    <script>
+                        // 새로운 페이지로 이동하는 함수
+                        function redirectToRecyclePage(category) {
+                            window.location.href = 'http://localhost:8080/recyclePage/recycle.html?category=' + category;
+                        }
+                    </script>
+                        
+        
+
 
         <div class="banner4">
             <div class="banner-text">
