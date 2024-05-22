@@ -1,3 +1,44 @@
+// 카테고리별 콘텐츠를 표시하는 함수
+function showContent(category) {
+  // 모든 콘텐츠를 숨김
+  const contents = document.querySelectorAll('.recycleContent > div');
+  contents.forEach(content => content.classList.remove('active'));
+  
+  // 선택한 카테고리의 콘텐츠를 표시
+  const selectedContent = document.getElementById('content' + category);
+  if (selectedContent) {
+      selectedContent.classList.add('active');
+  }
+  
+  // 모든 버튼에서 active 클래스 제거
+  const buttons = document.querySelectorAll('.recycleTab button');
+  buttons.forEach(button => button.classList.remove('active'));
+  
+  // 선택한 버튼에 active 클래스 추가
+  const activeButton = document.getElementById('button' + category);
+  if (activeButton) {
+      activeButton.classList.add('active');
+  }
+
+  // 해당 텍스트를 표시하는 부분 수정
+  const activeButtonText = activeButton.textContent; // 현재 활성화된 버튼의 텍스트
+  const contentText = document.querySelector('.content' + category + ' p'); // 해당 콘텐츠의 텍스트 엘리먼트
+  if (contentText) {
+      contentText.textContent = activeButtonText; // 텍스트 엘리먼트에 버튼 텍스트를 설정
+  }
+
+  // 모든 subTab을 숨김
+  const subTabs = document.querySelectorAll('.recycleSubTab ul li');
+  subTabs.forEach(subTab => subTab.style.display = 'none');
+  
+  // 선택한 subTab을 표시
+  const selectedSubTab = document.querySelector('.subTab' + category);
+  if (selectedSubTab) {
+      selectedSubTab.style.display = 'block';
+  }
+}
+
+
 document.addEventListener("DOMContentLoaded", function() {
   const btns = document.querySelectorAll(".recycleTab button"); // 메인 버튼 불러오기
   const contents = document.querySelectorAll(".recycleContent div"); // 메인 내용 부분 불러오기
