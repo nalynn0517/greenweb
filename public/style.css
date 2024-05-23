@@ -105,7 +105,7 @@ nav ul li a {
   text-align: center;
   margin-bottom: 0; /* 배너 사이의 간격 제거 */
   width: 100%; /* 화면 너비에 꽉 차게 설정 */
-  height: 500px;
+  height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center; /* 세로 가운데 정렬 */
@@ -133,7 +133,7 @@ nav ul li a {
 }
 
 .logo-container img {
-  max-width: 65%; /* 로고 이미지 너비를 75%로 설정 */
+  max-width: 50%; /* 로고 이미지 너비를 75%로 설정 */
   max-height: auto; /* 높이는 자동으로 조정되도록 설정 */
 }
 
@@ -144,13 +144,14 @@ nav ul li a {
 
 .banner2 {
   background-color: white;
-  padding: 20px 0; /* 상하 여백은 그대로 두고 좌우 여백만 없앰 */
-  width: 100%; /* 좌우 여백을 고려하여 너비 설정 */
-  height: 500px;
+  padding: 0; 
+  width: 100%; /* 배너2의 전체 너비를 화면 너비에 맞춤 */
+  height: 400px; /* 배너2의 높이를 400px로 설정 */
   display: flex;
   box-sizing: border-box; /* 패딩을 너비에 포함시킴 */
   border-top: 1px solid #ccc; /* 위쪽에 1px 두께의 실선 추가 */
   border-bottom: 1px solid #ccc; /* 아래쪽에 1px 두께의 실선 추가 */
+  overflow: hidden;
 }
 
 .image-container {
@@ -169,26 +170,29 @@ nav ul li a {
   height: auto;
 }
 
-.text-container {
-  flex: 1;
+.slider {
+  width: 900px; 
+  height: 400px; 
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding-left: 10px; /* 텍스트 왼쪽 패딩 추가 */
+  overflow: hidden;
+  position: relative;
 }
 
-.text-container h2 {
-  font-size: 24px;
-  margin: 0;
+.slide-container {
+  display: flex;
+  width: calc(900px * 3); /* 슬라이드 3개를 포함할 수 있도록 너비 설정 */
+  transition: transform 0.5s ease-in-out;
 }
 
-.text-container p {
-  color: black;
-  font-size: 20px;
-  margin: 5px 0;
-  white-space: nowrap; /* 줄바꿈 방지 */
+.slide-container a {
+  flex: none; /* 슬라이드가 동일한 비율로 공간을 차지하지 않도록 설정 */
+  width: 900px; 
+  height: 400px; 
+}
+
+.slide-container img {
+  width: 100%; /* 슬라이드 이미지가 슬라이드 컨테이너의 너비에 맞게 설정 */
+  height: 100%; /* 슬라이드 이미지가 슬라이드 컨테이너의 높이에 맞게 설정 */
 }
 
 .banner2 img {
@@ -198,6 +202,7 @@ nav ul li a {
   height: auto; /* 이미지의 비율을 유지하면서 높이 조정 */
   text-align: center;
 }
+
 .banner3 {
   background-color: #c5d4c9;
   background-repeat: no-repeat;
@@ -279,38 +284,6 @@ nav ul li a {
 .banner4 .banner-text button {
   margin-bottom: 30px; /* 각 요소의 아래쪽 여백 조절 */
 }
-
-/* .banner6 {
-  background-color: #ffffff;
-  padding: 20px;
-  text-align: center;
-  margin-bottom: 0; 
-  width: 1200px;
-  height: 400px
-} */
-
-.banner5 {
-  background-color: #ffffff;
-  padding: 0; /* 기존의 padding을 제거합니다. */
-  text-align: center;
-  margin-bottom: 0; /* 배너 사이의 간격 제거 */
-  width: 1400px;
-  height: 400px;
-  overflow: hidden; /* 내용이 넘치는 경우를 대비하여 오버플로우를 숨깁니다. */
-}
-
-.slider {
-  width: 1400px; /* 슬라이드 컨테이너의 너비를 100%로 설정합니다. */
-  height: 400px; /* 슬라이드 컨테이너의 높이를 100%로 설정합니다. */
-  display: flex; /* 슬라이드를 수평으로 배치하기 위해 flex로 설정합니다. */
-}
-
-.slide-container {
-  display: flex; /* 슬라이드를 수평으로 배치하기 위해 flex로 설정합니다. */
-  width: 4200px; /* 슬라이드 컨테이너의 전체 너비를 슬라이드 개수 * 슬라이드 너비로 설정합니다. */
-  transition: transform 0.5s ease-in-out; /* 슬라이드 전환에 사용할 트랜지션을 설정합니다. */
-}
-
 
 footer {
   bottom: 0;
