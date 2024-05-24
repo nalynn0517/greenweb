@@ -111,25 +111,7 @@ nav ul li a {
   justify-content: center; /* 세로 가운데 정렬 */
   align-items: center; /* 가로 가운데 정렬 */
   position: relative; /* 상대적 위치 설정 */
-}
-
-.banner1::before,
-.banner1::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 20px; /* 세로선의 너비 */
-  background-color: #235B36; /* 세로선 색상 */
-  opacity: 0.7;
-}
-
-.banner1::before {
-  left: 50px; /* 왼쪽에 세로선 배치 */
-}
-
-.banner1::after {
-  right: 50px; /* 오른쪽에 세로선 배치 */
+  border: 25px solid hsla(140, 44%, 25%, 0.7);
 }
 
 .logo-container img {
@@ -149,8 +131,6 @@ nav ul li a {
   height: 400px; /* 배너2의 높이를 400px로 설정 */
   display: flex;
   box-sizing: border-box; /* 패딩을 너비에 포함시킴 */
-  border-top: 1px solid #ccc; /* 위쪽에 1px 두께의 실선 추가 */
-  border-bottom: 1px solid #ccc; /* 아래쪽에 1px 두께의 실선 추가 */
   overflow: hidden;
 }
 
@@ -159,8 +139,7 @@ nav ul li a {
   display: flex;
   justify-content: center; /* 이미지를 수평으로 가운데 정렬 */
   align-items: center; /* 이미지를 수직으로 가운데 정렬 */
-  border-right: 1px solid #ccc; /* 이미지 오른쪽에 1px 두께의 실선 추가 */
-  padding-right: 10px; /* 이미지 오른쪽 패딩 추가 */
+  border-right: 1px solid white; /* 이미지 오른쪽에 1px 두께의 실선 추가 */
 }
 
 .image-container img {
