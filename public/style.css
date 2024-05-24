@@ -205,9 +205,9 @@ nav ul li a {
 }
 
 .category-title {
-  margin-bottom: auto; /* 아래 여백 자동으로 채우기 */
+  /*margin-bottom: ; 
   font-size: 30px;
-  color: #2a6b40;
+  color: #2a6b40; */
 }
 
 .image {
