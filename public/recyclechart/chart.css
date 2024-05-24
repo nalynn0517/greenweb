@@ -74,7 +74,7 @@ nav ul li a {
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 110vh;
+            height: 120vh;
             padding: 21px;
         }
         .chart-container {
