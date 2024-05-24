@@ -211,15 +211,11 @@ nav ul li a {
 }
 
 .image {
-  position: center;
+  position: relative;
   bottom: 0; /* 아래로 정렬 */
   right: 0; /* 오른쪽으로 정렬 */
-  margin-top: 5px;
-  margin-left: 8px;
-  margin-right: 8px;
-  margin-bottom: 5px;
-  width: 76px; /* 이미지가 사각형을 넘어가지 않도록 최대 너비 설정 */
-  height: 76px; /* 이미지가 사각형을 넘어가지 않도록 최대 높이 설정 */
+  width: 100%; /* 이미지가 사각형을 넘어가지 않도록 최대 너비 설정 */
+  height: 100%; /* 이미지가 사각형을 넘어가지 않도록 최대 높이 설정 */
 }
 
 .banner4 {
