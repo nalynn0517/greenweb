@@ -99,12 +99,13 @@ nav ul li a {
             margin-right: 0;
         }
         .info-box1 {
+          position: relative;
             background-color: #BFEA7C;
             border: 1px solid #cccccc;
             padding: 16px;
             text-align: center;
             width: 100%;
-            margin-bottom: 50px;
+            margin-bottom: 30px;
             cursor: pointer;
             border-radius: 10px;
             transition: margin-top 0.3s ease;
@@ -146,6 +147,7 @@ nav ul li a {
             margin-top: 700px;
         }
         .map-container .map {
+          position: relative;
             width: 100%;
             height: auto;
             display: block;
