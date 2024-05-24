@@ -104,7 +104,7 @@ nav ul li a {
             padding: 16px;
             text-align: center;
             width: 100%;
-            margin-bottom: 10px;
+            margin-bottom: 30px;
             cursor: pointer;
             border-radius: 10px;
             transition: margin-top 0.3s ease;
@@ -164,7 +164,7 @@ nav ul li a {
           padding: 10px;
           border-radius: 10px;
           position: absolute;
-          right: 374px;
+          right: 340px;
           top: 350px;
         }
 
