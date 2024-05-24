@@ -7,7 +7,7 @@ function drawInitialChart() {
 
     var options1 = {
         title: '재활용 통계',
-        titleTextStyle: { fontSize: 20 },
+        titleTextStyle: { fontSize: 24 },
         pieSliceText: 'label',
         pieSliceTextStyle: { fontSize: 12 },
         slices: {
@@ -30,14 +30,12 @@ function drawInitialChart() {
         if (selectedItem) {
             var selectedValue = data1.getValue(selectedItem.row, 0);
             if (selectedValue === '재활용 가능') {
-                // 재활용 가능 클릭 시 차트 2 표시
                 document.getElementById('piechart2').style.display = 'block';
-                document.getElementById('piechart3').style.display = 'none'; // 차트3 숨기기
+                document.getElementById('piechart3').style.display = 'none';
                 drawSecondChart();
             } else if (selectedValue === '재활용 불가능') {
-                // 재활용 불가능 클릭 시 차트 3 표시
                 document.getElementById('piechart3').style.display = 'block';
-                document.getElementById('piechart2').style.display = 'none'; // 차트2 숨기기
+                document.getElementById('piechart2').style.display = 'none';
                 drawThirdChart();
             }
         }
@@ -60,7 +58,7 @@ function drawSecondChart() {
 
     var options2 = {
         title: '재활용 가능 통계',
-        titleTextStyle: { fontSize: 20 },
+        titleTextStyle: { fontSize: 24 },
         pieSliceText: 'label',
         pieSliceTextStyle: { fontSize: 10},
         slices: {
@@ -84,7 +82,6 @@ function drawSecondChart() {
     };
 
     var chart2 = new google.visualization.PieChart(document.getElementById('piechart2'));
-
     chart2.draw(data2, options2);
 }
 
@@ -103,7 +100,7 @@ function drawThirdChart() {
 
     var options3 = {
         title: '재활용 불가능 통계',
-        titleTextStyle: { fontSize: 20 },
+        titleTextStyle: { fontSize: 24 },
         pieSliceText: 'label',
         pieSliceTextStyle: { fontSize: 10 },
         slices: {
@@ -127,30 +124,53 @@ function drawThirdChart() {
     };
 
     var chart3 = new google.visualization.PieChart(document.getElementById('piechart3'));
-
     chart3.draw(data3, options3);
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-const showMapButton = document.getElementById('showMapButton');
-const mapContainer = document.querySelector('.map-container');
+    const showMapButton = document.getElementById('showMapButton');
+    const mapContainer = document.querySelector('.map-container');
+    const chartContainer = document.querySelector('.chart-container');
+    const infoBox1 = document.getElementById('showMapButton');
+    const pinTableContainer = document.querySelector('.pin-table-container');
+    const regionName = document.getElementById('region-name');
+    const info1 = document.getElementById('info1');
+    const info2 = document.getElementById('info2');
+    const info3 = document.getElementById('info3');
+    const info4 = document.getElementById('info4');
+    const info5 = document.getElementById('info5');
+    const info6 = document.getElementById('info6');
+    const info7 = document.getElementById('info7');
+    const info8 = document.getElementById('info8');
 
-showMapButton.addEventListener('click', function() {
-if (mapContainer.style.display === 'block') {
-    mapContainer.style.display = 'none'; // 지도가 표시되어 있다면 숨깁니다.
-} else {
-    mapContainer.style.display = 'block'; // 지도가 숨겨져 있다면 표시합니다.
-}
-});
+    showMapButton.addEventListener('click', function() {
+        if (mapContainer.style.display === 'block') {
+            mapContainer.style.display = 'none'; // 지도가 표시되어 있다면 숨깁니다.
+            chartContainer.style.display = 'flex'; // 차트를 표시합니다.
+            infoBox1.style.marginTop = '10px'; // info-box1의 위치를 원래대로
+            pinTableContainer.style.display = 'none'; // 표를 숨깁니다.
+        } else {
+            mapContainer.style.display = 'block'; // 지도가 숨겨져 있다면 표시합니다.
+            chartContainer.style.display = 'none'; // 차트를 숨깁니다.
+            infoBox1.style.marginTop = '-430px'; // info-box1의 위치를 아래로
+        }
+    });
 
-const pins = document.querySelectorAll('.pin');
-const infoBox = document.querySelector('.info-box');
+    const pins = document.querySelectorAll('.pin');
 
-pins.forEach(pin => {
-pin.addEventListener('click', function () {
-    const info = this.getAttribute('data-info').split('|');
-    infoBox.innerHTML = `<h2>${info[0]}</h2><p> ${info[1]}</p><p> ${info[2]}</p><p> ${info[3]}</p>`;
-    infoBox.style.display = 'block';
-});
-});
+    pins.forEach(pin => {
+        pin.addEventListener('click', function () {
+            const info = this.getAttribute('data-info').split('|');
+            regionName.textContent = info[0];
+            info1.textContent = info[1];
+            info2.textContent = info[2];
+            info3.textContent = info[3];
+            info4.textContent = info[4];
+            info5.textContent = info[5];
+            info6.textContent = info[6];
+            info7.textContent = info[7];
+            info8.textContent = info[8];
+            pinTableContainer.style.display = 'block';
+        });
+    });
 });
