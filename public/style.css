@@ -100,11 +100,23 @@ nav ul li a {
 }
 
 .banner1 {
+  background-color: white;
   padding: 20px;
   text-align: center;
-  height: 500px;
+  margin-bottom: 0; /* 배너 사이의 간격 제거 */
+  width: 100%; /* 화면 너비에 꽉 차게 설정 */
+  height: 400px;
   display: flex;
   flex-direction: column;
+  justify-content: center; /* 세로 가운데 정렬 */
+  align-items: center; /* 가로 가운데 정렬 */
+  position: relative; /* 상대적 위치 설정 */
+  border: 25px solid hsla(140, 44%, 25%, 0.7);
+}
+
+.logo-container img {
+  max-width: 50%; /* 로고 이미지 너비를 75%로 설정 */
+  max-height: auto; /* 높이는 자동으로 조정되도록 설정 */
 }
 
 .quick-recycle {
@@ -114,15 +126,13 @@ nav ul li a {
 
 .banner2 {
   background-color: white;
-  padding: 20px 0; /* 상하 여백은 그대로 두고 좌우 여백만 없앰 */
-  width: calc(100% - 40px); /* 좌우 여백을 고려하여 너비 설정 */
-  height: 500px;
+  padding: 0; 
+  width: 100%; /* 배너2의 전체 너비를 화면 너비에 맞춤 */
+  height: 400px; /* 배너2의 높이를 400px로 설정 */
   display: flex;
   box-sizing: border-box; /* 패딩을 너비에 포함시킴 */
-  border-top: 1px solid #ccc; /* 위쪽에 1px 두께의 실선 추가 */
-  border-bottom: 1px solid #ccc; /* 아래쪽에 1px 두께의 실선 추가 */
+  overflow: hidden;
 }
-
 .image-container {
   flex: 1;
   display: flex;
@@ -169,6 +179,31 @@ nav ul li a {
   text-align: center;
 }
 
+.slider {
+  width: 900px; 
+  height: 400px; 
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+
+.slide-container {
+  display: flex;
+  width: calc(900px * 3); /* 슬라이드 3개를 포함할 수 있도록 너비 설정 */
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide-container a {
+  flex: none; /* 슬라이드가 동일한 비율로 공간을 차지하지 않도록 설정 */
+  width: 900px; 
+  height: 400px; 
+}
+
+.slide-container img {
+  width: 100%; /* 슬라이드 이미지가 슬라이드 컨테이너의 너비에 맞게 설정 */
+  height: 100%; /* 슬라이드 이미지가 슬라이드 컨테이너의 높이에 맞게 설정 */
+}
+
 .banner3 {
   background-color: #c5d4c9;
   background-repeat: no-repeat;
@@ -187,39 +222,33 @@ nav ul li a {
   max-width: 1200px; /* 최대 너비 설정 */
   margin: 0 auto; /* 중앙 정렬을 위해 좌우 여백을 자동으로 조정 */
 }
+.category-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .category-box {
-  position: relative;
-  width: 100px; /* 너비 조정, 각 박스 간격을 고려하여 계산 */
+  width: 100px; /* 너비 조정 */
   height: 100px; /* 높이 조정 */
-  margin: 30px; /* 여백 조정 */
+  margin: 10px; /* 여백 조정 */
   background-color: white; /* 배경색 흰색 */
   border: 4px solid #235B36; /* 테두리 색 녹색 */
   border-radius: 10px; /* 사각형 모서리 둥글게 */
   display: inline-block;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  padding: 10px; /* 내부 여백 */
   cursor: pointer; /* 포인터 모양으로 변경하여 클릭 가능하도록 */
 }
 
 .category-title {
-  margin-bottom: auto; /* 아래 여백 자동으로 채우기 */
-  font-size: 30px;
-  color: #2a6b40;
+  margin-top: 10px; /* 이미지와 제목 사이의 여백 조정 */
+  font-size: 16px; /* 텍스트 크기 설정 */
+  color: #235B36;
+  text-align: center;
 }
 
 .image {
-  position: center;
-  bottom: 0; /* 아래로 정렬 */
-  right: 0; /* 오른쪽으로 정렬 */
-  margin-top: 5px;
-  margin-left: 8px;
-  margin-right: 8px;
-  margin-bottom: 5px;
-  width: 76px; /* 이미지가 사각형을 넘어가지 않도록 최대 너비 설정 */
-  height: 76px; /* 이미지가 사각형을 넘어가지 않도록 최대 높이 설정 */
+  width: 100%; /* 이미지가 사각형을 넘어가지 않도록 최대 너비 설정 */
+  height: 100%; /* 이미지가 사각형을 넘어가지 않도록 최대 높이 설정 */
 }
 
 .banner4 {
@@ -229,6 +258,7 @@ nav ul li a {
   padding: 0;
   text-align: center;
   margin-top: 0;
+  margin-bottom: 0;
   width: 100%;
   height: 630px;
   display: flex;
@@ -253,52 +283,15 @@ nav ul li a {
   margin-bottom: 30px; /* 각 요소의 아래쪽 여백 조절 */
 }
 
-.banner5 {
-  background-color: #ffffff;
-  padding: 20px;
-  text-align: center;
-  margin-bottom: 0; /* 배너 사이의 간격 제거 */
-  width: 1200px;/* 화면 너비에 꽉 차게 설정 */
-  height: 400px
-}
-
-.banner6 {
-  background-color: #ffffff;
-  padding: 20px;
-  text-align: center;
-  margin-bottom: 0; /* 배너 사이의 간격 제거 */
-  width: 1200px;/* 화면 너비에 꽉 차게 설정 */
-  height: 400px
-}
-
-.slider{
-  overflow: hidden;
-  width: 1000px;
-  height: 300px;
-  position: relative;
-  left: 80px;
-  top: 30px;
-}
-
-.slide-container{
-  display: flex;
-  width: 3000px;
-  transition: transform 0.5s ease-in-out;
-}
-
-
 footer {
-  position: absolute; /* 페이지 내용의 가장 아래에 배치하기 위해 절대 위치 지정 */
-  bottom: 0; /* 페이지 아래쪽에 배치 */
-  width: 100%; /* 너비 100%로 설정하여 화면 가로폭에 맞게 푸터가 꽉 차게 함 */
+  bottom: 0;
+  width: 100%;
   background-color: #a6a6a6;
   padding: 20px 0;
   text-align: center;
 }
 
 body {
-  height: auto;
-  min-height: 100vh;
-  padding-bottom: 1700px; /* 푸터 높이만큼 아래 여백을 추가하여 푸터가 내용을 가리지 않도록 함 */
-  position: relative; /* 페이지 내용을 상대적으로 배치 */
+  height: 100vh;
+  overflow-y: auto;
 }

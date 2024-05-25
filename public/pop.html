@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>캠페인</title>
+    <link rel="stylesheet" type="text/css" href="pop.css">
+</head>
+<body>
+    <div class="popup-container">
+        <script>
+            function getRandomInt(min, max) {
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+
+            window.onload = function() {
+                const images = ["camp1.png", "camp2.png", "camp3.png"];
+                const randomIndex = getRandomInt(0, images.length - 1);
+                const selectedImage = images[randomIndex];
+                const imageElement = document.createElement("img");
+                imageElement.classList.add("popup-image");
+                imageElement.src = "img/" + selectedImage;
+                imageElement.alt = "Popup Image";
+                imageElement.onclick = function() {
+                    switch (selectedImage) {
+                        case "camp1.png":
+                            window.open("http://www.naver.com", "_blank");
+                            break;
+                        case "camp2.png":
+                            window.open("http://www.google.co.kr", "_blank");
+                            break;
+                        case "camp3.png":
+                            window.open("http://www.daum.net", "_blank");
+                            break;
+                        default:
+                            break;
+                    }
+                };
+                document.querySelector(".popup-container").appendChild(imageElement);
+            };
+        </script>
+    </div>
+</body>
+</html>
