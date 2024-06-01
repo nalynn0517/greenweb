@@ -64,125 +64,122 @@ nav ul li a {
   text-decoration: none; /* 밑줄 제거 */
 }
 /* header */
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 120vh;
-            padding: 21px;
-        }
-        .chart-container {
-            max-width: 80%;
-            margin: auto;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 2px;
-            margin-top: 60px;
-        }
-        .chart {
-            width: 100%;
-            max-width: 1200px;
-            height: 500px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-            margin-right: 20px;
-        }
-        .chart:last-child {
-            margin-right: 0;
-        }
-        .info-box1 {
-          position: relative;
-            background-color: #BFEA7C;
-            border: 1px solid #cccccc;
-            padding: 16px;
-            text-align: center;
-            width: 100%;
-            margin-bottom: 30px;
-            cursor: pointer;
-            border-radius: 10px;
-            transition: margin-top 0.3s ease;
-        }
-        @media screen and (max-width: 768px) {
-            .chart-container {
-                max-width: 90%;
-            }
-        }
-        .map-container .pin img {
-            vertical-align: top;
-            width: 27px;
-            height: auto;
-            position: relative;
-            z-index: 2;
-            cursor: pointer;
-        }
-        .map-container .pin .pin-text {
-            background-color: #174723;
-            color: white;
-            font-size: 12px;
-            padding: 10px 10px;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            width: auto;
-            max-width: 50px;
-            white-space: nowrap;
-            overflow: auto;
-            text-overflow: ellipsis;
-            position: absolute;
-            z-index: 2;
-        }
-        .map-container {
-            position: absolute;
-            width: 600px;
-            height: 130vh;;
-            display: flex;
-            left: 0;
-            margin-top: 650px;
-        }
-        .map-container .map {
-          position: relative;
-            width: 100%;
-            height: auto;
-            display: block;
-            margin: 0;
-        }
-        .map-container .pin {
-            position: absolute;
-            z-index: 2;
-        }
-        .pin-table-container {
-          display: none;
-          margin-top: 20px;
-          width: 340px;
-          background-color: #f9f9f9;
-          border: 1px solid #ccc;
-          padding: 10px;
-          border-radius: 10px;
-          position: absolute;
-          right: 340px;
-          top: 350px;
-        }
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
 
-        .pin-table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        .pin-table th, .pin-table td {
-            border: 1px solid #ccc;
-            padding: 8px;
-            text-align: left;
-        }
-        .pin-table th{
-            background-color: rgb(8, 50, 8);
-            color: white;
-        }
-        .pin-table td{
-            background-color: #eaf5d9;
-        }
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 120vh;
+  padding: 21px;
+}
+
+.chart-container {
+  max-width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2px;
+  margin-top: 40px;
+}
+
+.chart {
+  width: 100%;
+  max-width: 1200px;
+  height: 500px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  margin-right: 20px;
+}
+
+.chart:last-child {
+  margin-right: 0;
+}
+
+.info-box1 {
+  background-color: #BFEA7C;
+  border: 1px solid #cccccc;
+  padding: 16px;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 30px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: margin-top 0.3s ease;
+}
+
+.map-container {
+  position: absolute;
+  width: 600px;
+  height: 130vh;
+  left: 0;
+  top: 200px;
+}
+
+.map-container .map {
+  width: 100%;
+  height: auto;
+}
+
+.map-container .pin {
+  position: absolute;
+}
+
+.map-container .pin img {
+  vertical-align: top;
+  width: 27px;
+  height: auto;
+  cursor: pointer;
+}
+
+.map-container .pin .pin-text {
+  background-color: #174723;
+  color: white;
+  font-size: 12px;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: absolute;
+}
+
+.pin-table-container {
+  display: none;
+  width: 340px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 10px;
+  position: absolute;
+  right: 230px;
+  top: 300px;
+}
+
+.pin-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.pin-table th, .pin-table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+.pin-table th {
+  background-color: rgb(8, 50, 8);
+  color: white;
+}
+
+.pin-table td {
+  background-color: #eaf5d9;
+}
