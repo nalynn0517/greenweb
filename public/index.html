@@ -124,18 +124,19 @@
 
         // 슬라이드 배너 자동 슬라이드 기능 추가
         document.addEventListener("DOMContentLoaded", function() {
-        const slideContainer = document.querySelector(".slider .slide-container");
-        let slideIndex = 0;
-        const slideWidth = 900; // 슬라이드 너비 고정
-        const totalSlides = slideContainer.children.length;
+            const slideContainer = document.querySelector(".slider .slide-container");
+            const slides = document.querySelectorAll(".slide-container a");
+            let slideIndex = 0;
+            const slideWidth = 100; // 슬라이드 너비를 퍼센트로 설정
+            const totalSlides = slides.length;
 
-        setInterval(function() {
-            slideIndex++;
-            if (slideIndex === totalSlides) {
-                slideIndex = 0;
-            }
-            slideContainer.style.transition = "transform 0.5s ease-in-out";
-            slideContainer.style.transform = `translateX(${-slideWidth * slideIndex}px)`;
+            setInterval(function() {
+                slideIndex++;
+                if (slideIndex === totalSlides) {
+                    slideIndex = 0;
+                }
+                slideContainer.style.transition = "transform 0.5s ease-in-out";
+                slideContainer.style.transform = `translateX(${-slideWidth * slideIndex}%)`;
             }, 2700);
         });
 
