@@ -34,12 +34,16 @@ const trashTypes = [
     { id: 'other8', type: 'other', text: '화장품' }
 ];
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', (event) => {
     const homeButton = document.getElementById('homeButton');
-    
+
     homeButton.addEventListener('click', () => {
-        window.location.href = 'http://localhost:8080';
+        // 현재 페이지의 프로토콜, 호스트 및 포트를 가져와서 동적으로 URL을 생성
+        const baseUrl = `${window.location.protocol}//${window.location.host}`;
+        window.location.href = `${baseUrl}/index.html`;
     });
+
+    document.body.appendChild(a); // a 태그를 body에 추가
     
     const trashContainer = document.querySelector('.trash-container');
     const bins = document.querySelectorAll('.bin');
