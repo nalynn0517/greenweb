@@ -244,7 +244,7 @@ nav ul li a {
   margin-top: 7px;
   font-size: 26px;
   color: #235B36;
-  font-family: 'GmarketSansTTFMedium', monospace;
+  font-family: 'GmarketSansTTFMedium', sans-serif;
 }
 
 @font-face {
