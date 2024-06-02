@@ -244,21 +244,20 @@ nav ul li a {
   margin-top: 7px;
   font-size: 26px;
   color: #235B36;
-  font-family: 'GmarketSansmedium';
-
+  font: 'GmarketSansTTFMedium';
 }
 
 @font-face {
-  font-family: 'GmarketSansbold';
+  font-family: 'GmarketSansTTFBold';
   src: url(/public/font/GmarketSansTTFBold.ttf) format('opentype');
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'GmarketSansmedium';
+  font-family: 'GmarketSansTTFMedium';
   src: url(/public/font/GmarketSansTTFMedium.ttf) format('opentype');
-  font-weight: bold;
+  font-weight: normal;
   font-style: normal;
 }
 
