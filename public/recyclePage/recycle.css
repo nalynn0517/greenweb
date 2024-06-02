@@ -13,8 +13,8 @@ li {
   list-style: none;
 }
 header{
-  background-color: #FFE081;
-  color: #333;
+  background-color: white;
+  border-bottom: 1px solid #7e7e7e;
   padding: 10px;
   display: flex;
   justify-content: space-between;
@@ -123,11 +123,31 @@ nav ul li a {
 }
 .recycleContent{
   width: 65%;
-  height: 300px;
+  height: 450px;
   position: relative;
   left: 10%;
   padding: 20px;
   background: rgb(173, 181, 98, 0.5);
+  overflow: auto;
+}
+/* 내용 구성 - 플라스틱 빼고 */
+.recycleCnts h2,h4{
+  margin-bottom: 10px;
+}
+.recycleCnts p:first-child{
+  margin: 0;
+}
+.recycleCnts p{
+  margin-bottom: 20px;
+}
+.recycleCnts img{
+  width: 150px;
+  height: 150px;
 }
 
-
+/* 음식물 쓰레기, 의약품 쓰레기 스타일 지정 */
+.howTo{
+  display: block;
+  border: 1px solid gray;
+  padding: 10px;
+}

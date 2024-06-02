@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
   const btns = document.querySelectorAll(".recycleTab button"); // 메인 버튼 불러오기
-  const contents = document.querySelectorAll(".recycleContent div"); // 메인 내용 부분 불러오기
+  const contents = document.querySelectorAll(".recycleContent>div"); // 메인 내용 부분 불러오기
   const subBtns = document.querySelectorAll(".recycleSubTab li"); // 서브 버튼들 한번에 불러오기
   const subBtn = document.querySelectorAll(".recycleSubTab button"); // 각 서브 버튼 불러오기
   const subCtns = document.querySelectorAll(".recycleContent li"); // 서브 내용 불러오기
@@ -72,5 +72,4 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
 
-    
 });
