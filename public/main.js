@@ -68,48 +68,48 @@ function showZeroWasteStores(map) {
         경상: new kakao.maps.MarkerImage('img/m6.png', new kakao.maps.Size(18, 30)),
     };
 
-    // 제로 웨이스트 샵 정보 반복해서 처리
     for (const [region, data] of Object.entries(zeroWasteStores)) {
         // 각 지역의 제로 웨이스트 샵 정보 가져오기
         const stores = data.stores;
-
+    
         // 제로 웨이스트 샵 정보 반복해서 처리
         for (const store of stores) {
             // 마커 위치 설정
             const markerPosition = new kakao.maps.LatLng(store.latitude, store.longitude);
-
+    
             // 마커 생성
             const marker = new kakao.maps.Marker({
                 position: markerPosition,
                 image: markerImages[region], // 마커 이미지 설정
                 map: map // 지도 설정
             });
-
+    
             // 인포윈도우를 표시하는 클로저 함수 생성
             const showInfoWindow = (marker, store) => {
                 return () => {
                     // 인포윈도우 내용 HTML 생성
                     const content = `
-                        <div style="width: 200px; height: auto; padding: 10px;">
+                        <div style="width: 200px; height:170px; padding: 10px; position: relative;">
                             <div>${store.name}</div>
                             <br>
                             <div>${store.address}</div>
+                            <button style="position: absolute; right: 10px; bottom: 10px;" onclick="window.location.href='${store.link}'">➡️</button>
                         </div>
                     `;
-
+    
                     // 인포윈도우 생성
                     const infoWindow = new kakao.maps.InfoWindow({
                         content: content,
                         removable: true // 닫기 버튼 표시
                     });
-
+    
                     // 인포윈도우 지도에 표시
                     infoWindow.open(map, marker);
                 };
             };
-
+    
             // 마커 클릭 이벤트 리스너 등록
             kakao.maps.event.addListener(marker, 'click', showInfoWindow(marker, store));
         }
     }
-}
+}    
