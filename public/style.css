@@ -244,19 +244,19 @@ nav ul li a {
   margin-top: 7px;
   font-size: 26px;
   color: #235B36;
-  font: 'GmarketSansTTFMedium';
+  font: 'GmarketSansTTFMedium', monospace;
 }
 
 @font-face {
   font-family: 'GmarketSansTTFBold';
-  src: url(/public/font/GmarketSansTTFBold.ttf) format('opentype');
+  src: url(/public/font/GmarketSansTTFBold.ttf) format('truetype');
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'GmarketSansTTFMedium';
-  src: url(/public/font/GmarketSansTTFMedium.ttf) format('opentype');
+  src: url(/public/font/GmarketSansTTFMedium.ttf) format('truetype');
   font-weight: normal;
   font-style: normal;
 }
