@@ -100,45 +100,72 @@ nav ul li a {
 }
 
 .banner1 {
-  background-color: #f0f0f0;
+  background-color: white;
   padding: 20px;
   text-align: center;
   margin-bottom: 0; /* 배너 사이의 간격 제거 */
   width: 100%; /* 화면 너비에 꽉 차게 설정 */
-  height: 550px
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 세로 가운데 정렬 */
+  align-items: center; /* 가로 가운데 정렬 */
+  position: relative; /* 상대적 위치 설정 */
+  border: 25px solid hsla(140, 44%, 25%, 0.7);
 }
+
+.logo-container img {
+  max-width: 50%; /* 로고 이미지 너비를 75%로 설정 */
+  max-height: auto; /* 높이는 자동으로 조정되도록 설정 */
+}
+
+.quick-recycle {
+  margin-top: 20px; /* "빠른 분리 바른 배출"과 로고 사이의 여백 조정 */
+  font-size: 24px; /* 텍스트 크기 설정 */
+}
+
 .banner2 {
   background-color: white;
-  padding: 20px 0; /* 상하 여백은 그대로 두고 좌우 여백만 없앰 */
-  width: calc(100% - 40px); /* 좌우 여백을 고려하여 너비 설정 */
-  height: 500px;
+  padding: 0; 
+  width: 100%; /* 배너2의 전체 너비를 화면 너비에 맞춤 */
+  height: 400px; /* 배너2의 높이를 400px로 설정 */
   display: flex;
   box-sizing: border-box; /* 패딩을 너비에 포함시킴 */
+  overflow: hidden;
 }
-.banner2 div {
+.image-container {
   flex: 1;
   display: flex;
   justify-content: center; /* 이미지를 수평으로 가운데 정렬 */
   align-items: center; /* 이미지를 수직으로 가운데 정렬 */
-}
-
-.image-container {
   border-right: 1px solid #ccc; /* 이미지 오른쪽에 1px 두께의 실선 추가 */
   padding-right: 10px; /* 이미지 오른쪽 패딩 추가 */
 }
 
+.image-container img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+}
+
 .text-container {
+  flex: 1;
+  display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   padding-left: 10px; /* 텍스트 왼쪽 패딩 추가 */
 }
 
 .text-container h2 {
   font-size: 24px;
-  margin-top: 0;
+  margin: 0;
 }
 
 .text-container p {
-  color: #333;
+  color: black;
   font-size: 20px;
   margin: 5px 0;
   white-space: nowrap; /* 줄바꿈 방지 */
@@ -151,54 +178,87 @@ nav ul li a {
   height: auto; /* 이미지의 비율을 유지하면서 높이 조정 */
   text-align: center;
 }
+
+.slider {
+  width: 900px; 
+  height: 400px; 
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+
+.slide-container {
+  display: flex;
+  width: calc(900px * 3); /* 슬라이드 3개를 포함할 수 있도록 너비 설정 */
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide-container a {
+  flex: none; /* 슬라이드가 동일한 비율로 공간을 차지하지 않도록 설정 */
+  width: 900px; 
+  height: 400px; 
+}
+
+.slide-container img {
+  width: 100%; /* 슬라이드 이미지가 슬라이드 컨테이너의 너비에 맞게 설정 */
+  height: 100%; /* 슬라이드 이미지가 슬라이드 컨테이너의 높이에 맞게 설정 */
+}
+
 .banner3 {
-  background-color: #c5d4c9;
+  background-color: #ffffff;
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
+  margin-bottom: 0; /* 배너 사이의 간격 제거 */
   width: 100%;/* 화면 너비에 꽉 차게 설정 */
-  height: 630px;
+  height: 360px;
 }
 
-.category-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start; /* 세로 정렬 기준을 맨 위로 조정 */
-  max-width: 1200px; /* 최대 너비 설정 */
-  margin: 0 auto; /* 중앙 정렬을 위해 좌우 여백을 자동으로 조정 */
-}
-
-.category-box {
-  position: relative;
-  width: 195px; /* 너비 조정 */
-  height: 195px; /* 높이 조정 */
-  margin: 30px; /* 여백 조정 */
-  background-color: white; /* 배경색 흰색 */
-  border: 4px solid #235B36; /* 테두리 색 녹색 */
-  border-radius: 10px; /* 사각형 모서리 둥글게 */
+.container {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  padding: 10px; /* 내부 여백 */
-  cursor: pointer; /* 포인터 모양으로 변경하여 클릭 가능하도록 */
-  }
-
-.category-title {
-  margin-bottom: auto; /* 아래 여백 자동으로 채우기 */
-  font-size: 30px;
-  color: #2a6b40 ;
+  align-items: center;
+  margin-top: 20px;
 }
 
-.image {
-  position: absolute;
-  bottom: 0; /* 아래로 정렬 */
-  right: 0; /* 오른쪽으로 정렬 */
-  margin-right: 5px;
-  margin-bottom: 5px;
-  width: 76px; /* 이미지가 사각형을 넘어가지 않도록 최대 너비 설정 */
-  height: 76px; /* 이미지가 사각형을 넘어가지 않도록 최대 높이 설정 */
+.icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.icon img {
+  width: 120px;
+  height: 120px;
+  margin: 8px;
+  cursor: pointer;
+}
+
+.icon span {
+  margin-top: 7px;
+  font-size: 26px;
+  color: #235B36;
+  font-family: 'GmarketSansTTFMedium', sans-serif;
+}
+
+@font-face {
+  font-family: 'GmarketSansTTFBold';
+  src: url(/public/font/GmarketSansTTFBold.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GmarketSansTTFMedium';
+  src: url(/public/font/GmarketSansTTFMedium.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 .banner4 {
@@ -231,39 +291,6 @@ nav ul li a {
 }
 .banner4 .banner-text button {
   margin-bottom: 30px; /* 각 요소의 아래쪽 여백 조절 */
-}
-
-.banner5 {
-  background-color: #ffffff;
-  padding: 20px;
-  text-align: center;
-  margin-bottom: 0; /* 배너 사이의 간격 제거 */
-  width: 1200px;/* 화면 너비에 꽉 차게 설정 */
-  height: 400px
-}
-
-.banner6 {
-  background-color: #ffffff;
-  padding: 20px;
-  text-align: center;
-  margin-bottom: 0; /* 배너 사이의 간격 제거 */
-  width: 1200px;/* 화면 너비에 꽉 차게 설정 */
-  height: 400px
-}
-
-.slider{
-  overflow: hidden;
-  width: 1000px;
-  height: 300px;
-  position: relative;
-  left: 80px;
-  top: 30px;
-}
-
-.slide-container{
-  display: flex;
-  width: 3000px;
-  transition: transform 0.5s ease-in-out;
 }
 
 footer {
