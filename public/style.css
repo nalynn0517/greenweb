@@ -203,6 +203,13 @@ nav ul li a {
   height: 360px;
 }
 
+.banner3 h1 {
+  color: #004d40; 
+  font-size: 30px; 
+  margin-top: 70px; 
+  margin-bottom: 38px;
+}
+
 .container {
   display: flex;
   flex-direction: column;
