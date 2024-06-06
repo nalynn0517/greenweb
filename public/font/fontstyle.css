@@ -16,3 +16,15 @@
 * {
   font-family: 'GmarketSansTTFMedium';
 }
+
+nav ul li a {
+  font-family: Arial, sans-serif;;
+}
+
+.banner3 h1 {
+  font-family: 'GmarketSansTTFBold';
+}
+
+.icon span {
+  font-family: 'GmarketSansTTFMedium';
+}
