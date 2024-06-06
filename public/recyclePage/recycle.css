@@ -13,8 +13,8 @@ li {
   list-style: none;
 }
 header{
-  background-color: white;
-  border-bottom: 1px solid #7e7e7e;
+  background-color: #FFE081;
+  color: #333;
   padding: 10px;
   display: flex;
   justify-content: space-between;
@@ -75,7 +75,7 @@ nav ul li a {
 .recycleTab{
   text-align: center;
   padding: 20px;
-  margin-top: 80px;
+  margin-top: 100px;
 }
 .tab1,
 .tab2{

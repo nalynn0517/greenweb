@@ -1,0 +1,8 @@
+@font-face {
+  font-family : 'GmarketSansTTFMedium';
+  src : url(GmarketSansTTFMedium.ttf)
+}
+
+* {
+  font-family: 'GmarketSansTTFMedium';
+}

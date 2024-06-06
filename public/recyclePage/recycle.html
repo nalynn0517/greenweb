@@ -5,53 +5,62 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>분리수거</title>
   <link rel="stylesheet" href="recycle.css">
+  <link rel="stylesheet" href="../font/fontstyle.css">
   <script src="recycle.js"></script>
+  <!-- <style>
+    .recycleContent > div {
+      display: none;
+    }
+    .recycleContent > div.active {
+      display: block;
+    }
+  </style> -->
 </head>
 <body>
   <header>
-    <div class="logo"><a href="../index.html">로고</a></div> <!-- 로고 -->
-    <nav>
-        <ul> <!-- 메뉴 4개 -->
-            <li><a href="#section1">재활용 통계</a></li>
-            <li><a href="recycle.html">분리수거 정보</a></li>
-            <li><a href="../map.html" target="_blank">오프라인 제로웨이스트샵</a></li>
-            <li><a href="#section4">자주 묻는 질문</a></li>
-        </ul>
-    </nav>
+    <div class="logo"><a href="http://localhost:8080/"><img src="../img/logo1.png" alt="로고" width="60" height="40"></a></div>
+        <nav>
+            <ul> <!-- 메뉴 4개 -->
+                <li><a href="./recyclechart/chart.html">재활용 통계</a></li>
+                <li><a href="./recyclePage/recycle.html">분리수거 정보</a></li>
+                <li><a href="map.html" id="showMap">오프라인 제로웨이스트샵</a></li> <!-- ID 추가 -->
+                <li><a href="quest.html">자주 묻는 질문</a></li>
+            </ul>
+        </nav>
     <!-- 검색창 추가 -->
     <div class="search-bar">
         <input type="text" placeholder="검색어를 입력하세요">
         <button><img src="../img/search.png" alt="Search"></button>
     </div>
-</header>
+  </header>
   <div class="recycleTab">
     <ul class="tab1">
-      <li>
-        <button id="button1" class="active">종이</button>
-        <button id="button2">플라스틱</button>
-        <button id="button3">캔/고철</button>
-        <button id="button4">유리</button>
-      </li>
+        <li>
+            <button id="button1" class="active" onclick="showContent(1)">종이</button>
+            <button id="button2" onclick="showContent(2)">플라스틱</button>
+            <button id="button3" onclick="showContent(3)">캔/고철</button>
+            <button id="button4" onclick="showContent(4)">유리</button>
+        </li>
     </ul>
     <ul class="tab2">
-      <li>
-        <button id="button5">비닐</button>
-        <button id="button6">음식물</button>
-        <button id="button7">의약품</button>
-        <button id="button8">기타</button>
-      </li>
+        <li>
+            <button id="button5" onclick="showContent(5)">비닐</button>
+            <button id="button6" onclick="showContent(6)">음식물</button>
+            <button id="button7" onclick="showContent(7)">의약품</button>
+            <button id="button8" onclick="showContent(8)">기타</button>
+        </li>
     </ul>
   </div>
 
   <div class="recycleCnts">
     <div class="recycleSubTab">
-      <ul>
+      <ul id="subTabContainer">
         <li class="subTab1">
           <button class="active">재활용 O</button>
           <button>재활용 X</button>
         </li>
         <li class="subTab2">
-          <button>1</button>
+          <button class="active">1</button>
           <button>2</button>
           <button>3</button>
           <button>4</button>
@@ -61,36 +70,35 @@
           <button>재활용 X</button>
         </li>
         <li class="subTab3">
-          <button>캔</button>
+          <button class="active">캔</button>
           <button>고철</button>
           <button>재활용 X</button>
-          
         </li>
         <li class="subTab4">
-          <button>재활용 O</button>
+          <button class="active">재활용 O</button>
           <button>재활용 X</button>
         </li>
         <li class="subTab5">
-          <button>재활용 O</button>
+          <button class="active">재활용 O</button>
           <button>재활용 X</button>
         </li>
         <li class="subTab6">
-          <button>분리배출 기준</button>
+          <button class="active">분리배출 기준</button>
           <button>헷갈리는 것</button>
         </li>
         <li class="subTab7">
-          <button>분리배출 기준</button>
+          <button class="active">분리배출 기준</button>
           <button>헷갈리는 것</button>
         </li>
         <li class="subTab8">
-          <button>분리배출 기준</button>
+          <button class="active">분리배출 기준</button>
         </li>
       </ul>
     </div>
     <div class="recycleContent">
-      <div class="content1"> <!--종이-->
+      <div id="content1" class="content1"> <!--종이-->
         <ul>
-          <li class="container1">
+          <li>
             <p>
               <h2>종이 박스, 인쇄용지, 골판지류</h2>
               <h4>: 테이프 등 다른 물질이나 이물질 제거 후 펼쳐서 배출하면 됩니다.</h4>
@@ -109,7 +117,7 @@
               <img src="recycleImg/springnote.jpg" alt="스프링노트">
             </div>
           </li>
-          <li class="container1">
+          <li>
             <p>
               <h2>혼합 폐지
               </h2>
@@ -129,7 +137,7 @@
           </li>
         </ul>
       </div>
-      <div class="content2"> <!--플라스틱-->
+      <div id="content2" class="content2"> <!--플라스틱-->
         <ul>
           <li>
             <p>
@@ -251,7 +259,7 @@
           </li>
         </ul>
       </div>
-      <div class="content3"> <!--캔/고철-->
+      <div id="content3" class="content3"> <!--캔/고철-->
         <ul>
           <li>
             <p>
@@ -299,7 +307,7 @@
           </li>
         </ul>
       </div>
-      <div class="content4"> <!--유리-->
+      <div id="content4" class="content4"> <!--유리-->
         <ul>
           <li>
             <p>
@@ -326,7 +334,7 @@
           </li>
         </ul>
       </div>
-      <div class="content5"> <!--비닐-->
+      <div id="content5" class="content5"> <!--비닐-->
         <ul>
           <li>
             <p>
@@ -357,7 +365,7 @@
           </li>
         </ul>
       </div>
-      <div class="content6"> <!--음식물-->
+      <div id="content6" class="content6"> <!--음식물-->
         <ul>
           <li>
             <p>
@@ -425,7 +433,7 @@
           </li>
         </ul>
       </div>
-      <div class="content7"> <!--의약품-->
+      <div id="content7" class="content7"> <!--의약품-->
         <ul>
           <li>
             <div class="howTo">
@@ -474,7 +482,7 @@
           </li>
         </ul>
       </div>
-      <div class="content8"> <!--기타-->
+      <div id="content8" class="content8"> <!--기타-->
         <ul>
           <li>
             <p>
@@ -517,5 +525,59 @@
       </div>
     </div>
   </div>
+
+  <script>
+    // 페이지가 로드될 때 실행되는 함수
+    window.onload = function() {
+        // URL에서 category 값을 가져옴
+        const urlParams = new URLSearchParams(window.location.search);
+        const category = urlParams.get('category');
+        if (category) {
+            showContent(category);
+        }
+    };
+
+    // 카테고리별 콘텐츠를 표시하는 함수
+    function showContent(category) {
+        // 모든 콘텐츠를 숨김
+        const contents = document.querySelectorAll('.recycleContent > div');
+        contents.forEach(content => content.classList.remove('active'));
+        
+        // 선택한 카테고리의 콘텐츠를 표시
+        const selectedContent = document.getElementById('content' + category);
+
+        if (selectedContent) {
+            selectedContent.classList.add('active');
+        }
+        
+        // 모든 버튼에서 active 클래스 제거
+        const buttons = document.querySelectorAll('.recycleTab button');
+        buttons.forEach(button => button.classList.remove('active'));
+        
+        // 선택한 버튼에 active 클래스 추가
+        const activeButton = document.getElementById('button' + category);
+        if (activeButton) {
+            activeButton.classList.add('active');
+        }
+        
+        // 해당 텍스트를 표시하는 부분 수정
+        const activeButtonText = activeButton.innerText; // 현재 활성화된 버튼의 텍스트
+        const contentText = document.getElementById('.content' + category + ' ul'); // 해당 콘텐츠의 텍스트 엘리먼트
+        console.log(contentText);
+        if (contentText) {
+        contentText.innerText = activeButtonText; // 텍스트 엘리먼트에 버튼 텍스트를 설정
+        }
+        
+        // 모든 subTab을 숨김
+        const subTabs = document.querySelectorAll('.recycleSubTab ul li');
+        subTabs.forEach(subTab => subTab.style.display = 'none');
+        
+        // 선택한 subTab을 표시
+        const selectedSubTab = document.querySelector('.subTab' + category);
+        if (selectedSubTab) {
+            selectedSubTab.style.display = 'block';
+        }
+    }
+  </script>
 </body>
 </html>
