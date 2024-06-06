@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="chart.css">
+    <script src="chart.js"></script>
+    <title>재활용 통계</title>
+    
+    <style>
+ /* reset */
+* {
+  margin: 0;
+  padding: 0;
+  color: #333;
+  box-sizing: border-box;
+}
+    </style>
+</head>
+<body>
+    <header>
+      <div class="logo"><a href="index.html"><img src="img/logo1.png" alt="로고" width="60" height="40"></a></div>
+        <nav>
+            <ul> <!-- 메뉴 4개 -->
+                <li><a href="chart.html">재활용 통계</a></li>
+                <li><a href="/public/recyclePage/recycle.html">분리수거 정보</a></li>
+                <li><a href="/public/map.html" target="_blank">오프라인 제로웨이스트샵</a></li>
+                <li><a href="/public/quest.html">자주 묻는 질문</a></li>
+            </ul>
+        </nav>
+        <!-- 검색창 추가 -->
+        <div class="search-bar">
+            <input type="text" placeholder="검색어를 입력하세요">
+            <button><img src="img/search.png" alt="Search"></button>
+        </div>
+    </header>
+    <div class="container">
+        <div class="chart-container">
+            <div id="piechart1" class="chart"></div>
+            <div id="piechart2" class="chart"></div>
+            <div id="piechart3" class="chart"></div>
+        </div>
+        <div class="info-box1" id="showMapButton">
+            <h2>전국 생활 재활용 통계</h2>
+            <p>경기, 강원, 경상, 충청, 서울 등 전국의 재활용 가능, 불가능 생활 폐기물 통계</p>
+        </div>
+        <div class="map-container" style="display: none;">
+            <!-- 기존 지도 및 핀 코드 -->
+            <img src="img/jido.png" alt="Map" class="map">
+            <div class="pin" style="top: 152px; left: 208px;" data-info="서울|610톤|5.5만톤|6만톤|4.3만톤|11만톤|83만톤|110만톤|14만톤">
+                <img src="img/pin.png" alt="pin">
+                <div class="pin-text">서울</div>
+            </div>
+            <div class="pin" style="top: 152px; left: 168px;" data-info="인천|181톤|1.2만톤|1.6만톤|1.4만톤|4.6만톤|22만톤|2110KG|1.4만톤">
+                <img src="img/pin.png" alt="pin">
+                <div class="pin-text">인천</div>
+            </div>
+            <div class="pin" style="top: 99px; left: 232px;" data-info="경기|1,300톤|5.8a만톤|7.0만톤|4.1만톤|11만톤|110만톤|415톤|9.9만톤">
+              <img src="img/pin.png" alt="pin">
+              <div class="pin-text">경기</div>
+            </div>
+            <div class="pin" style="top: 109px; left: 336px;" data-info="강원|508톤|7,000톤|7,600톤|4,100톤|4,900톤|15만톤|415톤|7,300톤">
+              <img src="img/pin.png" alt="pin">
+              <div class="pin-text">강원</div>
+            </div>
+            <div class="pin" style="top: 260px; left: 270px;" data-info="충북|83톤|8,000톤|7,500톤|5,500톤|4,300톤|13만톤|6.5만톤|9,700톤">
+              <img src="img/pin.png" alt="pin">
+              <div class="pin-text">충북</div>
+            </div>
+            <div class="pin" style="top: 298px; left: 176px;" data-info="충남|943톤|6,400톤|6,900톤|4,700톤|18만톤|24만톤|4.6만톤|7,400톤">
+              <img src="img/pin.png" alt="pin">
+              <div class="pin-text">충남</div>
+            </div>
+            <div class="pin" style="top: 330px; left: 240px;" data-info="대전|88톤|7,500톤|6,000톤|4,400톤|1.8만톤|14만톤|415톤|6,100톤">
+              <img src="img/pin.png" alt="pin">
+              <div class="pin-text">대전</div>
+            </div>
+            <div class="pin" style="top: 410px; left: 200px;" data-info="전북|720톤|8,200톤|7,700톤|3,400톤|4,100톤|20만톤|120만톤|1.1만톤">
+              <img src="img/pin.png" alt="pin">
+              <div class="pin-text">전북</div>
+            </div>
+            <div class="pin" style="top: 486px; left: 156px;" data-info="광주|2,000톤|1.3만톤|8,000톤|3,900톤|1.7톤|15.0톤|970KG|1.4만톤">
+              <img src="img/pin.png" alt="pin">
+              <div class="pin-text">광주</div>
+            </div>
+            <div class="pin" style="top: 546px; left: 168px;" data-info="전남|1.4만톤|6,200톤|4,900톤|4,100톤|19만톤|4,300톤|2900KG|1.1톤">
+              <img src="img/pin.png" alt="pin">
+              <div class="pin-text">전남</div>
+            </div>
+            <div class="pin" style="top: 640px; left: 168px;" data-info="제주|116톤|8,200톤|7,600톤|5.4만톤|5,400톤|8.7만톤|12만톤|7,700톤">
+              <img src="img/pin.png" alt="pin">
+              <div class="pin-text">제주</div>
+            </div>
+            <div class="pin" style="top: 483px; left: 333px;" data-info="경남|3,400톤|1.6만톤|1.6만톤|1.6만톤|1.8만톤|31.0만톤|3800KG|7.0만톤">
+              <img src="img/pin.png" alt="pin">
+              <div class="pin-text">경남</div>
+            </div>
+            <div class="pin" style="top: 410px; left: 369px;" data-info="대구|4,000톤|1.3만톤|1.5만톤|2,900톤|1.5만톤|20.0만톤|7130KG|11만톤">
+              <img src="img/pin.png" alt="pin">
+              <div class="pin-text">대구</div>
+            </div>
+            <div class="pin" style="top: 323px; left: 402px;" data-info="경북|273톤|1.0만톤|9,800톤|4,400톤|1,900톤|23만톤|2100KG|2.4만톤">
+              <img src="img/pin.png" alt="pin">
+              <div class="pin-text">경북</div>
+            </div>
+            <div class="pin" style="top: 463px; left: 445px;" data-info="울산|135톤|4,300톤|5,400톤|2,916톤|6,100톤|9.8만톤|1톤|5,900톤">
+              <img src="img/pin.png" alt="pin">
+              <div class="pin-text">울산</div>
+            </div>
+            <div class="pin" style="top: 512px; left: 423px;" data-info="부산|230톤|9,000톤|2.6만톤|6,700톤|2.5만톤|22만톤|120만톤|2.0만톤">
+              <img src="img/pin.png" alt="pin">
+              <div class="pin-text">부산</div>
+            </div>          
+        </div>
+        <div class="pin-table-container">
+            <table class="pin-table">
+                <thead>
+                    <tr>
+                        <th>항목</th>
+                        <th>내용</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>지역명</td>
+                        <td id="region-name"></td>
+                    </tr>
+                    <tr>
+                        <td>종이</td>
+                        <td id="info1"></td>
+                    </tr>
+                    <tr>
+                        <td>플라스틱</td>
+                        <td id="info2"></td>
+                    </tr>
+                    <tr>
+                        <td>유리</td>
+                        <td id="info3"></td>
+                    </tr>
+                    <tr>
+                        <td>금속</td>
+                        <td id="info4"></td>
+                    </tr>
+                    <tr>
+                        <td>비닐</td>
+                        <td id="info5"></td>
+                    </tr>
+                    <tr>
+                        <td>음식물</td>
+                        <td id="info6"></td>
+                    </tr>
+                    <tr>
+                        <td>의약품</td>
+                        <td id="info7"></td>
+                    </tr>
+                    <tr>
+                      <td>기타</td>
+                      <td id="info8"></td>
+                  </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawInitialChart);
+    </script>
+</body>
+</html>

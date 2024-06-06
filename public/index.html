@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>환경</title>
     <link rel="stylesheet" type="text/css" href="./style.css">
+    <script src="main.js"></script>
     
     <style>
         /* 지도를 담을 컨테이너의 스타일 설정 */
@@ -16,11 +17,11 @@
 </head>
 <body>
     <header>
-        <div class="logo"><a href="index.html">로고</a></div> <!-- 로고 -->
+        <div class="logo"><a href="index.html"><img src="img/logo1.png" alt="로고" width="60" height="40"></a></div>
         <nav>
             <ul> <!-- 메뉴 4개 -->
-                <li><a href="#section1">재활용 통계</a></li>
-                <li><a href="recyclePage/recycle.html">분리수거 정보</a></li>
+                <li><a href="./recyclechart/chart.html">재활용 통계</a></li>
+                <li><a href="./recyclePage/recycle.html">분리수거 정보</a></li>
                 <li><a href="map.html" id="showMap">오프라인 제로웨이스트샵</a></li> <!-- ID 추가 -->
                 <li><a href="quest.html">자주 묻는 질문</a></li>
             </ul>
@@ -33,140 +34,109 @@
     </header>
 
     <div class="banner-section">
-        <div class="banner1">배너1</div>
+        <div class="banner1">
+            <div class="logo-container">
+              <img src="img/logo3.png">
+            </div>
+            <!-- <p class="quick-recycle">빠른 분리 바른 배출</p> -->
+          </div>          
 
         <div class="banner2">
             <div class="image-container">
-                <img src="img/grapht2.png" alt="쓰레기 총량 그래프">
+                <img src="img/graph1.png" alt="쓰레기 총량 그래프">
             </div>
-            <div class="text-container">
-                <h2>쓰레기 총량 그래프</h2>
-                <p>총량 대비 재활용 비율</p>
-                <p>2018년부터 2022년 5개년 데이터</p>
+            <div class="slider">
+                <div class="slide-container">
+                    <a href="https://www.donggubat.co.kr/" target="_blank"><img src="./img/zero1.png" alt="slideimage1"></a>
+                    <a href="https://www.myansim.com/" target="_blank"><img src="./img/zero2.png" alt="slideimage2"></a>
+                    <a href="https://onlyeco.co.kr/" target="_blank"><img src="./img/zero3.jpg" alt="slideimage3"></a>
+                </div>
             </div>
         </div>  
 
+        
         <div class="banner3">
-            <h1 style="color: #004d40; font-size: 38px;">올바른 분리수거 배출 가이드</h1>
-            <div class="category-container">
-                <!-- 카테고리 1 -->
-                <div class="category-box" onclick="window.location.href='다른페이지의URL1'">
-                    <div class="category-title">종이</div>
-                    <img class="image" src="img/paper.png" alt="paper">
-                </div>
-                
-                <!-- 카테고리 2 -->
-                <div class="category-box" onclick="window.location.href='다른페이지의URL1'">
-                    <div class="category-title">플라스틱</div>
-                    <img class="image" src="img/plastic.png" alt="plastic">
-                </div>
-                
-                <!-- 카테고리 3 -->
-                <div class="category-box" onclick="window.location.href='다른페이지의URL1'">
-                    <div class="category-title">캔/고철</div>
-                    <img class="image" src="img/metal.png" alt="metal">
-                </div>
-                
-                <!-- 카테고리 4 -->
-                <div class="category-box" onclick="window.location.href='다른페이지의URL1'">
-                    <div class="category-title">유리</div>
-                    <img class="image" src="img/glass.png" alt="glass">
-                </div>
-                
-                <!-- 카테고리 5 -->
-                <div class="category-box" onclick="window.location.href='다른페이지의URL1'">
-                    <div class="category-title">비닐</div>
-                    <img class="image" src="img/vinlybag.png" alt="plasticbag">
-                </div>
-                
-                <!-- 카테고리 6 -->
-                <div class="category-box" onclick="window.location.href='다른페이지의URL1'">
-                    <div class="category-title">음식물</div>
-                    <img class="image" src="img/organic.png" alt="organic">
-                </div>
-                
-                <!-- 카테고리 7 -->
-                <div class="category-box"onclick="window.location.href='다른페이지의URL1'">
-                    <div class="category-title">의약품</div>
-                    <img class="image" src="img/Medicine.png" alt="Medicine">
-                </div>
-                
-                <!-- 카테고리 8 -->
-                <div class="category-box" onclick="window.location.href='다른페이지의URL6'">
-                    <div class="category-title">기타</div>
-                    <img class="image" src="img/battery.png" alt="battery">
+            <h1 style="font-family: 'GmarketSansTTFBold', sans-serif; color: #235B36; font-size: 30px; margin-top: 70px; margin-bottom: 38px;">올바른 분리수거 배출 가이드</h1>
+            <div class="container">
+                <div class="icons">
+                    <div class="icon" onclick="navigateToRecyclePage(1)">
+                        <img src="img/paper.png" alt="종이">
+                        <span>종이</span>
+                    </div>
+                    <div class="icon" onclick="navigateToRecyclePage(2)">
+                        <img src="img/plastic.png" alt="플라스틱">
+                        <span>플라스틱</span>
+                    </div>
+                    <div class="icon" onclick="navigateToRecyclePage(3)">
+                        <img src="img/metal.png" alt="금속">
+                        <span>금속</span>
+                    </div>
+                    <div class="icon" onclick="navigateToRecyclePage(4)">
+                        <img src="img/glass.png" alt="유리">
+                        <span>유리</span>
+                    </div>
+                    <div class="icon" onclick="navigateToRecyclePage(5)">
+                        <img src="img/vinlybag.png" alt="비닐">
+                        <span>비닐</span>
+                    </div>
+                    <div class="icon" onclick="navigateToRecyclePage(6)">
+                        <img src="img/organic.png" alt="음식물">
+                        <span>음식물</span>
+                    </div>
+                    <div class="icon" onclick="navigateToRecyclePage(7)">
+                        <img src="img/medicine.png" alt="의약품">
+                        <span>의약품</span>
+                    </div>
+                    <div class="icon" onclick="navigateToRecyclePage(8)">
+                        <img src="img/battery.png" alt="기타">
+                        <span>기타</span>
+                    </div>
                 </div>
             </div>
         </div>
 
+        <script>
+            function navigateToRecyclePage(category) {
+                window.location.href = './recyclePage/recycle.html?category=' + category;
+            }
+        </script>
+        
         <div class="banner4">
             <div class="banner-text">
                 <h2>분리수거 게임</h2>
                 <p>간단한 게임에 참여해보세요!</p>
-                <button id="playButton">게임 플레이하기</button>
+                <button onclick="window.location.href='./gamepage/game.html'" class="start-game-button">게임 시작하기</button>
             </div>
         </div>
 
-        <div class="banner5">
-            <div class="slider">
-                <div class="slide-container">
-                    <img src="./img/ex_slideimg.jpg" alt="slideimage1">
-                    <img src="./img/ex_slideimg2.png" alt="slideimage2">
-                    <img src="./img/ex_slideimg3.png" alt="slideimage3">
-                </div>
-            </div>
-        </div>
-
-        <div class="banner6">
-            <div class="slider">
-                <div class="slide-container">
-                    <img src="./img/ex_slideimg.jpg" alt="slideimage4">
-                    <img src="./img/ex_slideimg2.png" alt="slideimage5">
-                    <img src="./img/ex_slideimg3.png" alt="slideimage6">
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        푸터 영역
-    </footer>
-
-    <script>
-        // 분리수거 페이지로 연결
-
-
-        // 슬라이드 배너 자동 슬라이드 기능 추가
-        document.addEventListener("DOMContentLoaded", function() {
-            const slideContainers = document.querySelectorAll(".slider .slide-container");
-            let slideIndexes = [0, 0];
+        <footer>
+            푸터 영역
+        </footer>
+        
+        <script>
+            // 분리수거 페이지로 연결
+    
+            // 슬라이드 배너 자동 슬라이드 기능 추가
+            document.addEventListener("DOMContentLoaded", function() {
+            const slideContainer = document.querySelector(".slider .slide-container");
+            let slideIndex = 0;
+            const slideWidth = 900; // 슬라이드 너비 고정
+            const totalSlides = slideContainer.children.length;
     
             setInterval(function() {
-                slideIndexes[0]++;
-                slideContainers[0].style.transition = "margin-left 0.6s"
-                slideContainers[0].style.marginLeft = `${-1000 * slideIndexes[0]}px`;
-    
-                if (slideIndexes[0] === 3) {
-                    setTimeout(function() {
-                        slideContainers[0].style.marginLeft = "0";
-                        slideIndexes[0] = 0;
-                    }, 0);
-                };   
-    
-                slideIndexes[1]++;
-                slideContainers[1].style.transition = "margin-left 0.6s"
-                slideContainers[1].style.marginLeft = `${-1000 * slideIndexes[1]}px`;
-    
-                if (slideIndexes[1] === 3) {
-                    setTimeout(function() {
-                        slideContainers[1].style.marginLeft = "0";
-                        slideIndexes[1] = 0;
-                    }, 0);
+                slideIndex++;
+                if (slideIndex === totalSlides) {
+                    slideIndex = 0;
                 }
-            }, 3000);
-        });
+                slideContainer.style.transition = "transform 0.5s ease-in-out";
+                slideContainer.style.transform = `translateX(${-slideWidth * slideIndex}px)`;
+                }, 2700);
+            });
     
-
-    </script>
+            // 팝업 창 열기
+            window.onload = function() {
+                const popupWindow = window.open("pop.html", "", "width=500,height=500,left=0,top=0");
+            };
+        </script>
 </body>
 </html>
