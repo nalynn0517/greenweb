@@ -55,6 +55,7 @@ nav ul {
 nav ul li {
   display: inline-block; /* 항목들을 가로로 배열 */
   margin-right: 120px; /* 간격 조정 */
+  margin-top: -5px;
 }
 
 nav ul li:last-child {
@@ -233,20 +234,6 @@ nav ul li a {
   font-size: 26px;
   color: #235B36;
   font-family: 'GmarketSansTTFMedium', sans-serif;
-}
-
-@font-face {
-  font-family: 'GmarketSansTTFBold';
-  src: url(/public/font/GmarketSansTTFBold.ttf) format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'GmarketSansTTFMedium';
-  src: url(/public/font/GmarketSansTTFMedium.ttf) format('truetype');
-  font-weight: normal;
-  font-style: normal;
 }
 
 .banner4 {
