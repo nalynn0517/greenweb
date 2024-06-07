@@ -55,7 +55,6 @@ nav ul {
 nav ul li {
   display: inline-block; /* 항목들을 가로로 배열 */
   margin-right: 120px; /* 간격 조정 */
-  margin-top: -5px;
 }
 
 nav ul li:last-child {
