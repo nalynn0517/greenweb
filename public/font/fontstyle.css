@@ -13,6 +13,11 @@
   src : url(GmarketSansTTFBold.ttf)
 }
 
+@font-face {
+  font-family : 'DungGenunMo';
+  src : url(DungGenunMo.ttf)
+}
+
 * {
   font-family: 'GmarketSansTTFMedium';
 }
@@ -27,4 +32,8 @@ nav ul li a {
 
 .icon span {
   font-family: 'GmarketSansTTFMedium';
+}
+
+.gamefont{
+  font-family : 'DungGenunMo';
 }
