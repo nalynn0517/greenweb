@@ -23,7 +23,7 @@
 }
 
 nav ul li a {
-  font-family: 'Arial, sans-serif';
+  font-family: 'DungGenunMo';
 }
 
 .banner3 h1 {
@@ -32,8 +32,4 @@ nav ul li a {
 
 .icon span {
   font-family: 'GmarketSansTTFMedium';
-}
-
-nav ul li a .gamefont{
-  font-family : 'DungGenunMo';
 }
