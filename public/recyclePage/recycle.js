@@ -1,7 +1,7 @@
 // 카테고리별 콘텐츠를 표시하는 함수
 function showContent(category) {
   // 모든 콘텐츠를 숨김
-  const contents = document.querySelectorAll('.recycleContent > div');
+  const contents = document.querySelectorAll('.recycleContent div');
   contents.forEach(content => content.classList.remove('active'));
   
   // 선택한 카테고리의 콘텐츠를 표시
@@ -22,7 +22,7 @@ function showContent(category) {
 
   // 해당 텍스트를 표시하는 부분 수정
   const activeButtonText = activeButton.textContent; // 현재 활성화된 버튼의 텍스트
-  const contentText = document.querySelector('.content' + category + ' p'); // 해당 콘텐츠의 텍스트 엘리먼트
+  const contentText = document.querySelector('.content' + category + ' ul'); // 해당 콘텐츠의 텍스트 엘리먼트
   if (contentText) {
       contentText.textContent = activeButtonText; // 텍스트 엘리먼트에 버튼 텍스트를 설정
   }
@@ -41,7 +41,7 @@ function showContent(category) {
 
 document.addEventListener("DOMContentLoaded", function() {
   const btns = document.querySelectorAll(".recycleTab button"); // 메인 버튼 불러오기
-  const contents = document.querySelectorAll(".recycleContent div"); // 메인 내용 부분 불러오기
+  const contents = document.querySelectorAll(".recycleContent>div"); // 메인 내용 부분 불러오기
   const subBtns = document.querySelectorAll(".recycleSubTab li"); // 서브 버튼들 한번에 불러오기
   const subBtn = document.querySelectorAll(".recycleSubTab button"); // 각 서브 버튼 불러오기
   const subCtns = document.querySelectorAll(".recycleContent li"); // 서브 내용 불러오기

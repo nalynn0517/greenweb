@@ -1,0 +1,35 @@
+@font-face {
+  font-family : 'GmarketSansTTFMedium';
+  src : url(GmarketSansTTFMedium.ttf)
+}
+
+@font-face {
+  font-family : 'GmarketSansTTFLight';
+  src : url(GmarketSansTTFLight.ttf)
+}
+
+@font-face {
+  font-family : 'GmarketSansTTFBold';
+  src : url(GmarketSansTTFBold.ttf)
+}
+
+@font-face {
+  font-family : 'DungGenunMo';
+  src : url(DungGenunMo.ttf)
+}
+
+* {
+  font-family: 'GmarketSansTTFMedium';
+}
+
+nav ul li a {
+  font-family: 'DungGenunMo';
+}
+
+.banner3 h1 {
+  font-family : 'GmarketSansTTFBold';
+}
+
+.icon span {
+  font-family: 'GmarketSansTTFMedium';
+}
