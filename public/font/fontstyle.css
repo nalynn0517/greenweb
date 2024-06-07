@@ -34,6 +34,6 @@ nav ul li a {
   font-family: 'GmarketSansTTFMedium';
 }
 
-.gamefont{
+nav ul li a .gamefont{
   font-family : 'DungGenunMo';
 }
