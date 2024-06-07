@@ -1,0 +1,137 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #d8d8d8;
+    color: #000000;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.search-bar {
+    display: flex;
+}
+
+.search-bar input[type="text"] {
+    flex: 1;
+    padding: 10px;
+}
+
+.search-bar button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.search-bar button img {
+    width: 30px;
+    height: auto;
+    margin-top: 3px;
+}
+
+.logo {
+    margin-right: 30px;
+    font-size: 24px;
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 150px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav ul li a {
+    color: #000000;
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: 'GmarketSans';
+    src: url('./font/GmarketSansTTFLight.ttf') format('truetype'); 
+}
+
+body {
+    font-family: 'GmarketSans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.faq-container {
+    max-width: 1200px;
+    margin: 100px auto 50px; /* 가운데 정렬 및 위아래 여백 추가 */
+    padding: 20px;
+    border: 1px solid #ccc; /* 박스 테두리 */
+    border-radius: 10px; /* 박스 모서리 둥글게 */
+    background-color: #f9f9f9; /* 박스 배경색 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 박스 그림자 */
+}
+
+.faq-container h2 {
+    text-align: center;
+    margin-top: 50px; /* 헤더 아래 50px 여백 */
+    /* color: #235b36; */
+}
+
+.faq-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+.faq-item {
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.question-label, .answer-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    width: 100%; /* 라벨을 한 줄에 표시 */
+}
+
+.answer-label {
+    text-align: right;
+}
+
+.question-box, .answer-box {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background-color: white;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    width: flex; 
+}
+
+.answer-box {
+    background-color: #235b362b;
+    justify-content: flex-start;
+    margin-left: auto; /* 박스를 오른쪽으로 정렬 */
+}
+
+.question-box span, .answer-box span {
+    flex: 1;
+}
