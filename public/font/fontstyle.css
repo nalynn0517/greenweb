@@ -1,40 +1,18 @@
 @font-face {
   font-family : 'GmarketSansTTFMedium';
-  src : url(GmarketSansTTFMedium.ttf)
-}
-
-@font-face {
-  font-family : 'GmarketSansTTFLight';
-  src : url(GmarketSansTTFLight.ttf)
+  src : url(./GmarketSansTTFMedium.ttf)
 }
 
 @font-face {
   font-family : 'GmarketSansTTFBold';
-  src : url(GmarketSansTTFBold.ttf)
+  src : url(./GmarketSansTTFBold.ttf)
 }
 
 @font-face {
   font-family : 'DungGeunMo';
-  src : url(DungGeunMo.ttf)
+  src : url(./DungGeunMo.ttf)
 }
-
 
 * {
   font-family: 'GmarketSansTTFMedium';
-}
-
-nav ul li a {
-  font-family: 'GmarketSansTTFMedium';
-}
-
-.banner3 h1 {
-  font-family : 'GmarketSansTTFBold';
-}
-
-.icon span {
-  font-family: 'GmarketSansTTFMedium';
-}
-
-.gamefont{
-  font-family : 'DungGeunMo';
 }
