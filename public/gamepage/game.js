@@ -24,14 +24,14 @@ const trashTypes = [
     { id: 'medicine1', type: 'medicine', text: '폐약품' },
     { id: 'medicine2', type: 'medicine', text: '사용한 주사기' },
     { id: 'medicine3', type: 'medicine', text: '폐기된 알약' },
-    { id: 'etc1', type: 'etc', text: '옷' },
-    { id: 'etc2', type: 'etc', text: '신발' },
-    { id: 'etc3', type: 'etc', text: '가방' },
-    { id: 'etc4', type: 'etc', text: '장난감' },
-    { id: 'etc5', type: 'etc', text: '전자제품' },
-    { id: 'etc6', type: 'etc', text: '건전지' },
-    { id: 'etc7', type: 'etc', text: '형광등' },
-    { id: 'etc8', type: 'etc', text: '화장품' }
+    { id: 'other1', type: 'etc', text: '옷' },
+    { id: 'other2', type: 'etc', text: '신발' },
+    { id: 'other3', type: 'etc', text: '가방' },
+    { id: 'other4', type: 'etc', text: '장난감' },
+    { id: 'other5', type: 'etc', text: '전자제품' },
+    { id: 'other6', type: 'etc', text: '건전지' },
+    { id: 'other7', type: 'etc', text: '형광등' },
+    { id: 'other8', type: 'etc', text: '화장품' }
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -76,12 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
         e.currentTarget.querySelector('img').src = `../gamepage/img/${binType}_open.png`;
     }
     
-    function dragLeave(e) {
-        const binType = e.currentTarget.getAttribute('data-type');
-        // 드래그가 끝나면 쓰레기통 이미지를 다시 기존 이미지로 변경
-        e.currentTarget.querySelector('img').src = `../gamepage/img/${binType}.png`;
-    }
-    
     function drop(e) {
         e.preventDefault();
         const id = e.dataTransfer.getData('text');
@@ -105,15 +99,11 @@ document.addEventListener('DOMContentLoaded', () => {
             createTrashItem();
         }
     
-        // 드롭 후에는 쓰레기통 이미지를 다시 기존 이미지로 변경
-        e.currentTarget.querySelector('img').src = `../gamepage/img/${binType}.png`;
+        bins.forEach(bin => {
+            const type = bin.getAttribute('data-type');
+            bin.querySelector('img').src = `../gamepage/img/${type}.png`;
+        });
     }
-    
-    // function dragEnd(e) {
-    //     const binType = e.currentTarget.getAttribute('data-type');
-        
-    //     e.currentTarget.querySelector('img').src = `../gamepage/img/${binType}.png`;
-    // }
     
     function isCorrectBin(trashId, binType) {
         const trashType = trashTypes.find(trash => trash.id === trashId);
