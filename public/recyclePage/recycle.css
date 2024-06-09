@@ -5,9 +5,7 @@
   color: #333;
   box-sizing: border-box;
 }
-* {
-  box-sizing: border-box; /* 모든 요소의 박스 크기를 내부 패딩 및 테두리를 포함한 크기로 설정 */
-}
+
 a {
   text-decoration: none;
   color: #333;
@@ -20,7 +18,6 @@ ul {
 }
 
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   margin-top: 58px; /* header의 높이만큼 여백 추가 */
@@ -40,9 +37,10 @@ header {
   border-bottom: 3px solid #5a5858; /* 아래쪽 회색 줄 추가 */
 }
 
-.logo img {
-  width: 60px;
-  height: 40px;
+nav {
+  flex: 1; /* 남은 공간을 모두 차지 */
+  display: flex;
+  justify-content: center; /* 중앙 정렬 */
 }
 
 nav ul {
@@ -52,26 +50,23 @@ nav ul {
 
 .logo {
   margin-right: 30px;
-  font-size: 24px;
-}
-nav ul {
-  padding: 0;
-  margin: 0;
+  margin-top: 5px;
 }
 
 nav ul li {
   display: inline-block; /* 항목들을 가로로 배열 */
   margin-right: 120px; /* 간격 조정 */
-  margin-top: -5px;
+  margin-top: 5px; /* 간격 조정 */
 }
 
 nav ul li:last-child {
-  margin-right: 40px; /* 마지막 메뉴 항목의 간격 조정 */
+  margin-right: 0; /* 마지막 메뉴 항목의 간격 조정 */
+  margin-top: 0; /* 마지막 메뉴 항목의 간격 조정 */
 }
-
-nav ul li a {
-  color: #000000; /* 메뉴 항목의 텍스트 색상 */
-  text-decoration: none; /* 밑줄 제거 */
+.gamefont{
+  font-size: 22px;
+  color: #235B36;
+  font-family: 'DungGeunMo';
 }
 
 /* header */
