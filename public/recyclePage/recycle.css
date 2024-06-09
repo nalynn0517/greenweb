@@ -166,7 +166,7 @@ nav ul li a {
   text-align: center;
   margin-top: 10%;
   font-size: 20px;
-  color: #333;
+  color: #235B36;
 }
 .calcCnt{
   text-align: center;
@@ -197,6 +197,9 @@ img.calcImg{
   color: white;
   font-size: 20px;
 }
+.num{
+  margin-top: 2px;
+}
 .calcSum{
   text-align: center;
   font-size: 25px;
@@ -223,4 +226,5 @@ img.calcImg{
 }
 .sum{
   margin-top: 10px;
+  color: #235B36;
 }
