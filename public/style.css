@@ -36,7 +36,7 @@ header {
 nav {
   flex: 1; /* 남은 공간을 모두 차지 */
   display: flex;
-  justify-content: center; /* 중앙 정렬 */
+  justify-content: center;
 }
 
 nav ul {
@@ -77,11 +77,16 @@ nav ul li:last-child {
   overflow-y: auto; /* 내용이 넘칠 경우 수직 스크롤바 표시 */
 }
 
+.titleMap{
+  margin-left: 10%;
+}
+
 .search-bar button img {
   width: 10px; /* 이미지 너비 설정 */
   height: 12px; /* 높이 자동 조정 */
   margin-top: 3px;
 }
+
 
 .banner {
   max-width: 600px;

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kakao Map</title>
+    <title>오프라인 제로웨이스트샵</title>
     <link rel="stylesheet" type="text/css" href="./style.css">
     <link rel="stylesheet" type="text/css" href="./font/fontstyle.css">
     <style>
@@ -23,24 +23,16 @@
 <!-- 고정된 헤더 -->
 <header>
     <div class="logo"><a href="index.html"><img src="./img/logo1.png" alt="로고" width="65" height="45"></a></div>
-    <nav>
-        <ul> <!-- 메뉴 5개 -->
-            <li><a href="./recyclechart/chart.html">재활용 통계</a></li>
-            <li><a href="./recyclePage/recycle.html">분리수거 정보</a></li>
-            <li><a href="map.html" id="showMap">오프라인 제로웨이스트샵</a></li> <!-- ID 추가 -->
-            <li><a href="quest.html">자주 묻는 질문</a></li>
-           <div class="search-bar">
-            <input id="searchInput" type="text" placeholder="검색어를 입력하세요">
-            <button id="searchButton"><img src="../img/search.png" alt="Search"></button>
-            </div>
-        </ul>
-    </nav>
+    <div class="titleMap">
+        <a href="map.html" id="titleMap">오프라인 제로웨이스트샵</a>
+    </div>
+    <div class="search-bar">
+        <input id="searchInput" type="text" placeholder="검색어를 입력하세요">
+        <button id="searchButton"><img src="./img/search.png" alt="Search"></button>
+    </div>
 </header>
 
     <div id="map"></div>
-    <footer>
-        푸터 영역
-    </footer>
     
     <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=8948120168a32c7a96068b04adbb1558"></script>
     <script src="main.js"></script>
