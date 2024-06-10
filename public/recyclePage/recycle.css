@@ -2,7 +2,7 @@
 * {
   margin: 0;
   padding: 0;
-  color: #333;
+  color: #235B36;
   box-sizing: border-box;
 }
 
@@ -116,7 +116,7 @@ nav ul li:last-child {
 }
 .recycleSubTab button.active{
   background: #fff;
-  color: #64884A;
+  color: #235B36;
   transition: 0.2s;
 }
 .recycleContent{
@@ -125,7 +125,7 @@ nav ul li:last-child {
   position: relative;
   left: 10%;
   padding: 20px;
-  background: rgb(173, 181, 98, 0.5);
+  background: rgba(173, 181, 98, 0.368);
   overflow: auto;
 }
 /* 내용 구성 - 플라스틱 빼고 */
@@ -148,4 +148,83 @@ nav ul li:last-child {
   display: block;
   border: 1px solid gray;
   padding: 10px;
+}
+
+/* 탄소 계산기 */
+.sideCalc{
+  position: relative;
+  left: 10%;
+  width: 16%;
+  max-width: 20%;
+  height: 300px;
+  margin-left: 10px;
+  border: 5px solid #235B36;
+  border-radius: 30px;
+}
+.sideCalc h3{
+  text-align: center;
+  margin-top: 10%;
+  font-size: 20px;
+  color: #333;
+}
+.calcCnt{
+  text-align: center;
+  margin-top: 10%;
+}
+img.next{
+  position: relative;
+  width: 30px;
+  height: 30px;
+  top: -40px;
+}
+img.calcImg{
+  width: 100px;
+  height: 100px;
+  margin: 0 5px;
+  padding: 5px;
+}
+.calcNum{
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #235B36;
+  margin: 0 30px;
+}
+.calcNum button{
+  border: none;
+  width: 20%;
+  background: #64884A;
+  color: white;
+  font-size: 20px;
+}
+.num{
+  margin-top: 2px;
+}
+.calcSum{
+  text-align: center;
+  font-size: 25px;
+}
+.sumBtn{
+  width: 70%;
+  height: 30px;
+  font-size: 17px;
+  border: 1px solid #64884A;
+  background: white;
+  color: #64884A;
+  border-radius: 20px;
+  margin-top: 4px;
+}
+.sumBtn{
+  width: 70%;
+  height: 30px;
+  font-size: 17px;
+  border: 1px solid #64884A;
+  background: white;
+  color: #64884A;
+  border-radius: 20px;
+  margin-top: 4px;
+  padding-top: 2px;
+}
+.sum{
+  margin-top: 10px;
+  color: #235B36;
 }

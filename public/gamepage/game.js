@@ -37,12 +37,8 @@ const trashTypes = [
 document.addEventListener('DOMContentLoaded', () => {
     const homeButton = document.getElementById('homeButton');
     
-    // 현재 호스트가 localhost일 경우 로컬 URL 사용, 아닐 경우 GitHub Pages URL 사용
-    const isLocalhost = window.location.hostname === 'localhost';
-    const homeUrl = isLocalhost ? 'http://localhost:8080' : 'https://nalynn0517.github.io/greenweb/';
-
     homeButton.addEventListener('click', () => {
-        window.location.href = homeUrl;
+        window.location.href = "https://github.com/nalynn0517/greenweb/blob/master/public/index.html";
     });
     
     const trashContainer = document.querySelector('.trash-container');
