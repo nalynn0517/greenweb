@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const homeButton = document.getElementById('homeButton');
     
     homeButton.addEventListener('click', () => {
-        window.location.href = "http://localhost:8080";
+        window.location.href = "https://github.com/nalynn0517/greenweb/blob/master/public/index.html";
     });
     
     const trashContainer = document.querySelector('.trash-container');
