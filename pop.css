@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.popup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    visibility: hidden; /* 이미지 로드 전까지는 숨김 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: 600px; /* 고정된 높이 */
+}
+
+img.popup-image {
+    max-height: 100%;
+    width: auto; /* 비율에 맞게 가로 길이 자동 조정 */
+    object-fit: contain; /* 이미지 비율 유지하며 컨테이너 안에 맞추기 */
+    cursor: pointer;
+}
