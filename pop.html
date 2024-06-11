@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>환경 캠페인</title>
+    <link rel="stylesheet" type="text/css" href="pop.css">
+</head>
+<body>
+    <div class="popup-container"></div>
+
+    <script>
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        window.onload = function() {
+            const images = ["pop1.jpeg", "pop2.jpg", "pop3.png"];
+            const randomIndex = getRandomInt(0, images.length - 1);
+            const selectedImage = images[randomIndex];
+            const imageElement = document.createElement("img");
+            imageElement.classList.add("popup-image");
+            imageElement.src = "img/" + selectedImage;
+            imageElement.alt = "Popup Image";
+
+            imageElement.onload = function() {
+                const container = document.querySelector(".popup-container");
+                container.style.visibility = 'visible';
+                window.resizeTo(container.offsetWidth, container.offsetHeight);
+                window.moveTo(0, 0); // 왼쪽 상단에 고정
+            };
+
+            imageElement.onclick = function() {
+                switch (selectedImage) {
+                    case "pop1.jpeg":
+                        window.open("https://blog.naver.com/dgcsc3561/223440354908", "_blank");
+                        break;
+                    case "pop2.jpg":
+                        window.open("https://www.osrc.or.kr/notice/%EC%98%A4%EC%82%B0%EC%9E%A5%EC%95%A0%EC%9D%B8%EC%A2%85%ED%95%A9%EB%B3%B5%EC%A7%80%EA%B4%80-%ED%99%98%EA%B2%BD%EB%B3%B4%ED%98%B8-%EC%8B%A4%EC%B2%9C-%EC%9D%B8%EC%A6%9D%EC%83%B7-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EC%9A%B0%EB%A6%AC%EA%B0%80-green-%EC%84%B8%EC%83%81/", "_blank");
+                        break;
+                    case "pop3.png":
+                        window.open("https://blog.naver.com/sh_healthcity/223461211866", "_blank");
+                        break;
+                    default:
+                        break;
+                }
+            };
+
+            document.querySelector(".popup-container").appendChild(imageElement);
+        };
+    </script>
+</body>
+</html>
