@@ -230,43 +230,27 @@ nav ul li:last-child {
 /* footer */
 footer {
   width: 100%;
-  height: 200px;
+  height: 100%;
   background-color: #0B2505;
-  color: white;
-}
-.footerCont{
-  display: flex;
-  margin-left: 15%;
-  margin-right: 30px;
-  margin-bottom: 20px;
-}
-.footerCont img{
-  width: 140px;
-  height: 84px;
-  margin-top: 2px;
-  margin-left: -50px;
-}
-.footerCont ul{
-  margin-left: 60px;
-}
-.footerCont>ul{
-  margin-top: 20px;
-  font-family: 'GmarketSansTTFBold';
-  font-size: 22px;
-  padding-right: 50px;
-}
-.footerCont ul:first-child{
-  margin-right: -20px;
-}
-.footerCont li{
-  margin-top: 10px;
+  color: #777;
+  font-family: 'GmarketSansTTFLight';
   font-size: 16px;
 }
-hr{
-  opacity: 0.8;
+.footerCont span{
+  display: inline-block;
+  margin-top: 20px;
+  margin-left: 20px;
+  font-family: 'GmarketSansTTFLight';
+}
+.ftitle{
+  margin-top: 10px;
+  color: #999;
 }
 p{
-  text-align: center;
+  margin: 20px;
+  margin-top: 30px;
+  font-size: 14px;
+  color: #999;
 }
 
 body {
