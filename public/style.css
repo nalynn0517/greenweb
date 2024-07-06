@@ -239,3 +239,34 @@ body {
   height: 100vh;
   overflow-y: auto;
 }
+
+/* footer */
+footer {
+  width: 100%;
+  height: 100%;
+  background-color: #0B2505;
+  color: #777;
+  font-family: 'GmarketSansTTFLight';
+  font-size: 16px;
+}
+.footerCont span{
+  display: inline-block;
+  margin-top: 20px;
+  margin-left: 20px;
+  font-family: 'GmarketSansTTFLight';
+}
+.ftitle{
+  margin-top: 10px;
+  color: #999;
+}
+p{
+  margin: 20px;
+  margin-top: 30px;
+  font-size: 14px;
+  color: #999;
+}
+
+body {
+  height: 100vh;
+  overflow-y: auto;
+}
