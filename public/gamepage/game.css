@@ -1,7 +1,7 @@
 @font-face {
     font-family : 'DungGeunMo';
     src : url(DungGeunMo.ttf)
-  }
+}
 
 * {
     font-family: 'DungGeunMo';
@@ -96,12 +96,10 @@ h1.game-title {
     font-size: 25px;
 }
 
-
 /* 숨겨진 요소를 감추는 스타일 */
 .hidden {
     display: none; /* 화면에 표시하지 않음 */
 }
-
 
 .trash-container {
     border: 2px dashed #000000;
@@ -114,7 +112,6 @@ h1.game-title {
     align-items: center; /* 세로 방향 가운데 정렬 */
     border-radius: 20px; /* 모든 모서리를 둥글게 조정 */
 }
-
 
 .trash {
     width: 150px; /* 쓰레기 아이템의 너비 */
@@ -136,7 +133,6 @@ h1.game-title {
 .bin {
     width: 100px;
     height: 150px;
-
     text-align: center;
 }
 
@@ -195,11 +191,11 @@ h1.game-title {
     text-align: center;
     width: 25px;
     height: 25px;
-  }
+}
   
-  .close-button:hover {
+.close-button:hover {
     background-color: #ff0044; /* 마우스 호버 시 배경색 변경 */
-  }
+}
 
 .visible {
     display: block;
@@ -237,4 +233,81 @@ h1.game-title {
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+.sideCalc {
+    position: absolute;
+    top: 50px;
+    right: 200px;
+    background-color: #ffffff;
+    border: 2px solid #000;
+    border-radius: 10px;
+    padding: 10px; /* Padding을 약간 추가 */
+    text-align: center;
+    width: 200px; /* 너비 조정 */
+    height: 230px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.calcCnt {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px; /* Margin 조정 */
+}
+
+.calcCnt img {
+    width: 30px; /* 크기를 줄임 */
+    height: 30px;
+    cursor: pointer;
+}
+
+.calcImg {
+    width: 80px; /* 크기를 줄임 */
+    height: 80px;
+}
+
+.calcNum {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px; /* Margin 조정 */
+}
+
+.calcNum button {
+    background-color: #469660;
+    color: white;
+    border: none;
+    padding: 8px; /* Padding을 줄임 */
+    cursor: pointer;
+    width: 30px; /* 너비 조정 */
+    height: 30px; /* 높이 조정 */
+}
+
+.calcNum .num {
+    font-size: 20px; /* 폰트 크기 조정 */
+    margin: 0 10px; /* Margin 조정 */
+}
+
+.calcSum {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sumBtn {
+    background-color: #469660;
+    color: white;
+    border: none;
+    padding: 8px 16px; /* Padding 조정 */
+    cursor: pointer;
+}
+
+.sumBtn:hover {
+    background-color: #ff0044;
+}
+
+.sum {
+    font-size: 20px; /* 폰트 크기 조정 */
+    margin-top: 10px;
 }

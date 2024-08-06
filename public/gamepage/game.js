@@ -298,4 +298,36 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     
+    // 품목 이미지 리스트
+    const itemImages = [
+        "../img/paper.png",
+        "../img/glass.png",
+        "../img/plastic.png",
+        "../img/metal.png",
+        "../img/vinylbag.png",
+        "../img/organic.png",
+        "../img/medicine.png",
+        "../img/battery.png"
+    ];
+
+    let currentIndex = 0; // 현재 이미지의 인덱스
+
+    function updateImage(index) {
+        const imgElement = document.getElementById('currentImage');
+        imgElement.src = itemImages[index];
+    }
+
+    document.getElementById('prevButton').onclick = function() {
+        currentIndex = (currentIndex - 1 + itemImages.length) % itemImages.length;
+        updateImage(currentIndex);
+    };
+
+    document.getElementById('nextButton').onclick = function() {
+        currentIndex = (currentIndex + 1) % itemImages.length;
+        updateImage(currentIndex);
+    };
+
+    // 초기 이미지 설정
+    updateImage(currentIndex);
+
 });
