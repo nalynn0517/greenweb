@@ -130,7 +130,7 @@ h1.game-title {
 .bins {
     display: flex;
     justify-content: space-around;
-    margin-bottom: 80px;
+    margin-bottom: 50px;
 }
 
 .bin {
