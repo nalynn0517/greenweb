@@ -101,9 +101,10 @@ h1.game-title {
 }
 
 .trash-container {
+    position: absolute; /* 절대 위치로 설정하여 게임 컨테이너 내에서 고정 위치를 유지하도록 합니다. */
     border: 2px dashed #000000;
     padding: 10px;
-    margin-top: 30px;
+    margin-top: 100px;
     margin-bottom: 20px;
     min-height: 60px;
     display: flex;
@@ -125,8 +126,9 @@ h1.game-title {
 
 .bins {
     display: flex;
+    position: absolute;
     justify-content: space-around;
-    margin-bottom: 50px;
+    margin-top: 240px;
 }
 
 .bin {
@@ -222,7 +224,7 @@ h1.game-title {
 
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto;
+    margin: 13% auto;
     padding: 20px;
     border: 1px solid #888;
     width: 80%;

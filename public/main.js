@@ -128,9 +128,13 @@ let markers = []; // 전역 변수로 마커 배열 선언
 
 function setupLogoClick() {
     const logo = document.querySelector(".logo");
-    logo.addEventListener("click", function() {
-        window.location.href = "http://localhost:8080";
-    });
+    if (logo) {
+        logo.addEventListener("click", function() {
+            window.location.href = "http://localhost:8080";
+        });
+    } else {
+        console.error('Logo element not found.');
+    }
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -158,94 +162,115 @@ function loadKakaoMapAPI(apiKey) {
 // 카카오맵 초기화 함수
 function initMap() {
     // 지도 생성 및 표시할 div
-    const container = document.getElementById('map');
-    const options = {
-        center: new kakao.maps.LatLng(36.6050, 127.5170), // 중심 위치 설정 (경도 127.5170, 위도 36.6050)
-        level: 12 // 지도의 확대 레벨 (8도 영역)
+    const mapContainer = document.getElementById('map');
+    if (!mapContainer) {
+        console.error('Map container element not found.');
+        return;
+    }
+
+    const mapOption = {
+        center: new kakao.maps.LatLng(36.6050, 127.5170),
+        level: 12
     };
 
     // 지도 생성
-    map = new kakao.maps.Map(container, options);
+    map = new kakao.maps.Map(mapContainer, mapOption);
 
-    var mapTypeControl = new kakao.maps.MapTypeControl();
+    // 사용자 정의 확대 버튼 생성
+    var zoomInControlDiv = document.createElement('div');
+    zoomInControlDiv.className = 'custom_zoomcontrol';
+    zoomInControlDiv.innerHTML = `
+        <span onclick="zoomIn()" class="zoom-button zoom-in">+</span>
+        <span onclick="zoomOut()" class="zoom-button zoom-out">-</span>
+    `;
 
-    // 지도에 컨트롤을 추가해야 지도위에 표시됩니다
-    // kakao.maps.ControlPosition은 컨트롤이 표시될 위치를 정의하는데 TOPRIGHT는 오른쪽 위를 의미합니다
-    map.addControl(mapTypeControl, kakao.maps.ControlPosition.RIGHT);
-    
-    // 지도 확대 축소를 제어할 수 있는 줌 컨트롤을 생성합니다
-    var zoomControl = new kakao.maps.ZoomControl();
-    map.addControl(zoomControl, kakao.maps.ControlPosition.TOPRIGHT);
+    // 사용자 정의 확대/축소 컨트롤을 지도에 추가
+    mapContainer.appendChild(zoomInControlDiv);
 
-    // 제로 웨이스트 샵 정보를 가져와서 표시
-    showZeroWasteStores(map);
+    // 제로 웨이스트 샵을 지도에 표시하는 함수 호출
+    if (typeof coords !== 'undefined') {
+        showZeroWasteStores(map);
+    } else {
+        console.error('Coords data not defined.');
+    }
 
-    // 검색 버튼 클릭 이벤트 설정 (지도 초기화 후 설정)
-    const searchButton = document.getElementById("searchButton");
-    searchButton.addEventListener("click", function() {
-        const searchInput = document.getElementById("searchInput").value;
-        searchStores(searchInput);
-    });
+    // // 검색 버튼 클릭 이벤트 설정
+    // const searchButton = document.getElementById("searchButton");
+    // const searchInput = document.getElementById("searchInput");
+
+    // if (searchButton && searchInput) {
+    //     searchButton.addEventListener("click", function() {
+    //         const searchQuery = searchInput.value;
+    //         searchStores(searchQuery);
+    //     });
+    // } else {
+    //     console.error('Search button or input element not found.');
+    // }
 }
 
+// 확대 함수
+function zoomIn() {
+    const currentLevel = map.getLevel();
+    map.setLevel(currentLevel - 1);
+}
+
+// 축소 함수
+function zoomOut() {
+    const currentLevel = map.getLevel();
+    map.setLevel(currentLevel + 1);
+}
 // 제로 웨이스트 샵을 지도에 표시하는 함수
 function showZeroWasteStores(map) {
-    // 제로 웨이스트 샵 정보를 가져옴 (위에 선언한 coords 객체 사용)
+    if (typeof coords === 'undefined') {
+        console.error('Coords data is not available.');
+        return;
+    }
+
     const zeroWasteStores = coords;
 
-    // 제로 웨이스트 샵 마커 이미지
     const markerImages = {
         경기: new kakao.maps.MarkerImage('img/m1.png', new kakao.maps.Size(18, 30)),
         서울: new kakao.maps.MarkerImage('img/m5.png', new kakao.maps.Size(18, 30)),
         충청: new kakao.maps.MarkerImage('img/m3.png', new kakao.maps.Size(18, 30)),
         전라: new kakao.maps.MarkerImage('img/m4.png', new kakao.maps.Size(18, 30)),
-        강원: new kakao.maps.MarkerImage('img/m2.png', new kakao.maps.Size(18, 30)), 
+        강원: new kakao.maps.MarkerImage('img/m2.png', new kakao.maps.Size(18, 30)),
         경상: new kakao.maps.MarkerImage('img/m6.png', new kakao.maps.Size(18, 30)),
     };
 
     for (const [region, data] of Object.entries(zeroWasteStores)) {
-        // 각 지역의 제로 웨이스트 샵 정보 가져오기
         const stores = data.stores;
-    
-        // 제로 웨이스트 샵 정보 반복해서 처리
+
         for (const store of stores) {
-            // 마커 위치 설정
             const markerPosition = new kakao.maps.LatLng(store.latitude, store.longitude);
-    
-            // 마커 생성
+
             const marker = new kakao.maps.Marker({
                 position: markerPosition,
                 image: markerImages[region], // 마커 이미지 설정
                 map: map // 지도 설정
             });
 
-            markers.push(marker); // 생성된 마커를 배열에 추가
-    
-            // 인포윈도우를 표시하는 클로저 함수 생성
+            markers.push(marker);
+
             const showInfoWindow = (marker, store) => {
                 return () => {
-                    // 인포윈도우 내용 HTML 생성
                     const content = `
                         <div style="width: 200px; height:170px; padding: 10px; position: relative;">
                             <div>${store.name}</div>
                             <br>
                             <div>${store.address}</div>
-                            <button style="position: absolute; right: 10px; bottom: 10px;" onclick="window.open('${store.link}', '_blank')">➡️</button><div>
+                            <button style="position: absolute; right: 10px; bottom: 10px;" onclick="window.open('${store.link}', '_blank')">➡️</button>
                         </div>
                     `;
-    
-                    // 인포윈도우 생성
+
                     const infoWindow = new kakao.maps.InfoWindow({
                         content: content,
-                        removable: true // 닫기 버튼 표시
+                        removable: true
                     });
-    
-                    // 인포윈도우 지도에 표시
+
                     infoWindow.open(map, marker);
                 };
             };
-    
-            // 마커 클릭 이벤트 리스너 등록
+
             kakao.maps.event.addListener(marker, 'click', showInfoWindow(marker, store));
         }
     }
@@ -256,30 +281,32 @@ function clearMarkers() {
     for (let i = 0; i < markers.length; i++) {
         markers[i].setMap(null);
     }
-    markers = []; // 배열 초기화
+    markers = [];
 }
 
 // 검색어를 사용하여 가게를 검색하고 지도에 표시하는 함수
 function searchStores(searchQuery) {
+    if (typeof coords === 'undefined') {
+        console.error('Coords data is not available.');
+        return;
+    }
+
     const zeroWasteStores = coords;
-    const searchButton = document.querySelector(".searchButton");
 
     const markerImages = {
         경기: new kakao.maps.MarkerImage('img/m1.png', new kakao.maps.Size(18, 30)),
         서울: new kakao.maps.MarkerImage('img/m5.png', new kakao.maps.Size(18, 30)),
         충청: new kakao.maps.MarkerImage('img/m3.png', new kakao.maps.Size(18, 30)),
         전라: new kakao.maps.MarkerImage('img/m4.png', new kakao.maps.Size(18, 30)),
-        강원: new kakao.maps.MarkerImage('img/m2.png', new kakao.maps.Size(18, 30)), 
+        강원: new kakao.maps.MarkerImage('img/m2.png', new kakao.maps.Size(18, 30)),
         경상: new kakao.maps.MarkerImage('img/m6.png', new kakao.maps.Size(18, 30)),
     };
 
-    // 기존 마커 초기화
     clearMarkers();
 
     for (const [region, data] of Object.entries(zeroWasteStores)) {
         const stores = data.stores;
         for (const store of stores) {
-            // 가게 이름과 검색어를 모두 소문자로 변환하여 비교
             if (store.name.toLowerCase().includes(searchQuery.toLowerCase())) {
                 const markerPosition = new kakao.maps.LatLng(store.latitude, store.longitude);
                 const marker = new kakao.maps.Marker({
@@ -288,7 +315,7 @@ function searchStores(searchQuery) {
                     map: map
                 });
 
-                markers.push(marker); // 검색 결과 마커를 배열에 추가
+                markers.push(marker);
 
                 const showInfoWindow = (marker, store) => {
                     return () => {

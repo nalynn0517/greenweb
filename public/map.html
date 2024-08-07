@@ -13,32 +13,73 @@
             padding: 0;
             height: 100%;
         }
-
+    
         #map {
             width: 100vw; /* 화면 너비를 100%로 설정 */
             height: 100vh; /* 화면 높이를 100%로 설정 */
             margin: 0; /* 여백 제거 */
+            position: relative; /* 사용자 정의 컨트롤을 지도에 맞게 위치시키기 위해 필요 */
         }
-
+    
         body {
             overflow: hidden; /* 스크롤바 숨김 */
         }
+    
+        .custom_zoomcontrol {
+            position: absolute;
+            top: 90px; /* 헤더의 높이만큼 떨어지도록 조정 */
+            right: 10px;
+            width: 36px;
+            height: 80px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+            overflow: hidden;
+            z-index: 1;
+            font-size: 0; /* 텍스트가 아닌 버튼만 보이도록 설정 */
+        }
+    
+        .zoom-button {
+            display: block;
+            width: 36px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+            font-size: 18px; /* 버튼의 글씨 크기 */
+            border-bottom: 1px solid #bfbfbf;
+        }
+    
+        .zoom-button:hover {
+            background-color: #e0e0e0;
+        }
+    
+        .zoom-button.zoom-in {
+            background-color: #fff;
+        }
+    
+        .zoom-button.zoom-out {
+            background-color: #fff;
+        }
+    
+        .zoom-button:last-child {
+            border-bottom: none; /* 마지막 버튼의 경계선 제거 */
+        }
     </style>
 </head>
-
-<body>   
-<!-- 고정된 헤더 -->
-<header>
-    <div class="logo"><a href="index.html"><img src="./img/logo2.png" alt="로고" width="65" height="45"></a></div>
-    <div class="titleMap">
-        <a href="map.html" id="titleMap">오프라인 제로웨이스트샵</a>
-    </div>
-    <div class="search-bar">
-        <input id="searchInput" type="text" placeholder="검색어를 입력하세요">
-        <button id="searchButton"><img src="./img/search1.png" alt="Search"></button>
-    </div>
-</header>
-
+<body>
+    <!-- 고정된 헤더 -->
+    <header>
+        <div class="logo"><a href="../index.html"><img src="img/logo2.png" alt="로고" width="65" height="45"></a></div>
+        <nav>
+          <ul> <!-- 메뉴 5개 -->
+            <li><a href="chart.html">재활용 통계</a></li>
+            <li><a href="../recyclePage/recycle.html">분리수거 정보</a></li>
+            <li><a href="../map.html" id="showMap">오프라인 제로웨이스트샵</a></li> <!-- ID 추가 -->
+            <li><a href="../quest.html">자주 묻는 질문</a></li>
+            <li><a href="../gamepage/game.html" class="gamefont">GAME</a></li> 
+          </ul>
+        </nav>
+    </header>
     <div id="map"></div>
     
     <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=8948120168a32c7a96068b04adbb1558"></script>
