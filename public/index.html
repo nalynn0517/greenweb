@@ -10,22 +10,21 @@
     <style>
         /* 지도를 담을 컨테이너의 스타일 설정 */
         #map {
-            width: 100vw; /* 화면 너비를 100%로 설정 */
-            height: 100vh; /* 화면 높이를 100%로 설정 */
-            margin: 0; /* 여백 제거 */
+            width: 100%;
+            height: 100%;
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="logo"><a href="index.html"><img src="img/logo2.png" alt="로고" width="65" height="45"></a></div>
+        <div class="logo"><a href="index.html"><img src="img/logo1.png" alt="로고" width="65" height="45"></a></div>
         <nav>
             <ul> <!-- 메뉴 5개 -->
                 <li><a href="./recyclechart/chart.html">재활용 통계</a></li>
                 <li><a href="./recyclePage/recycle.html">분리수거 정보</a></li>
                 <li><a href="map.html" id="showMap">오프라인 제로웨이스트샵</a></li> <!-- ID 추가 -->
                 <li><a href="quest.html">자주 묻는 질문</a></li>
-               <li><a href="gamepage/game.html" class="gamefont">GAME</a></li> 
+               <li><a href="gamepage/game.html" class="gamefont" style="font-size: 20px;">GAME</a></li> 
             </ul>
         </nav>
     </header>
@@ -35,6 +34,7 @@
             <div class="logo-container">
               <img src="img/logo3.png">
             </div>
+            <!-- <p class="quick-recycle">빠른 분리 바른 배출</p> -->
           </div>          
 
         <div class="banner2">
@@ -55,35 +55,35 @@
                 <h1>올바른 분리수거 배출 가이드</h1>
             <div class="container">
                 <div class="icons">
-                    <div class="icon" onclick="navigateToRecyclePage(1)">
+                    <div class="icon" onclick="redirectToContent(1)">
                         <img src="img/paper.png" alt="종이">
                         <span>종이</span>
                     </div>
-                    <div class="icon" onclick="navigateToRecyclePage(2)">
+                    <div class="icon" onclick="redirectToContent(2)">
                         <img src="img/plastic.png" alt="플라스틱">
                         <span>플라스틱</span>
                     </div>
-                    <div class="icon" onclick="navigateToRecyclePage(3)">
+                    <div class="icon" onclick="redirectToContent(3)">
                         <img src="img/metal.png" alt="금속">
                         <span>금속</span>
                     </div>
-                    <div class="icon" onclick="navigateToRecyclePage(4)">
+                    <div class="icon" onclick="redirectToContent(4)">
                         <img src="img/glass.png" alt="유리">
                         <span>유리</span>
                     </div>
-                    <div class="icon" onclick="navigateToRecyclePage(5)">
+                    <div class="icon" onclick="redirectToContent(5)">
                         <img src="img/vinlybag.png" alt="비닐">
                         <span>비닐</span>
                     </div>
-                    <div class="icon" onclick="navigateToRecyclePage(6)">
+                    <div class="icon" onclick="redirectToContent(6)">
                         <img src="img/organic.png" alt="음식물">
                         <span>음식물</span>
                     </div>
-                    <div class="icon" onclick="navigateToRecyclePage(7)">
+                    <div class="icon" onclick="redirectToContent(7)">
                         <img src="img/medicine.png" alt="의약품">
                         <span>의약품</span>
                     </div>
-                    <div class="icon" onclick="navigateToRecyclePage(8)">
+                    <div class="icon" onclick="redirectToContent(8)">
                         <img src="img/battery.png" alt="기타">
                         <span>기타</span>
                     </div>
@@ -92,27 +92,22 @@
         </div>
 
         <script>
-            function navigateToRecyclePage(category) {
-                window.location.href = './recyclePage/recycle.html?category=' + category;
-            }
-        </script>
+            function redirectToContent(contentId) {
+      // URL의 쿼리 파라미터를 사용하여 특정 콘텐츠로 이동합니다.
+      window.location.href = `./recyclePage/recycle.html?category=${contentId}`;
+    }
+          </script>
         
-        <footer>
-            <div class="footerCont">
-                <span class="ftitle">소속</span>
-                <span>한세대학교 ICT융합학과</span>
-                <br>
-                <span class="ftitle">자료 출처</span>
-                <span>한국폐기물협회</span>
-                <span>KOSIS 국가통계포털</span>
-                <span>환경부</span>
-                <br>
-                <span class="ftitle">이미지 출처</span>
-                <span>freepik</span>
-                <span>flaticon</span>
-                <span>unsplash</span>
+        <div class="banner4">
+            <div class="banner-text">
+                <h2>분리수거 게임</h2>
+                <p>간단한 게임에 참여해보세요!</p>
+                <button onclick="window.location.href='./gamepage/game.html'" class="start-game-button">게임 시작하기</button>
             </div>
-            <p>© 바른. All rights reserved.</p>
+        </div>
+
+        <footer>
+            푸터 영역
         </footer>
         
         <script>
@@ -120,19 +115,18 @@
     
             // 슬라이드 배너 자동 슬라이드 기능 추가
             document.addEventListener("DOMContentLoaded", function() {
-                const slideContainer = document.querySelector(".slider .slide-container");
-                const slides = document.querySelectorAll(".slide-container a");
-                let slideIndex = 0;
-                const slideWidth = 100; // 슬라이드 너비를 퍼센트로 설정
-                const totalSlides = slides.length;
+            const slideContainer = document.querySelector(".slider .slide-container");
+            let slideIndex = 0;
+            const slideWidth = 900; // 슬라이드 너비 고정
+            const totalSlides = slideContainer.children.length;
     
-                setInterval(function() {
-                    slideIndex++;
-                    if (slideIndex === totalSlides) {
-                        slideIndex = 0;
-                    }
-                    slideContainer.style.transition = "transform 0.5s ease-in-out";
-                    slideContainer.style.transform = `translateX(${-slideWidth * slideIndex}%)`;
+            setInterval(function() {
+                slideIndex++;
+                if (slideIndex === totalSlides) {
+                    slideIndex = 0;
+                }
+                slideContainer.style.transition = "transform 0.5s ease-in-out";
+                slideContainer.style.transform = `translateX(${-slideWidth * slideIndex}px)`;
                 }, 2700);
             });
     

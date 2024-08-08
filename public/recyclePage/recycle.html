@@ -3,30 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>분리수거 정보</title>
+  <title>분리수거</title>
   <link rel="stylesheet" href="recycle.css">
   <link rel="stylesheet" href="../font/fontstyle.css">
   <script src="recycle.js"></script>
-  <!-- <style>
+  <style>
     .recycleContent > div {
       display: none;
     }
     .recycleContent > div.active {
       display: block;
     }
-  </style> -->
+
+    .content {
+    display: none;
+  }
+  .content.active {
+    display: block;
+  }
+  </style>
 </head>
 <body>
   <header>
-    <div class="logo"><a href="../index.html"><img src="recycleImg/logo2.png" alt="로고" width="65" height="45"></a></div>
+    <div class="logo"><a href="index.html"><img src="recycleImg/logo1.png" alt="로고" width="65" height="45"></a></div>
     <nav>
-      <ul> <!-- 메뉴 5개 -->
-          <li><a href="../recyclechart/chart.html">재활용 통계</a></li>
-          <li><a href="recycle.html">분리수거 정보</a></li>
-          <li><a href="../map.html" id="showMap">오프라인 제로웨이스트샵</a></li> <!-- ID 추가 -->
-          <li><a href="../quest.html">자주 묻는 질문</a></li>
-         <li><a href="../gamepage/game.html" class="gamefont">GAME</a></li> 
-      </ul>
+        <ul> <!-- 메뉴 5개 -->
+            <li><a href="./recyclechart/chart.html">재활용 통계</a></li>
+            <li><a href="./recyclePage/recycle.html">분리수거 정보</a></li>
+            <li><a href="map.html" id="showMap">오프라인 제로웨이스트샵</a></li> <!-- ID 추가 -->
+            <li><a href="quest.html">자주 묻는 질문</a></li>
+           <li><a href="gamepage/game.html" class="gamefont" style="font-size: 20px;">GAME</a></li> 
+        </ul>
     </nav>
 </header>
   <div class="recycleTab">
@@ -520,78 +527,76 @@
         </ul>
       </div>
     </div>
-
-    <div class="sideCalc">
-      <h3>탄소 계산기</h3>
-      <div class="calcCnt">
-        <img class="next" src="../img/calc_l.png" alt="왼">
-        <img class="calcImg" src="../img/glass.png" alt="배터리">
-        <img class="next" src="../img/calc_r.png" alt="오">
-      </div>
-      <div class="calcNum">
-        <button>-</button>
-        <div class="num">1</div>
-        <button>+</button>
-      </div>
-      <div class="calcSum">
-        <button class="sumBtn">줄인 총 탄소량</button>
-        <div class="sum">0.3 kg</div>
-      </div>
-    </div>
   </div>
 
   <script>
-    // 페이지가 로드될 때 실행되는 함수
     window.onload = function() {
-        // URL에서 category 값을 가져옴
-        const urlParams = new URLSearchParams(window.location.search);
-        const category = urlParams.get('category');
-        if (category) {
-            showContent(category);
-        }
-    };
+      const urlParams = new URLSearchParams(window.location.search);
+      const category = urlParams.get('category');
+      if (category) {
+          showContent(category);
+      } else {
+          // URL에 category가 없으면 모든 콘텐츠를 숨김
+          const contents = document.querySelectorAll('.recycleContent > div');
+          contents.forEach(content => content.classList.remove('active'));
+      }
+  };
 
-    // 카테고리별 콘텐츠를 표시하는 함수
-    function showContent(category) {
-        // 모든 콘텐츠를 숨김
-        const contents = document.querySelectorAll('.recycleContent > div');
-        contents.forEach(content => content.classList.remove('active'));
-        
-        // 선택한 카테고리의 콘텐츠를 표시
-        const selectedContent = document.getElementById('content' + category);
+  function showContent(category) {
+    // 모든 컨텐츠를 숨김
+    const contents = document.querySelectorAll('.recycleContent > div');
+    contents.forEach(content => content.style.display = 'none'); // display 속성을 none으로 설정
 
-        if (selectedContent) {
-            selectedContent.classList.add('active');
-        }
-        
-        // 모든 버튼에서 active 클래스 제거
-        const buttons = document.querySelectorAll('.recycleTab button');
-        buttons.forEach(button => button.classList.remove('active'));
-        
-        // 선택한 버튼에 active 클래스 추가
-        const activeButton = document.getElementById('button' + category);
-        if (activeButton) {
-            activeButton.classList.add('active');
-        }
-        
-        // 해당 텍스트를 표시하는 부분 수정
-        const activeButtonText = activeButton.innerText; // 현재 활성화된 버튼의 텍스트
-        const contentText = document.getElementById('.content' + category + ' ul'); // 해당 콘텐츠의 텍스트 엘리먼트
-        console.log(contentText);
-        if (contentText) {
-        contentText.innerText = activeButtonText; // 텍스트 엘리먼트에 버튼 텍스트를 설정
-        }
-        
-        // 모든 subTab을 숨김
-        const subTabs = document.querySelectorAll('.recycleSubTab ul li');
-        subTabs.forEach(subTab => subTab.style.display = 'none');
-        
-        // 선택한 subTab을 표시
-        const selectedSubTab = document.querySelector('.subTab' + category);
-        if (selectedSubTab) {
-            selectedSubTab.style.display = 'block';
-        }
+    // 선택한 카테고리의 콘텐츠를 표시
+    const selectedContent = document.getElementById('content' + category);
+    if (selectedContent) {
+        selectedContent.style.display = 'block'; // 선택된 컨텐츠만 보이도록 설정
     }
+
+    // 모든 버튼에서 active 클래스 제거
+    const buttons = document.querySelectorAll('.recycleTab button');
+    buttons.forEach(button => button.classList.remove('active'));
+
+    // 선택한 버튼에 active 클래스 추가
+    const activeButton = document.getElementById('button' + category);
+    if (activeButton) {
+        activeButton.classList.add('active');
+    }
+
+    // 모든 subTab을 숨김
+    const subTabs = document.querySelectorAll('.recycleSubTab ul li');
+    subTabs.forEach(subTab => subTab.style.display = 'none');
+
+    // 선택한 subTab을 표시
+    const selectedSubTab = document.querySelector('.subTab' + category);
+    if (selectedSubTab) {
+        selectedSubTab.style.display = 'block';
+    }
+}
+
+
+function showContentFromURL() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const category = urlParams.get('category');
+    if (category) {
+      const contentId = `content${category}`;
+      const contentElement = document.getElementById(contentId);
+      if (contentElement) {
+        // 모든 콘텐츠를 숨김
+        document.querySelectorAll('.content').forEach(el => el.classList.remove('active'));
+        // 해당 콘텐츠만 표시
+        contentElement.classList.add('active');
+        contentElement.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        console.error('콘텐츠 요소를 찾을 수 없습니다:', contentId);
+      }
+    } else {
+      console.error('카테고리 파라미터가 없습니다.');
+    }
+  }
+
+  // 페이지 로드 시 콘텐츠 표시
+  document.addEventListener('DOMContentLoaded', showContentFromURL);
   </script>
 </body>
 </html>
