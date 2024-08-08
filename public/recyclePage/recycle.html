@@ -3,600 +3,595 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>분리수거</title>
+  <title>분리수거 정보</title>
   <link rel="stylesheet" href="recycle.css">
   <link rel="stylesheet" href="../font/fontstyle.css">
   <script src="recycle.js"></script>
-  <style>
+  <!-- <style>
     .recycleContent > div {
       display: none;
     }
     .recycleContent > div.active {
       display: block;
     }
-
-    .content {
-    display: none;
-  }
-  .content.active {
-    display: block;
-  }
-  </style>
+  </style> -->
 </head>
 <body>
   <header>
-    <div class="logo"><a href="index.html"><img src="recycleImg/logo1.png" alt="로고" width="65" height="45"></a></div>
+    <div class="logo"><a href="../index.html"><img src="recycleImg/logo2.png" alt="로고" width="65" height="45"></a></div>
     <nav>
-        <ul> <!-- 메뉴 5개 -->
-            <li><a href="./recyclechart/chart.html">재활용 통계</a></li>
-            <li><a href="./recyclePage/recycle.html">분리수거 정보</a></li>
-            <li><a href="map.html" id="showMap">오프라인 제로웨이스트샵</a></li> <!-- ID 추가 -->
-            <li><a href="quest.html">자주 묻는 질문</a></li>
-           <li><a href="gamepage/game.html" class="gamefont" style="font-size: 20px;">GAME</a></li> 
-        </ul>
+      <ul> <!-- 메뉴 5개 -->
+          <li><a href="../recyclechart/chart.html">재활용 통계</a></li>
+          <li><a href="recycle.html">분리수거 정보</a></li>
+          <li><a href="../map.html" id="showMap">오프라인 제로웨이스트샵</a></li> <!-- ID 추가 -->
+          <li><a href="../quest.html">자주 묻는 질문</a></li>
+         <li><a href="../gamepage/game.html" class="gamefont">GAME</a></li> 
+      </ul>
     </nav>
 </header>
-  <div class="recycleTab">
-    <ul class="tab1">
-        <li>
-            <button id="button1" class="active" onclick="showContent(1)">종이</button>
-            <button id="button2" onclick="showContent(2)">플라스틱</button>
-            <button id="button3" onclick="showContent(3)">캔/고철</button>
-            <button id="button4" onclick="showContent(4)">유리</button>
-        </li>
-    </ul>
-    <ul class="tab2">
-        <li>
-            <button id="button5" onclick="showContent(5)">비닐</button>
-            <button id="button6" onclick="showContent(6)">음식물</button>
-            <button id="button7" onclick="showContent(7)">의약품</button>
-            <button id="button8" onclick="showContent(8)">기타</button>
-        </li>
+<div class="recycleTab">
+  <ul class="tab1">
+      <li>
+          <button id="button1" class="active" onclick="showContent(1)">종이</button>
+          <button id="button2" onclick="showContent(2)">플라스틱</button>
+          <button id="button3" onclick="showContent(3)">캔/고철</button>
+          <button id="button4" onclick="showContent(4)">유리</button>
+      </li>
+  </ul>
+  <ul class="tab2">
+      <li>
+          <button id="button5" onclick="showContent(5)">비닐</button>
+          <button id="button6" onclick="showContent(6)">음식물</button>
+          <button id="button7" onclick="showContent(7)">의약품</button>
+          <button id="button8" onclick="showContent(8)">기타</button>
+      </li>
+  </ul>
+</div>
+
+<div class="recycleCnts">
+  <div class="recycleSubTab">
+    <ul id="subTabContainer">
+      <li class="subTab1">
+        <button class="active">재활용 O</button>
+        <button>재활용 X</button>
+      </li>
+      <li class="subTab2">
+        <button class="active">1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button>7</button>
+        <button>재활용 X</button>
+      </li>
+      <li class="subTab3">
+        <button class="active">캔</button>
+        <button>고철</button>
+        <button>재활용 X</button>
+      </li>
+      <li class="subTab4">
+        <button class="active">재활용 O</button>
+        <button>재활용 X</button>
+      </li>
+      <li class="subTab5">
+        <button class="active">재활용 O</button>
+        <button>재활용 X</button>
+      </li>
+      <li class="subTab6">
+        <button class="active">분리배출 기준</button>
+        <button>헷갈리는 것</button>
+      </li>
+      <li class="subTab7">
+        <button class="active">분리배출 기준</button>
+        <button>헷갈리는 것</button>
+      </li>
+      <li class="subTab8">
+        <button class="active">분리배출 기준</button>
+      </li>
     </ul>
   </div>
-
-  <div class="recycleCnts">
-    <div class="recycleSubTab">
-      <ul id="subTabContainer">
-        <li class="subTab1">
-          <button class="active">재활용 O</button>
-          <button>재활용 X</button>
+  <div class="recycleContent">
+    <div id="content1" class="content1"> <!--종이-->
+      <ul>
+        <li>
+          <p>
+            <h2>종이 박스, 인쇄용지, 골판지류</h2>
+            <h4>: 테이프 등 다른 물질이나 이물질 제거 후 펼쳐서 배출하면 됩니다.</h4>
+          </p>
+          <div class="img">
+            <img src="recycleImg/box.jpg" alt="종이상자">
+            <img src="recycleImg/books.jpg" alt="인쇄용지">
+            <img src="recycleImg/cardboard.jpg" alt="골판지">
+          </div>
+          <p>
+            <h2>신문, 책자류</h2>
+            <h4>: 신문은 차곡차곡 끈으로 묶어 배출하고 책자, 노트는 스프링 등 다른 재질을 제거 후 배출하면 됩니다.</h4>
+          </p>
+          <div class="img">
+            <img src="recycleImg/newspaper.jpg" alt="신문">
+            <img src="recycleImg/springnote.jpg" alt="스프링노트">
+          </div>
         </li>
-        <li class="subTab2">
-          <button class="active">1</button>
-          <button>2</button>
-          <button>3</button>
-          <button>4</button>
-          <button>5</button>
-          <button>6</button>
-          <button>7</button>
-          <button>재활용 X</button>
-        </li>
-        <li class="subTab3">
-          <button class="active">캔</button>
-          <button>고철</button>
-          <button>재활용 X</button>
-        </li>
-        <li class="subTab4">
-          <button class="active">재활용 O</button>
-          <button>재활용 X</button>
-        </li>
-        <li class="subTab5">
-          <button class="active">재활용 O</button>
-          <button>재활용 X</button>
-        </li>
-        <li class="subTab6">
-          <button class="active">분리배출 기준</button>
-          <button>헷갈리는 것</button>
-        </li>
-        <li class="subTab7">
-          <button class="active">분리배출 기준</button>
-          <button>헷갈리는 것</button>
-        </li>
-        <li class="subTab8">
-          <button class="active">분리배출 기준</button>
+        <li>
+          <p>
+            <h2>혼합 폐지
+            </h2>
+            <h4>: 음식물이나 오염물질이 묻은 경우 재활용이 어렵습니다. (예 : 컵라면, 폐휴지, 기저귀)<br>
+            여러 소재가 혼합된 경우에도 재활용이 어렵습니다. (예 : 종이테이프, 영수증, 벽지, 부직포)
+            </h4>
+          </p>
+          <div class="img">
+            <img src="recycleImg/cupnoodle.jpg" alt="컵라면">
+            <img src="recycleImg/tissue.jpg" alt="휴지">
+            <img src="recycleImg/diaper.jpg" alt="기저귀">
+            <img src="recycleImg/papertape.jpeg" alt="종이테이프">
+            <img src="recycleImg/receipt.jpg" alt="영수증">
+            <img src="recycleImg/wallpaper.jpg" alt="벽지">
+            <img src="recycleImg/non-woven.jpeg" alt="부직포">
+          </div>
         </li>
       </ul>
     </div>
-    <div class="recycleContent">
-      <div id="content1" class="content1"> <!--종이-->
-        <ul>
-          <li>
-            <p>
-              <h2>종이 박스, 인쇄용지, 골판지류</h2>
-              <h4>: 테이프 등 다른 물질이나 이물질 제거 후 펼쳐서 배출하면 됩니다.</h4>
-            </p>
-            <div class="img">
-              <img src="recycleImg/box.jpg" alt="종이상자">
-              <img src="recycleImg/books.jpg" alt="인쇄용지">
-              <img src="recycleImg/cardboard.jpg" alt="골판지">
-            </div>
-            <p>
-              <h2>신문, 책자류</h2>
-              <h4>: 신문은 차곡차곡 끈으로 묶어 배출하고 책자, 노트는 스프링 등 다른 재질을 제거 후 배출하면 됩니다.</h4>
-            </p>
-            <div class="img">
-              <img src="recycleImg/newspaper.jpg" alt="신문">
-              <img src="recycleImg/springnote.jpg" alt="스프링노트">
-            </div>
-          </li>
-          <li>
-            <p>
-              <h2>혼합 폐지
-              </h2>
-              <h4>: 음식물이나 오염물질이 묻은 경우 재활용이 어렵습니다. (예 : 컵라면, 폐휴지, 기저귀)<br>
-              여러 소재가 혼합된 경우에도 재활용이 어렵습니다. (예 : 종이테이프, 영수증, 벽지, 부직포)
-              </h4>
-            </p>
-            <div class="img">
-              <img src="recycleImg/cupnoodle.jpg" alt="컵라면">
-              <img src="recycleImg/tissue.jpg" alt="휴지">
-              <img src="recycleImg/diaper.jpg" alt="기저귀">
-              <img src="recycleImg/papertape.jpeg" alt="종이테이프">
-              <img src="recycleImg/receipt.jpg" alt="영수증">
-              <img src="recycleImg/wallpaper.jpg" alt="벽지">
-              <img src="recycleImg/non-woven.jpeg" alt="부직포">
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div id="content2" class="content2"> <!--플라스틱-->
-        <ul>
-          <li>
-            <p>
-              <h2>1번 플라스틱(PET/PETE)</h2>
-              <h4>
-                : 일회성으로 만들어졌기 때문에 재사용의 경우 박테리아 번식 가능성이 커지고 사람의 호르몬 밸런스를 깨트릴 수 있는 화학성분을 내보낼 수 있다고 합니다. 열에도 약하기 때문에 재사용을 추천하지 않습니다. <br>
-                (예 : 플라스틱 물병, 케찹병, 탄산수병 등)
-              </h4>
-            </p>
-            <div class="img">
-              <img src="recycleImg/waterbottle.jpg" alt="생수병">
-              <img src="recycleImg/otherbottle.jpg" alt="음료수병">
-              <img src="recycleImg/takeoutcup.jpg" alt="데이크아웃컵">
-            </div>
-          </li>
-          <li>
-            <p>
-              <h2>2번 플라스틱(HDP/HDPE)</h2>
-              <h4>
-                : 해로운 물질이 배출되지 않습니다. 그래서 전문가들이 마시는 생수병을 살 때 적극 추천하는 플라스틱 물병입니다. 또한 전자레인지 사용이 가능합니다.(내열온도 : 70~100도)
-                <br>(예 : 생수병 뚜껑, 세제병, 영유아 장난감)
-              </h4>
-            </p>
-            <div class="img">
-              <img src="recycleImg/bottlecap.jpg" alt="생수병 뚜껑">
-              <img src="recycleImg/detergentbottle.jpg" alt="세제병">
-              <img src="recycleImg/plastictoy.jpg" alt="장난감">
-            </div>
-          </li>
-          <li>
-            <p>
-              <h2>3번 플라스틱(PVC or V)</h2>
-              <h4>
-                : DEHP 등 해로운 발암 물질을 배출해서 재활용이 불가능합니다. 열에 약하고 가열 시 환경호르몬이 방출됩니다.
-                <br>(예 : 비닐랩, 신발, 인조가죽가방, 우비)
-              </h4>
-            </p>
-            <div class="img">
-              <img src="recycleImg/plasticwrap.jpg" alt="식품용 비닐랩">
-              <img src="recycleImg/plasticshoes.jpg" alt="신발">
-              <img src="recycleImg/bag.jpg" alt="인조가죽가방">
-              <img src="recycleImg/raincoat.jpg" alt="우비">
-            </div>
-          </li>
-          <li>
-            <p>
-              <h2>4번 플라스틱(LDPE)</h2>
-              <h4>
-                : 재활용이 어려워 세척 후 일반 쓰레기로 버려야 합니다.
-                <br>(예 : 비닐 봉투, 비닐 장갑, 필름, 우유병)
-              </h4>
-            </p>
-            <div class="img">
-              <img src="recycleImg/plasticbag.jpg" alt="비닐봉투">
-              <img src="recycleImg/plasticgloves.jpg" alt="비닐장갑">
-              <img src="recycleImg/film.jpg" alt="필름">
-              <img src="recycleImg/plasticmilkbottle.png" alt="우유병">
-            </div>
-          </li>
-          <li>
-            <p>
-              <h2>5번 플라스틱(PP)</h2>
-              <h4>
-                : 가볍고 내구성이 강해 고온에서 모양 변형이 없습니다.<br>
-                재활용이 가능합니다.<br>
-                전자레인지 사용이 가능합니다.(내열 온도 : 121~165도)
-                <br>(예 : 색 있는 플라스틱컵, 반찬통, 주방용기)
-              </h4>
-            </p>
-            <div class="img">
-              <img src="recycleImg/colorcup.png" alt="색있는 플라스틱 컵">
-              <img src="recycleImg/foodcontainer.png" alt="반찬통">
-              <img src="recycleImg/kitchentools.jpeg" alt="주방용품">
-            </div>
-          </li>
-          <li>
-            <p>
-              <h2>6번 플라스틱(PS)</h2>
-              <h4>
-                : 가볍고 성형이 쉽습니다. 열에 약하고 해로운 물질이 배출됩니다. 재활용이 가능하지만 쉽지 않고 미세플라스틱 발생 위험으로 적절한 처리가 필요합니다.
-                <br>(예 : 플라스틱 수저, 스티로폼, 커피컵 뚜껑)
-              </h4>
-            </p>
-            <div class="img">
-              <img src="recycleImg/plastictools.png" alt="플라스틱 숟가락 포크">
-              <img src="recycleImg/styrofoam.png" alt="스티로폼">
-              <img src="recycleImg/plasticlid.jpg" alt="커피컵 뚜껑">
-            </div>
-          </li>
-          <li>
-            <p>
-              <h2>7번 플라스틱(PC/라벨없음)</h2>
-              <h4>
-                : 환경호르몬이 유출되고 발암물질이 들어있기 때문에 재활용이 어렵습니다.
-                <br>(예 : 햇반, 치약용기, 안경, 스마트폰 케이스)
-              </h4>
-            </p>
-            <div class="img">
-              <img src="recycleImg/instantrice.png" alt="햇반">
-              <img src="recycleImg/toothpaste.jpg" alt="치약용기">
-              <img src="recycleImg/glasses.jpg" alt="안경">
-              <img src="recycleImg/phonecase.jpg" alt="스마트폰 케이스">
-            </div>
-          </li>
-          <li>
-            <p>
-              <h2>재활용 불가능</h2>
-              <h4>
-                : 소재가 복합적인 경우 처리가 복잡해지고 비용이 많이 들어가는 경우가 많아 재활용이 어렵습니다. 재활용 처리 공정 안전 상의 문제로 불가능한 경우도 있습니다.
-                <br>(예 : 로고가 있는 테이크아웃 컵, 세제 등의 펌프, 빨대, CD)
-              </h4>
-            </p>
-            <div class="img">
-              <img src="recycleImg/printingcup.png" alt="로고 있는 테이크아웃 컵">
-              <img src="recycleImg/pump.jpg" alt="세제 및 샴푸 등의 펌프">
-              <img src="recycleImg/straw.jpg" alt="빨대">
-              <img src="recycleImg/CD.jpg" alt="CD">
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div id="content3" class="content3"> <!--캔/고철-->
-        <ul>
-          <li>
-            <p>
-              <h2>캔류</h2>
-              <h4>
-                : 내용물을 비운 후 물로 헹국 뒤 찌그러뜨려 배출합니다.
-                <br>부탄 가스는 구멍을 뚫어 가스를 제거한 후에 배출해야합니다.
-              </h4>
-            </p>
-            <div class="img">
-              <img src="recycleImg/can.jpg" alt="캔류">
-              <img src="recycleImg/butanegas.png" alt="부탄가스">
-            </div>
-          </li>
-          <li>
-            <p>
-              <h2>고철류</h2>
-              <h4>
-                : 금속은 봉투에 넣거나 끈으로 묶어서 배출합니다. (예 : 철사, 못, 폐공구, 철재 옷걸이)
-                <br>비철금속은 묻어있는 이물질을 제거 후에 배출합니다. (예 : 양은, 알루미늄, 스테인리스 재질)
-              </h4>
-            </p>
-            <div class="img">
-              <img src="recycleImg/wire.jpg" alt="철사">
-              <img src="recycleImg/nail.jpg" alt="못">
-              <img src="recycleImg/wastetools.png" alt="폐공구">
-              <img src="recycleImg/hanger.jpg" alt="철재 옷걸이">
-              <img src="recycleImg/pot.png" alt="양은">
-              <img src="recycleImg/aluminium.png" alt="알루미늄">
-              <img src="recycleImg/stainsteel.png" alt="스테인리스">
-            </div>
-          </li>
-          <li>
-            <p>
-              <h2>폐유통, 페인트통, 알루미늄 호일</h2>
-              <h4>
-                : 폐유통, 페인트통의 경우 유해물질이 묻어있어 재활용이 어렵습니다.
-                <br>알루미늄 호일의 경우 공정에 많은 차이가 있어 수작업으로 분류 후 재활용을 진행해야 하는데 이 과정에서 같이 투입된 캔들도 재활용 불가로 만들기 때문에 재활용이 어렵습니다.
-              </h4>
-            </p>
-            <div class="img">
-              <img src="recycleImg/paint.jpg" alt="폐유통, 페인트통">
-              <img src="recycleImg/foil.jpg" alt="알루미늄 호일">
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div id="content4" class="content4"> <!--유리-->
-        <ul>
-          <li>
-            <p>
-              <h2>깨지지 않은 유리 그릇, 유색 유리병</h2>
-              <h4>: 뚜껑 제거 후 색깔별로(흰색, 갈색, 녹색) 분리해서 배출합니다. 빈용기의 경우 내용물을 비우고 이물질을 넣지 않도록 합니다. </h4>
-            </p>
-            <div class="img">
-              <img src="recycleImg/plate.jpg" alt="유리그릇">
-              <img src="recycleImg/glassbottle.jpg" alt="유리병">
-              <img src="recycleImg/colorbottles.jpg" alt="색유리병">
-            </div>
-          </li>
-          <li>
-            <p>
-              <h2>도자기 및 사기그릇, 거울, 내열 유리, 색이 섞인 유색 유리병</h2>
-              <h4>: 신문지에 말아서 일반쓰레기로 배출합니다. 양이 많을 경우 특수규격마대를 구매 후에 배출합니다.</h4>
-            </p>
-            <div class="img">
-              <img src="recycleImg/potterybowl.jpg" alt="도자기">
-              <img src="recycleImg/mirror.jpg" alt="거울">
-              <img src="recycleImg/heatglass.jpg" alt="내열유리">
-              <img src="recycleImg/colormixbottle.jpg" alt="색이 섞인 유리병">
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div id="content5" class="content5"> <!--비닐-->
-        <ul>
-          <li>
-            <p>
-              <h2>비닐봉투, 비닐포장재, 지퍼백</h2>
-              <h4>
-                : 지퍼백의 지퍼는 같이 배출합니다. 슬라이딩 지퍼백의 플라스틱 닫개는 일반쓰레기로 배출합니다. <br>
-                흩날리지 않게 봉투에 담아 배출합니다.
-              </h4>
-            </p>
-            <div class="img">
-              <img src="recycleImg/vinyl.png" alt="비닐">
-              <img src="recycleImg/zipperbag.jpg" alt="지퍼백">
-            </div>
-          </li>
-          <li>
-            <p>
-              <h2>딱지 모양으로 접은 봉지, 테이프, 스티커</h2>
-              <h4>
-                : 비닐포장재를 딱지 모양으로 접는 경우 재활용 작업장에서 선별이 어렵기 때문에 주의해서 배출합니다. <br>
-                테이프나 스티커의 경우 코팅때문에 재활용이 어렵기 때문에 일반쓰레기로 배출합니다. 
-              </h4>
-            </p>
-            <div class="img">
-              <img src="recycleImg/foldvinyl.jpeg" alt="딱지접기 비닐">
-              <img src="recycleImg/boxtape.jpg" alt="테이프">
-              <img src="recycleImg/sticker.jpg" alt="스티커">
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div id="content6" class="content6"> <!--음식물-->
-        <ul>
-          <li>
-            <p>
-              <div class="howTo">
-                <h2>음식물 폐기물 배출 방법</h2>
-                <h3>
-                  (1) 최대한 수분을 제거 후 배출합니다.<br>
-                  (2) 음식물 외의 이물질은 제거합니다.<br>
-                  (3) 길이가 긴 채소류와 덩어리가 큰 수박 등은 잘게 썰어 부피를 줄여서 배출합니다.<br>
-                  (4) 배출요일 및 시간을 지킵니다.
-                </h3>
-              </div>
-            </p>
-            <p>
-              <h2>음식물류폐기물로 넣어서는 안 되는 물질</h2>
-              <h4>- 채소류 : 쪽파, 대파, 미나리 등의 뿌리 / 고추씨, 고추대 / 양파, 마늘, 생강, 옥수수 껍질, 옥수수대</h4>
-              <h4>- 과일류 : 호두, 밤, 땅콩, 도토리, 코코넛, 파인애플 등의 딱딱한 껍데기 / 복숭아, 살구, 감 등 핵과류의 씨</h4>
-              <h4>- 곡류 : 왕겨</h4>
-              <h4>- 육류 : 소, 돼지, 닭 등의 털 및 뼈다귀</h4>
-              <h4>- 어패류 : 조개, 소라,전복, 꼬막, 멍게, 굴 등 패류 껍데기 / 게, 가재 등 갑각류의 껍데기, 생성뼈 / 복어내장</h4>
-              <h4>- 알껍질 : 달걀, 오리알, 메추리알, 타조알 등 껍데기</h4>
-              <h4>- 찌꺼기 : 각종 차류(녹차 등)찌꺼기, 한약재 찌꺼기</h4>
-            </p>
-          </li>
-          <li>
-            <p>
-              <h2>핵과류의 씨, 껍데기(갑각류,어패류), 뼈(닭 등의 뼈, 생선뼈)</h2>
-              <h4>수분이 적고 딱딱해서 재활용이 어렵습니다.</h4>
-            </p>
-            <div class="img">
-              <img src="recycleImg/peachseed.jpg" alt="핵과류 씨">
-              <img src="recycleImg/shell.jpg" alt="껍데기">
-              <img src="recycleImg/bone.jpeg" alt="뼈">
-            </div>
-            <p>
-              <h2>티백, 한약의 찌꺼기</h2>
-              <h4>재활용이 불가하기 때문에 일반쓰레기로 처리합니다.</h4>
-            </p>
-            <div class="img">
-              <img src="recycleImg/tbag.jpg" alt="티백">
-              <img src="recycleImg/herbalmedi.jpeg" alt="한약">
-            </div>
-            <p>
-              <h2>소금</h2>
-              <h4>소금과 같이 염분이 많이 함유된 음식은 비료나 사료로 쓰일 수 없으므로 일반쓰레기로 배출합니다.</h4>
-            </p>
-            <div class="img">
-              <img src="recycleImg/salt.jpg" alt="소금">
-            </div>
-            <p>
-              <h2>채소류(파뿌리, 채소의 마른 껍질)</h2>
-              <h4>파뿌리와 마른 껍질에는 가축의 소화능력을 떨어뜨리는 성분이 포함되어 있기 때문에 일반쓰레기로 배출합니다.(단, 우리가 음식에 넣어 먹는 부위의 파는 음식물 폐기물로 처리됩니다.)</h4>
-            </p>
-            <div class="img">
-              <img src="recycleImg/greenonion.jpg" alt="파뿌리">
-              <img src="recycleImg/garlic.jpg" alt="채소껍질">
-            </div>
-            <p>
-              <h2>생선 비늘이나 내장, 복어 내장</h2>
-              <h4>내장 등은 독성이 함유되어 있어 재활용하지 않습니다.</h4>
-            </p>
-            <div class="img">
-              <img src="recycleImg/blowfish.jpg" alt="복어내장">
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div id="content7" class="content7"> <!--의약품-->
-        <ul>
-          <li>
+    <div id="content2" class="content2"> <!--플라스틱-->
+      <ul>
+        <li>
+          <p>
+            <h2>1번 플라스틱(PET/PETE)</h2>
+            <h4>
+              : 일회성으로 만들어졌기 때문에 재사용의 경우 박테리아 번식 가능성이 커지고 사람의 호르몬 밸런스를 깨트릴 수 있는 화학성분을 내보낼 수 있다고 합니다. 열에도 약하기 때문에 재사용을 추천하지 않습니다. <br>
+              (예 : 플라스틱 물병, 케찹병, 탄산수병 등)
+            </h4>
+          </p>
+          <div class="img">
+            <img src="recycleImg/waterbottle.jpg" alt="생수병">
+            <img src="recycleImg/otherbottle.jpg" alt="음료수병">
+            <img src="recycleImg/takeoutcup.jpg" alt="데이크아웃컵">
+          </div>
+        </li>
+        <li>
+          <p>
+            <h2>2번 플라스틱(HDP/HDPE)</h2>
+            <h4>
+              : 해로운 물질이 배출되지 않습니다. 그래서 전문가들이 마시는 생수병을 살 때 적극 추천하는 플라스틱 물병입니다. 또한 전자레인지 사용이 가능합니다.(내열온도 : 70~100도)
+              <br>(예 : 생수병 뚜껑, 세제병, 영유아 장난감)
+            </h4>
+          </p>
+          <div class="img">
+            <img src="recycleImg/bottlecap.jpg" alt="생수병 뚜껑">
+            <img src="recycleImg/detergentbottle.jpg" alt="세제병">
+            <img src="recycleImg/plastictoy.jpg" alt="장난감">
+          </div>
+        </li>
+        <li>
+          <p>
+            <h2>3번 플라스틱(PVC or V)</h2>
+            <h4>
+              : DEHP 등 해로운 발암 물질을 배출해서 재활용이 불가능합니다. 열에 약하고 가열 시 환경호르몬이 방출됩니다.
+              <br>(예 : 비닐랩, 신발, 인조가죽가방, 우비)
+            </h4>
+          </p>
+          <div class="img">
+            <img src="recycleImg/plasticwrap.jpg" alt="식품용 비닐랩">
+            <img src="recycleImg/plasticshoes.jpg" alt="신발">
+            <img src="recycleImg/bag.jpg" alt="인조가죽가방">
+            <img src="recycleImg/raincoat.jpg" alt="우비">
+          </div>
+        </li>
+        <li>
+          <p>
+            <h2>4번 플라스틱(LDPE)</h2>
+            <h4>
+              : 재활용이 어려워 세척 후 일반 쓰레기로 버려야 합니다.
+              <br>(예 : 비닐 봉투, 비닐 장갑, 필름, 우유병)
+            </h4>
+          </p>
+          <div class="img">
+            <img src="recycleImg/plasticbag.jpg" alt="비닐봉투">
+            <img src="recycleImg/plasticgloves.jpg" alt="비닐장갑">
+            <img src="recycleImg/film.jpg" alt="필름">
+            <img src="recycleImg/plasticmilkbottle.png" alt="우유병">
+          </div>
+        </li>
+        <li>
+          <p>
+            <h2>5번 플라스틱(PP)</h2>
+            <h4>
+              : 가볍고 내구성이 강해 고온에서 모양 변형이 없습니다.<br>
+              재활용이 가능합니다.<br>
+              전자레인지 사용이 가능합니다.(내열 온도 : 121~165도)
+              <br>(예 : 색 있는 플라스틱컵, 반찬통, 주방용기)
+            </h4>
+          </p>
+          <div class="img">
+            <img src="recycleImg/colorcup.png" alt="색있는 플라스틱 컵">
+            <img src="recycleImg/foodcontainer.png" alt="반찬통">
+            <img src="recycleImg/kitchentools.jpeg" alt="주방용품">
+          </div>
+        </li>
+        <li>
+          <p>
+            <h2>6번 플라스틱(PS)</h2>
+            <h4>
+              : 가볍고 성형이 쉽습니다. 열에 약하고 해로운 물질이 배출됩니다. 재활용이 가능하지만 쉽지 않고 미세플라스틱 발생 위험으로 적절한 처리가 필요합니다.
+              <br>(예 : 플라스틱 수저, 스티로폼, 커피컵 뚜껑)
+            </h4>
+          </p>
+          <div class="img">
+            <img src="recycleImg/plastictools.png" alt="플라스틱 숟가락 포크">
+            <img src="recycleImg/styrofoam.png" alt="스티로폼">
+            <img src="recycleImg/plasticlid.jpg" alt="커피컵 뚜껑">
+          </div>
+        </li>
+        <li>
+          <p>
+            <h2>7번 플라스틱(PC/라벨없음)</h2>
+            <h4>
+              : 환경호르몬이 유출되고 발암물질이 들어있기 때문에 재활용이 어렵습니다.
+              <br>(예 : 햇반, 치약용기, 안경, 스마트폰 케이스)
+            </h4>
+          </p>
+          <div class="img">
+            <img src="recycleImg/instantrice.png" alt="햇반">
+            <img src="recycleImg/toothpaste.jpg" alt="치약용기">
+            <img src="recycleImg/glasses.jpg" alt="안경">
+            <img src="recycleImg/phonecase.jpg" alt="스마트폰 케이스">
+          </div>
+        </li>
+        <li>
+          <p>
+            <h2>재활용 불가능</h2>
+            <h4>
+              : 소재가 복합적인 경우 처리가 복잡해지고 비용이 많이 들어가는 경우가 많아 재활용이 어렵습니다. 재활용 처리 공정 안전 상의 문제로 불가능한 경우도 있습니다.
+              <br>(예 : 로고가 있는 테이크아웃 컵, 세제 등의 펌프, 빨대, CD)
+            </h4>
+          </p>
+          <div class="img">
+            <img src="recycleImg/printingcup.png" alt="로고 있는 테이크아웃 컵">
+            <img src="recycleImg/pump.jpg" alt="세제 및 샴푸 등의 펌프">
+            <img src="recycleImg/straw.jpg" alt="빨대">
+            <img src="recycleImg/CD.jpg" alt="CD">
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div id="content3" class="content3"> <!--캔/고철-->
+      <ul>
+        <li>
+          <p>
+            <h2>캔류</h2>
+            <h4>
+              : 내용물을 비운 후 물로 헹국 뒤 찌그러뜨려 배출합니다.
+              <br>부탄 가스는 구멍을 뚫어 가스를 제거한 후에 배출해야합니다.
+            </h4>
+          </p>
+          <div class="img">
+            <img src="recycleImg/can.jpg" alt="캔류">
+            <img src="recycleImg/butanegas.png" alt="부탄가스">
+          </div>
+        </li>
+        <li>
+          <p>
+            <h2>고철류</h2>
+            <h4>
+              : 금속은 봉투에 넣거나 끈으로 묶어서 배출합니다. (예 : 철사, 못, 폐공구, 철재 옷걸이)
+              <br>비철금속은 묻어있는 이물질을 제거 후에 배출합니다. (예 : 양은, 알루미늄, 스테인리스 재질)
+            </h4>
+          </p>
+          <div class="img">
+            <img src="recycleImg/wire.jpg" alt="철사">
+            <img src="recycleImg/nail.jpg" alt="못">
+            <img src="recycleImg/wastetools.png" alt="폐공구">
+            <img src="recycleImg/hanger.jpg" alt="철재 옷걸이">
+            <img src="recycleImg/pot.png" alt="양은">
+            <img src="recycleImg/aluminium.png" alt="알루미늄">
+            <img src="recycleImg/stainsteel.png" alt="스테인리스">
+          </div>
+        </li>
+        <li>
+          <p>
+            <h2>폐유통, 페인트통, 알루미늄 호일</h2>
+            <h4>
+              : 폐유통, 페인트통의 경우 유해물질이 묻어있어 재활용이 어렵습니다.
+              <br>알루미늄 호일의 경우 공정에 많은 차이가 있어 수작업으로 분류 후 재활용을 진행해야 하는데 이 과정에서 같이 투입된 캔들도 재활용 불가로 만들기 때문에 재활용이 어렵습니다.
+            </h4>
+          </p>
+          <div class="img">
+            <img src="recycleImg/paint.jpg" alt="폐유통, 페인트통">
+            <img src="recycleImg/foil.jpg" alt="알루미늄 호일">
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div id="content4" class="content4"> <!--유리-->
+      <ul>
+        <li>
+          <p>
+            <h2>깨지지 않은 유리 그릇, 유색 유리병</h2>
+            <h4>: 뚜껑 제거 후 색깔별로(흰색, 갈색, 녹색) 분리해서 배출합니다. 빈용기의 경우 내용물을 비우고 이물질을 넣지 않도록 합니다. </h4>
+          </p>
+          <div class="img">
+            <img src="recycleImg/plate.jpg" alt="유리그릇">
+            <img src="recycleImg/glassbottle.jpg" alt="유리병">
+            <img src="recycleImg/colorbottles.jpg" alt="색유리병">
+          </div>
+        </li>
+        <li>
+          <p>
+            <h2>도자기 및 사기그릇, 거울, 내열 유리, 색이 섞인 유색 유리병</h2>
+            <h4>: 신문지에 말아서 일반쓰레기로 배출합니다. 양이 많을 경우 특수규격마대를 구매 후에 배출합니다.</h4>
+          </p>
+          <div class="img">
+            <img src="recycleImg/potterybowl.jpg" alt="도자기">
+            <img src="recycleImg/mirror.jpg" alt="거울">
+            <img src="recycleImg/heatglass.jpg" alt="내열유리">
+            <img src="recycleImg/colormixbottle.jpg" alt="색이 섞인 유리병">
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div id="content5" class="content5"> <!--비닐-->
+      <ul>
+        <li>
+          <p>
+            <h2>비닐봉투, 비닐포장재, 지퍼백</h2>
+            <h4>
+              : 지퍼백의 지퍼는 같이 배출합니다. 슬라이딩 지퍼백의 플라스틱 닫개는 일반쓰레기로 배출합니다. <br>
+              흩날리지 않게 봉투에 담아 배출합니다.
+            </h4>
+          </p>
+          <div class="img">
+            <img src="recycleImg/vinyl.png" alt="비닐">
+            <img src="recycleImg/zipperbag.jpg" alt="지퍼백">
+          </div>
+        </li>
+        <li>
+          <p>
+            <h2>딱지 모양으로 접은 봉지, 테이프, 스티커</h2>
+            <h4>
+              : 비닐포장재를 딱지 모양으로 접는 경우 재활용 작업장에서 선별이 어렵기 때문에 주의해서 배출합니다. <br>
+              테이프나 스티커의 경우 코팅때문에 재활용이 어렵기 때문에 일반쓰레기로 배출합니다. 
+            </h4>
+          </p>
+          <div class="img">
+            <img src="recycleImg/foldvinyl.jpeg" alt="딱지접기 비닐">
+            <img src="recycleImg/boxtape.jpg" alt="테이프">
+            <img src="recycleImg/sticker.jpg" alt="스티커">
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div id="content6" class="content6"> <!--음식물-->
+      <ul>
+        <li>
+          <p>
             <div class="howTo">
-              <h2>폐의약품 배출 방법</h2>
+              <h2>음식물 폐기물 배출 방법</h2>
               <h3>
-                - 가정에서 배출되는 폐의약품은 약국, 보건소(보건의료원 포함), 보건지소 또는 보건진료소로 배출합니다.<br>
-                - 사용 가능한 의약품은 복약지도를 받도록 합니다.<br>
-                - 1차 포장재는 폐의약품 전용수거함으로 배출하고, 2차 포장재는 재질에 따라 분리배출합니다.
+                (1) 최대한 수분을 제거 후 배출합니다.<br>
+                (2) 음식물 외의 이물질은 제거합니다.<br>
+                (3) 길이가 긴 채소류와 덩어리가 큰 수박 등은 잘게 썰어 부피를 줄여서 배출합니다.<br>
+                (4) 배출요일 및 시간을 지킵니다.
               </h3>
             </div>
-            <p>
-              <h2>왜 분리배출 해야 할까요?</h2>
-              <h4>
-                : 가정 내 폐의약품이 매립되거나 도시하수로 배출될 경우 공기, 토양, 수질 등의 환경오염을 유발하고 생태계 교란의 원인이 됩니다. 폐의약품은 모아서 약국에 비치된 전용수거함으로 배출해야 합니다.
+          </p>
+          <p>
+            <h2>음식물류폐기물로 넣어서는 안 되는 물질</h2>
+            <h4>- 채소류 : 쪽파, 대파, 미나리 등의 뿌리 / 고추씨, 고추대 / 양파, 마늘, 생강, 옥수수 껍질, 옥수수대</h4>
+            <h4>- 과일류 : 호두, 밤, 땅콩, 도토리, 코코넛, 파인애플 등의 딱딱한 껍데기 / 복숭아, 살구, 감 등 핵과류의 씨</h4>
+            <h4>- 곡류 : 왕겨</h4>
+            <h4>- 육류 : 소, 돼지, 닭 등의 털 및 뼈다귀</h4>
+            <h4>- 어패류 : 조개, 소라,전복, 꼬막, 멍게, 굴 등 패류 껍데기 / 게, 가재 등 갑각류의 껍데기, 생성뼈 / 복어내장</h4>
+            <h4>- 알껍질 : 달걀, 오리알, 메추리알, 타조알 등 껍데기</h4>
+            <h4>- 찌꺼기 : 각종 차류(녹차 등)찌꺼기, 한약재 찌꺼기</h4>
+          </p>
+        </li>
+        <li>
+          <p>
+            <h2>핵과류의 씨, 껍데기(갑각류,어패류), 뼈(닭 등의 뼈, 생선뼈)</h2>
+            <h4>수분이 적고 딱딱해서 재활용이 어렵습니다.</h4>
+          </p>
+          <div class="img">
+            <img src="recycleImg/peachseed.jpg" alt="핵과류 씨">
+            <img src="recycleImg/shell.jpg" alt="껍데기">
+            <img src="recycleImg/bone.jpeg" alt="뼈">
+          </div>
+          <p>
+            <h2>티백, 한약의 찌꺼기</h2>
+            <h4>재활용이 불가하기 때문에 일반쓰레기로 처리합니다.</h4>
+          </p>
+          <div class="img">
+            <img src="recycleImg/tbag.jpg" alt="티백">
+            <img src="recycleImg/herbalmedi.jpeg" alt="한약">
+          </div>
+          <p>
+            <h2>소금</h2>
+            <h4>소금과 같이 염분이 많이 함유된 음식은 비료나 사료로 쓰일 수 없으므로 일반쓰레기로 배출합니다.</h4>
+          </p>
+          <div class="img">
+            <img src="recycleImg/salt.jpg" alt="소금">
+          </div>
+          <p>
+            <h2>채소류(파뿌리, 채소의 마른 껍질)</h2>
+            <h4>파뿌리와 마른 껍질에는 가축의 소화능력을 떨어뜨리는 성분이 포함되어 있기 때문에 일반쓰레기로 배출합니다.(단, 우리가 음식에 넣어 먹는 부위의 파는 음식물 폐기물로 처리됩니다.)</h4>
+          </p>
+          <div class="img">
+            <img src="recycleImg/greenonion.jpg" alt="파뿌리">
+            <img src="recycleImg/garlic.jpg" alt="채소껍질">
+          </div>
+          <p>
+            <h2>생선 비늘이나 내장, 복어 내장</h2>
+            <h4>내장 등은 독성이 함유되어 있어 재활용하지 않습니다.</h4>
+          </p>
+          <div class="img">
+            <img src="recycleImg/blowfish.jpg" alt="복어내장">
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div id="content7" class="content7"> <!--의약품-->
+      <ul>
+        <li>
+          <div class="howTo">
+            <h2>폐의약품 배출 방법</h2>
+            <h3>
+              - 가정에서 배출되는 폐의약품은 약국, 보건소(보건의료원 포함), 보건지소 또는 보건진료소로 배출합니다.<br>
+              - 사용 가능한 의약품은 복약지도를 받도록 합니다.<br>
+              - 1차 포장재는 폐의약품 전용수거함으로 배출하고, 2차 포장재는 재질에 따라 분리배출합니다.
+            </h3>
+          </div>
+          <p>
+            <h2>왜 분리배출 해야 할까요?</h2>
+            <h4>
+              : 가정 내 폐의약품이 매립되거나 도시하수로 배출될 경우 공기, 토양, 수질 등의 환경오염을 유발하고 생태계 교란의 원인이 됩니다. 폐의약품은 모아서 약국에 비치된 전용수거함으로 배출해야 합니다.
+            </h4>
+          </p>
+        </li>
+        <li>
+          <p>
+            <h2>포장된 알약, 캡슐약</h2>
+            <h4>
+              : 포장된 비닐, 종이, PTP케이스를 제거하여 내용물만 비닐에 따로 담아 모아 가까운 약국, 보건소, 주민센터에 가져다 주거나 폐의약품 수거함에 버립니다.
+            </h4>
+          </p>
+          <div class="img">
+            <img src="recycleImg/wrapmedicine.jpg" alt="포장된 알약">
+          </div>
+          <p>
+            <h2>가루약</h2>
+            <h4>
+              : 가루 날림 현상으로 포장지를 뜯지 않고 그대로 모아둔 후 가까운 약국, 보건소, 주민센터에 가져다 주거나 폐의약품 수거함에 버립니다.
+            </h4>
+          </p>
+          <div class="img">
+            <img src="recycleImg/powdermedicine.jpeg" alt="가루약">
+          </div>
+          <p>
+            <h2>스프레이 등 특수 용기에 담겨 있는 기타 의약품</h2>
+            <h4>
+              : 기타의약품은 특수용기에 담겨 있는 그대로 모아두고 가까운 약국, 보건소, 주민센터에 가져다 주거나 폐의약품 수거함에 버립니다.
+            </h4>
+          </p>
+          <div class="img">
+            <img src="recycleImg/spraymedicine.jpeg" alt="스프레이형 연고">
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div id="content8" class="content8"> <!--기타-->
+      <ul>
+        <li>
+          <p>
+            <h2>폐식용유</h2>
+            <h4>: 음식물 등 이물질이 섞이지 않게 모아 폐식용유 전용수거함에 배출합니다.</h4>
+          </p>
+          <div class="img">
+            <img src="recycleImg/oil.jpeg" alt="식용유">
+          </div>
+          <p>
+            <h2>폐건전지</h2>
+            <h4>: 전지를 제품에서 분리하여 배출합니다. 주요거점(동 주민센터, 아파트의 폐형광등 또는 폐건전지 일체함, 편의점, 아파트 동별 우편함 등)의 전용 수거함에 배출합니다.</h4>
+          </p>
+          <div class="img">
+            <img src="recycleImg/battery.jpeg" alt="폐건전지">
+          </div>
+          <p>
+            <h2>폐형광등</h2>
+              <h4>: 폐형광등은 유해물질을 포함하고 있으므로 깨지지 않도록 주의하여 폐형광등 전용수거함에 배출합니다. 깨진 폐형광등은 신문지 등으로 감싸 사람이 찔리거나 베이지 않도록 하여 종량제 봉투에 담아 배출합니다.<br>
+              (재활용이 가능한 형광등 종류: 직관형 형광램프(FL), 환형(원형)형광램프(FCL), 안정기 내장형램프(CFL), 콤팩트형 램프(FPL))
               </h4>
-            </p>
-          </li>
-          <li>
+          </p>
+          <div class="img">
+            <img src="recycleImg/FL.jpeg" alt="FL">
+            <img src="recycleImg/FCL.jpeg" alt="FCL">
+            <img src="recycleImg/CFL.jpeg" alt="CFL">
+            <img src="recycleImg/FPL.jpeg" alt="FPL">
+          </div>
             <p>
-              <h2>포장된 알약, 캡슐약</h2>
-              <h4>
-                : 포장된 비닐, 종이, PTP케이스를 제거하여 내용물만 비닐에 따로 담아 모아 가까운 약국, 보건소, 주민센터에 가져다 주거나 폐의약품 수거함에 버립니다.
-              </h4>
+              <h2>의류 및 원단류</h2>
+              <h4>: 지자체 또는 민간 재활용사업자가 비치한 폐의류 전용수거함에 배출합니다. 전용수거함이 없는 문전수거 지역 등에서는 물기에 젖지 않도록 마대 등에 담거나 묶어서 배출합니다.</h4>
             </p>
             <div class="img">
-              <img src="recycleImg/wrapmedicine.jpg" alt="포장된 알약">
+              <img src="recycleImg/clothes.jpeg" alt="의류">
+              <img src="recycleImg/clothes2.jpeg" alt="원단">
             </div>
-            <p>
-              <h2>가루약</h2>
-              <h4>
-                : 가루 날림 현상으로 포장지를 뜯지 않고 그대로 모아둔 후 가까운 약국, 보건소, 주민센터에 가져다 주거나 폐의약품 수거함에 버립니다.
-              </h4>
-            </p>
-            <div class="img">
-              <img src="recycleImg/powdermedicine.jpeg" alt="가루약">
-            </div>
-            <p>
-              <h2>스프레이 등 특수 용기에 담겨 있는 기타 의약품</h2>
-              <h4>
-                : 기타의약품은 특수용기에 담겨 있는 그대로 모아두고 가까운 약국, 보건소, 주민센터에 가져다 주거나 폐의약품 수거함에 버립니다.
-              </h4>
-            </p>
-            <div class="img">
-              <img src="recycleImg/spraymedicine.jpeg" alt="스프레이형 연고">
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div id="content8" class="content8"> <!--기타-->
-        <ul>
-          <li>
-            <p>
-              <h2>폐식용유</h2>
-              <h4>: 음식물 등 이물질이 섞이지 않게 모아 폐식용유 전용수거함에 배출합니다.</h4>
-            </p>
-            <div class="img">
-              <img src="recycleImg/oil.jpeg" alt="식용유">
-            </div>
-            <p>
-              <h2>폐건전지</h2>
-              <h4>: 전지를 제품에서 분리하여 배출합니다. 주요거점(동 주민센터, 아파트의 폐형광등 또는 폐건전지 일체함, 편의점, 아파트 동별 우편함 등)의 전용 수거함에 배출합니다.</h4>
-            </p>
-            <div class="img">
-              <img src="recycleImg/battery.jpeg" alt="폐건전지">
-            </div>
-            <p>
-              <h2>폐형광등</h2>
-                <h4>: 폐형광등은 유해물질을 포함하고 있으므로 깨지지 않도록 주의하여 폐형광등 전용수거함에 배출합니다. 깨진 폐형광등은 신문지 등으로 감싸 사람이 찔리거나 베이지 않도록 하여 종량제 봉투에 담아 배출합니다.<br>
-                (재활용이 가능한 형광등 종류: 직관형 형광램프(FL), 환형(원형)형광램프(FCL), 안정기 내장형램프(CFL), 콤팩트형 램프(FPL))
-                </h4>
-            </p>
-            <div class="img">
-              <img src="recycleImg/FL.jpeg" alt="FL">
-              <img src="recycleImg/FCL.jpeg" alt="FCL">
-              <img src="recycleImg/CFL.jpeg" alt="CFL">
-              <img src="recycleImg/FPL.jpeg" alt="FPL">
-            </div>
-              <p>
-                <h2>의류 및 원단류</h2>
-                <h4>: 지자체 또는 민간 재활용사업자가 비치한 폐의류 전용수거함에 배출합니다. 전용수거함이 없는 문전수거 지역 등에서는 물기에 젖지 않도록 마대 등에 담거나 묶어서 배출합니다.</h4>
-              </p>
-              <div class="img">
-                <img src="recycleImg/clothes.jpeg" alt="의류">
-                <img src="recycleImg/clothes2.jpeg" alt="원단">
-              </div>
-          </li>
-          <li>재활용 x</li>
-        </ul>
-      </div>
+        </li>
+        <li>재활용 x</li>
+      </ul>
     </div>
   </div>
 
-  <script>
-    window.onload = function() {
+  <div class="sideCalc">
+    <h3>탄소 계산기</h3>
+    <div class="calcCnt">
+      <img class="next" src="../img/calc_l.png" alt="왼">
+      <img class="calcImg" src="../img/glass.png" alt="배터리">
+      <img class="next" src="../img/calc_r.png" alt="오">
+    </div>
+    <div class="calcNum">
+      <button>-</button>
+      <div class="num">1</div>
+      <button>+</button>
+    </div>
+    <div class="calcSum">
+      <button class="sumBtn">줄인 총 탄소량</button>
+      <div class="sum">0.3 kg</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // 페이지가 로드될 때 실행되는 함수
+  window.onload = function() {
+      // URL에서 category 값을 가져옴
       const urlParams = new URLSearchParams(window.location.search);
       const category = urlParams.get('category');
       if (category) {
           showContent(category);
-      } else {
-          // URL에 category가 없으면 모든 콘텐츠를 숨김
-          const contents = document.querySelectorAll('.recycleContent > div');
-          contents.forEach(content => content.classList.remove('active'));
       }
   };
 
+  // 카테고리별 콘텐츠를 표시하는 함수
   function showContent(category) {
-    // 모든 컨텐츠를 숨김
-    const contents = document.querySelectorAll('.recycleContent > div');
-    contents.forEach(content => content.style.display = 'none'); // display 속성을 none으로 설정
+      // 모든 콘텐츠를 숨김
+      const contents = document.querySelectorAll('.recycleContent > div');
+      contents.forEach(content => content.classList.remove('active'));
+      
+      // 선택한 카테고리의 콘텐츠를 표시
+      const selectedContent = document.getElementById('content' + category);
 
-    // 선택한 카테고리의 콘텐츠를 표시
-    const selectedContent = document.getElementById('content' + category);
-    if (selectedContent) {
-        selectedContent.style.display = 'block'; // 선택된 컨텐츠만 보이도록 설정
-    }
-
-    // 모든 버튼에서 active 클래스 제거
-    const buttons = document.querySelectorAll('.recycleTab button');
-    buttons.forEach(button => button.classList.remove('active'));
-
-    // 선택한 버튼에 active 클래스 추가
-    const activeButton = document.getElementById('button' + category);
-    if (activeButton) {
-        activeButton.classList.add('active');
-    }
-
-    // 모든 subTab을 숨김
-    const subTabs = document.querySelectorAll('.recycleSubTab ul li');
-    subTabs.forEach(subTab => subTab.style.display = 'none');
-
-    // 선택한 subTab을 표시
-    const selectedSubTab = document.querySelector('.subTab' + category);
-    if (selectedSubTab) {
-        selectedSubTab.style.display = 'block';
-    }
-}
-
-
-function showContentFromURL() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const category = urlParams.get('category');
-    if (category) {
-      const contentId = `content${category}`;
-      const contentElement = document.getElementById(contentId);
-      if (contentElement) {
-        // 모든 콘텐츠를 숨김
-        document.querySelectorAll('.content').forEach(el => el.classList.remove('active'));
-        // 해당 콘텐츠만 표시
-        contentElement.classList.add('active');
-        contentElement.scrollIntoView({ behavior: 'smooth' });
-      } else {
-        console.error('콘텐츠 요소를 찾을 수 없습니다:', contentId);
+      if (selectedContent) {
+          selectedContent.classList.add('active');
       }
-    } else {
-      console.error('카테고리 파라미터가 없습니다.');
-    }
+      
+      // 모든 버튼에서 active 클래스 제거
+      const buttons = document.querySelectorAll('.recycleTab button');
+      buttons.forEach(button => button.classList.remove('active'));
+      
+      // 선택한 버튼에 active 클래스 추가
+      const activeButton = document.getElementById('button' + category);
+      if (activeButton) {
+          activeButton.classList.add('active');
+      }
+      
+      // 해당 텍스트를 표시하는 부분 수정
+      const activeButtonText = activeButton.innerText; // 현재 활성화된 버튼의 텍스트
+      const contentText = document.getElementById('.content' + category + ' ul'); // 해당 콘텐츠의 텍스트 엘리먼트
+      console.log(contentText);
+      if (contentText) {
+      contentText.innerText = activeButtonText; // 텍스트 엘리먼트에 버튼 텍스트를 설정
+      }
+      
+      // 모든 subTab을 숨김
+      const subTabs = document.querySelectorAll('.recycleSubTab ul li');
+      subTabs.forEach(subTab => subTab.style.display = 'none');
+      
+      // 선택한 subTab을 표시
+      const selectedSubTab = document.querySelector('.subTab' + category);
+      if (selectedSubTab) {
+          selectedSubTab.style.display = 'block';
+      }
   }
-
-  // 페이지 로드 시 콘텐츠 표시
-  document.addEventListener('DOMContentLoaded', showContentFromURL);
-  </script>
+</script>
 </body>
 </html>
