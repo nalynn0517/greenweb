@@ -541,57 +541,64 @@
 </div>
 
 <script>
-  // 페이지가 로드될 때 실행되는 함수
-  window.onload = function() {
-      // URL에서 category 값을 가져옴
+ function redirectToContent(contentId) {
+      window.location.href = `./recycle.html?category=${contentId}`;
+    }
+
+    window.onload = function() {
       const urlParams = new URLSearchParams(window.location.search);
       const category = urlParams.get('category');
       if (category) {
           showContent(category);
+      } else {
+          const contents = document.querySelectorAll('.recycleContent > div');
+          contents.forEach(content => content.classList.remove('active'));
       }
-  };
+    };
 
-  // 카테고리별 콘텐츠를 표시하는 함수
-  function showContent(category) {
-      // 모든 콘텐츠를 숨김
+    function showContent(category) {
+      // 모든 컨텐츠를 숨김
       const contents = document.querySelectorAll('.recycleContent > div');
-      contents.forEach(content => content.classList.remove('active'));
-      
+      contents.forEach(content => content.style.display = 'none');
+
       // 선택한 카테고리의 콘텐츠를 표시
       const selectedContent = document.getElementById('content' + category);
-
       if (selectedContent) {
-          selectedContent.classList.add('active');
+          selectedContent.style.display = 'block';
       }
-      
+
       // 모든 버튼에서 active 클래스 제거
       const buttons = document.querySelectorAll('.recycleTab button');
       buttons.forEach(button => button.classList.remove('active'));
-      
+
       // 선택한 버튼에 active 클래스 추가
       const activeButton = document.getElementById('button' + category);
       if (activeButton) {
           activeButton.classList.add('active');
       }
-      
-      // 해당 텍스트를 표시하는 부분 수정
-      const activeButtonText = activeButton.innerText; // 현재 활성화된 버튼의 텍스트
-      const contentText = document.getElementById('.content' + category + ' ul'); // 해당 콘텐츠의 텍스트 엘리먼트
-      console.log(contentText);
-      if (contentText) {
-      contentText.innerText = activeButtonText; // 텍스트 엘리먼트에 버튼 텍스트를 설정
-      }
-      
+
       // 모든 subTab을 숨김
       const subTabs = document.querySelectorAll('.recycleSubTab ul li');
       subTabs.forEach(subTab => subTab.style.display = 'none');
-      
+
       // 선택한 subTab을 표시
       const selectedSubTab = document.querySelector('.subTab' + category);
       if (selectedSubTab) {
           selectedSubTab.style.display = 'block';
       }
-  }
+    }
+
+    function showSubContent(category, subCategory) {
+      // 모든 서브 컨텐츠를 숨김
+      const subContents = document.querySelectorAll(`.content${category} ul li`);
+      subContents.forEach(content => content.style.display = 'none');
+
+      // 선택한 서브 카테고리의 콘텐츠를 표시
+      const selectedSubContent = subContents[subCategory - 1];
+      if (selectedSubContent) {
+          selectedSubContent.style.display = 'block';
+      }
+    }
 </script>
 </body>
 </html>
