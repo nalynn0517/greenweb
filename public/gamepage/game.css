@@ -31,8 +31,10 @@ h1.game-title {
     ), url("../gamepage/img/gameback.png");
     background-size: cover;
     background-position: center;
-    width: 97%;
-    height: 70%;
+    width: 95%;
+    height: calc(95vw * 0.75); /* 고정된 비율 (4:3) */
+    max-width: 1000px;
+    max-height: 600px; 
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
