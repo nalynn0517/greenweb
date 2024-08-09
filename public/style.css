@@ -20,6 +20,7 @@ body {
 }
 
 header {
+  position:absolute;
   background-color: #ffffff;
   color: #000000;
   padding: 10px;
@@ -82,8 +83,6 @@ nav ul li:last-child {
   z-index: 1000; /* 헤더보다 위에 보이도록 z-index 설정 */
 }
 
-
-
 .kakao-infowindow.infowindow-content {
   width: 300px; /* 원하는 너비로 설정 */
   height: 200px; /* 원하는 높이로 설정 */
@@ -92,6 +91,17 @@ nav ul li:last-child {
 
 .titleMap{
   margin-left: 10%;
+}
+
+
+.search-bar {
+  float: right;
+  margin-left: 80px;
+
+}
+
+.search-bar input[type="text"] {
+  width: 150px;
 }
 
 .search-bar button img {

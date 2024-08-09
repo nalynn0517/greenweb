@@ -194,18 +194,18 @@ function initMap() {
         console.error('Coords data not defined.');
     }
 
-    // // 검색 버튼 클릭 이벤트 설정
-    // const searchButton = document.getElementById("searchButton");
-    // const searchInput = document.getElementById("searchInput");
+    // 검색 버튼 클릭 이벤트 설정
+    const searchButton = document.getElementById("searchButton");
+    const searchInput = document.getElementById("searchInput");
 
-    // if (searchButton && searchInput) {
-    //     searchButton.addEventListener("click", function() {
-    //         const searchQuery = searchInput.value;
-    //         searchStores(searchQuery);
-    //     });
-    // } else {
-    //     console.error('Search button or input element not found.');
-    // }
+    if (searchButton && searchInput) {
+        searchButton.addEventListener("click", function() {
+            const searchQuery = searchInput.value;
+            searchStores(searchQuery);
+        });
+    } else {
+        console.error('Search button or input element not found.');
+    }
 }
 
 // 확대 함수
