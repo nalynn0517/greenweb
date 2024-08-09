@@ -52,94 +52,94 @@
 
         
         <div class="banner3">
-                <h1>올바른 분리수거 배출 가이드</h1>
-            <div class="container">
-                <div class="icons">
-                    <div class="icon" onclick="navigateToRecyclePage(1)">
-                        <img src="img/paper.png" alt="종이">
-                        <span>종이</span>
-                    </div>
-                    <div class="icon" onclick="navigateToRecyclePage(2)">
-                        <img src="img/plastic.png" alt="플라스틱">
-                        <span>플라스틱</span>
-                    </div>
-                    <div class="icon" onclick="navigateToRecyclePage(3)">
-                        <img src="img/metal.png" alt="금속">
-                        <span>금속</span>
-                    </div>
-                    <div class="icon" onclick="navigateToRecyclePage(4)">
-                        <img src="img/glass.png" alt="유리">
-                        <span>유리</span>
-                    </div>
-                    <div class="icon" onclick="navigateToRecyclePage(5)">
-                        <img src="img/vinlybag.png" alt="비닐">
-                        <span>비닐</span>
-                    </div>
-                    <div class="icon" onclick="navigateToRecyclePage(6)">
-                        <img src="img/organic.png" alt="음식물">
-                        <span>음식물</span>
-                    </div>
-                    <div class="icon" onclick="navigateToRecyclePage(7)">
-                        <img src="img/medicine.png" alt="의약품">
-                        <span>의약품</span>
-                    </div>
-                    <div class="icon" onclick="navigateToRecyclePage(8)">
-                        <img src="img/battery.png" alt="기타">
-                        <span>기타</span>
-                    </div>
+            <h1>올바른 분리수거 배출 가이드</h1>
+        <div class="container">
+            <div class="icons">
+                <div class="icon" onclick="navigateToRecyclePage(1)">
+                    <img src="img/paper.png" alt="종이">
+                    <span>종이</span>
+                </div>
+                <div class="icon" onclick="navigateToRecyclePage(2)">
+                    <img src="img/plastic.png" alt="플라스틱">
+                    <span>플라스틱</span>
+                </div>
+                <div class="icon" onclick="navigateToRecyclePage(3)">
+                    <img src="img/metal.png" alt="금속">
+                    <span>금속</span>
+                </div>
+                <div class="icon" onclick="navigateToRecyclePage(4)">
+                    <img src="img/glass.png" alt="유리">
+                    <span>유리</span>
+                </div>
+                <div class="icon" onclick="navigateToRecyclePage(5)">
+                    <img src="img/vinlybag.png" alt="비닐">
+                    <span>비닐</span>
+                </div>
+                <div class="icon" onclick="navigateToRecyclePage(6)">
+                    <img src="img/organic.png" alt="음식물">
+                    <span>음식물</span>
+                </div>
+                <div class="icon" onclick="navigateToRecyclePage(7)">
+                    <img src="img/medicine.png" alt="의약품">
+                    <span>의약품</span>
+                </div>
+                <div class="icon" onclick="navigateToRecyclePage(8)">
+                    <img src="img/battery.png" alt="기타">
+                    <span>기타</span>
                 </div>
             </div>
         </div>
+    </div>
 
-        <script>
-            function navigateToRecyclePage(category) {
-                window.location.href = './recyclePage/recycle.html?category=' + category;
-            }
-        </script>
-        
-        <footer>
-            <div class="footerCont">
-                <span class="ftitle">소속</span>
-                <span>한세대학교 ICT융합학과</span>
-                <br>
-                <span class="ftitle">자료 출처</span>
-                <span>한국폐기물협회</span>
-                <span>KOSIS 국가통계포털</span>
-                <span>환경부</span>
-                <br>
-                <span class="ftitle">이미지 출처</span>
-                <span>freepik</span>
-                <span>flaticon</span>
-                <span>unsplash</span>
-            </div>
-            <p>© 바른. All rights reserved.</p>
-        </footer>
-        
-        <script>
-            // 분리수거 페이지로 연결
+    <script>
+        function navigateToRecyclePage(category) {
+            window.location.href = './recyclePage/recycle.html?category=' + category;
+        }
+    </script>
     
-            // 슬라이드 배너 자동 슬라이드 기능 추가
-            document.addEventListener("DOMContentLoaded", function() {
-                const slideContainer = document.querySelector(".slider .slide-container");
-                const slides = document.querySelectorAll(".slide-container a");
-                let slideIndex = 0;
-                const slideWidth = 100; // 슬라이드 너비를 퍼센트로 설정
-                const totalSlides = slides.length;
+    <footer>
+        <div class="footerCont">
+            <span class="ftitle">소속</span>
+            <span>한세대학교 ICT융합학과</span>
+            <br>
+            <span class="ftitle">자료 출처</span>
+            <span>한국폐기물협회</span>
+            <span>KOSIS 국가통계포털</span>
+            <span>환경부</span>
+            <br>
+            <span class="ftitle">이미지 출처</span>
+            <span>freepik</span>
+            <span>flaticon</span>
+            <span>unsplash</span>
+        </div>
+        <p>© 바른. All rights reserved.</p>
+    </footer>
     
-                setInterval(function() {
-                    slideIndex++;
-                    if (slideIndex === totalSlides) {
-                        slideIndex = 0;
-                    }
-                    slideContainer.style.transition = "transform 0.5s ease-in-out";
-                    slideContainer.style.transform = `translateX(${-slideWidth * slideIndex}%)`;
-                }, 2700);
-            });
-    
-            // 팝업 창 열기
-            window.onload = function() {
-                const popupWindow = window.open("pop.html", "", "width=500,height=500,left=0,top=0");
-            };
-        </script>
+    <script>
+        // 분리수거 페이지로 연결
+
+        // 슬라이드 배너 자동 슬라이드 기능 추가
+        document.addEventListener("DOMContentLoaded", function() {
+            const slideContainer = document.querySelector(".slider .slide-container");
+            const slides = document.querySelectorAll(".slide-container a");
+            let slideIndex = 0;
+            const slideWidth = 100; // 슬라이드 너비를 퍼센트로 설정
+            const totalSlides = slides.length;
+
+            setInterval(function() {
+                slideIndex++;
+                if (slideIndex === totalSlides) {
+                    slideIndex = 0;
+                }
+                slideContainer.style.transition = "transform 0.5s ease-in-out";
+                slideContainer.style.transform = `translateX(${-slideWidth * slideIndex}%)`;
+            }, 2700);
+        });
+
+        // 팝업 창 열기
+        window.onload = function() {
+            const popupWindow = window.open("pop.html", "", "width=500,height=500,left=0,top=0");
+        };
+    </script>
 </body>
 </html>
