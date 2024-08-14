@@ -95,14 +95,15 @@ document.addEventListener('DOMContentLoaded', () => {
             score += 3;
             correctCount++;
             resultMessage.textContent = "정답입니다!";
-            modalText.innerHTML = `${trashItem.text}는 ${binType} 분리수거함에 올바르게 분리되었습니다.<br><br> ${getCorrectExplanation(trashItem)}`;
+            modalText.innerHTML = `${trashItem.text}은/는 ${binType} 분리수거함에 올바르게 분리되었습니다.<br><br> ${getCorrectExplanation(trashItem)}`;
             updateCarbonReduction();
         } else {
             lives--;
             updateLives();
             resultMessage.textContent = "틀렸습니다!";
-            modalText.innerHTML = `${trashItem.text}는 ${binType} 분리수거함에 잘못 분리되었습니다.<br><br>${getIncorrectExplanation(trashItem)}`;
+            modalText.innerHTML = `${trashItem.text}은/는 ${binType} 분리수거함에 잘못 분리되었습니다.<br><br>${getIncorrectExplanation(trashItem)}`;
         }
+        localStorage.setItem('gamePoints', score);
         scoreDisplay.textContent = score;
         explanationModal.style.display = "block";
         if (lives <= 0) {
@@ -149,6 +150,14 @@ document.addEventListener('DOMContentLoaded', () => {
             bin.removeEventListener('drop', drop);
         });
         showRestartButton();
+
+        const points = calculatePoints(); // 포인트 계산 로직 (예시)
+            
+        // localStorage에 포인트 저장
+        localStorage.setItem('gamePoints', points);
+            
+        // 장바구니 테스트 버튼을 표시
+        document.getElementById('testCartButton').style.display = 'block';    
     }
 
     function showRestartButton() {
@@ -280,7 +289,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 '화장품': "화장품 용기는 내용물을 비우고 깨끗이 헹군 후 배출해주세요."
             }
         };
-        return `${explanations[trashItem.type][trashItem.text]}<br><br>다음 번에는 ${trashItem.text}를 ${trashItem.type} 분리수거함에 올바르게 분리해 주세요.`;
+        return `${explanations[trashItem.type][trashItem.text]}<br><br>다음 번에는 ${trashItem.text}을/를 ${trashItem.type} 분리수거함에 올바르게 분리해 주세요.`;
     }
     closeBtn.addEventListener('click', closeModal);
 
@@ -298,36 +307,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     
-    // 품목 이미지 리스트
-    const itemImages = [
-        "../img/paper.png",
-        "../img/glass.png",
-        "../img/plastic.png",
-        "../img/metal.png",
-        "../img/vinylbag.png",
-        "../img/organic.png",
-        "../img/medicine.png",
-        "../img/battery.png"
-    ];
-
-    let currentIndex = 0; // 현재 이미지의 인덱스
-
-    function updateImage(index) {
-        const imgElement = document.getElementById('currentImage');
-        imgElement.src = itemImages[index];
+    
+    function calculatePoints() {
+        return score; // 예시 값
     }
-
-    document.getElementById('prevButton').onclick = function() {
-        currentIndex = (currentIndex - 1 + itemImages.length) % itemImages.length;
-        updateImage(currentIndex);
-    };
-
-    document.getElementById('nextButton').onclick = function() {
-        currentIndex = (currentIndex + 1) % itemImages.length;
-        updateImage(currentIndex);
-    };
-
-    // 초기 이미지 설정
-    updateImage(currentIndex);
+    
+    // 장바구니 테스트 버튼 클릭 시 장바구니 페이지로 이동
+    document.getElementById("testCartButton").addEventListener("click", function() {
+        const points = localStorage.getItem('gamePoints');
+        if (points) {
+            window.location.href = '../cartpage/cart.html'; // 경로 수정
+        } else {
+            console.error('포인트가 설정되지 않았습니다.');
+        }
+    });
+    
 
 });

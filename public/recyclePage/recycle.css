@@ -143,6 +143,13 @@ nav ul li:last-child {
   height: 150px;
 }
 
+.recycleContent > div {
+  display: none;
+}
+.recycleContent > div.active {
+  display: block;
+}
+
 /* 음식물 쓰레기, 의약품 쓰레기 스타일 지정 */
 .howTo{
   display: block;

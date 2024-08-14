@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>장바구니</title>
+    <link rel="stylesheet" href="cart.css"> <!-- CSS 파일 연결 -->
+</head>
+<body>
+    <header>
+        <h1>장바구니</h1>
+    </header>
+
+    <main>
+        <section class="points-section">
+            <h2>포인트 잔액</h2>
+            <p>획득한 포인트: <span id="points"></span></p>
+        </section>
+
+        <section class="cart-section">
+            <h2>장바구니 목록</h2>
+            <ul id="cartList">
+                <!-- 장바구니 아이템이 여기에 추가됩니다 -->
+            </ul>
+            <p id="emptyCartMessage">장바구니에 담은 목록이 없습니다.</p>
+            <p id="totalPrice">총 합계: 0 P</p>
+            <button id="checkoutButton">결제하기</button>
+        </section>
+
+        <section class="add-item-section">
+            <h2>아이템 추가하기</h2>
+            <input type="text" id="itemName" placeholder="아이템 이름">
+            <input type="number" id="itemPrice" placeholder="아이템 가격">
+            <button id="addItemButton">추가하기</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 장바구니 페이지. All rights reserved.</p>
+    </footer>
+
+    <script src="cart.js"></script> <!-- JS 파일 연결 -->
+</body>
+</html>
