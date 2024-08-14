@@ -1,61 +1,73 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // 로컬 스토리지에서 포인트 및 장바구니 항목을 가져옵니다
-    const points = localStorage.getItem('gamePoints') || 0;
-    const savedCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-    
-    const pointsElement = document.getElementById('points');
+    const pointsElement = document.getElementById("points");
     const cartList = document.getElementById("cartList");
     const totalElement = document.getElementById("totalPrice");
     const emptyCartMessage = document.getElementById("emptyCartMessage");
+    const deleteConfirmPopup = document.getElementById("deleteConfirmPopup");
 
+    let points = parseInt(localStorage.getItem('gamePoints')) || 1000;
+    let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
     let total = 0;
-    let cartItems = savedCartItems;
 
-    // 포인트 표시
     pointsElement.innerHTML = `${points} P`;
 
-    // 장바구니에 아이템 추가 기능
+    cartItems.forEach(item => addItemToCart(item));
+    updateTotalPrice();
+
     document.getElementById("addItemButton").addEventListener("click", function() {
-        const itemName = document.getElementById("itemName").value;
-        const itemPrice = parseInt(document.getElementById("itemPrice").value);
-        
-        if (itemName && itemPrice) {
-            const item = { name: itemName, price: itemPrice };
-            cartItems.push(item);
-            addItemToCart(item);
+        const itemName = document.getElementById("itemName").value.trim();
+        const itemPrice = parseInt(document.getElementById("itemPrice").value.trim());
+
+        if (itemName && itemPrice > 0) {
+            const newItem = { name: itemName, price: itemPrice };
+            cartItems.push(newItem);
+            addItemToCart(newItem);
             updateTotalPrice();
             saveCartItems();
+        } else {
+            alert("유효한 아이템 이름과 가격을 입력해주세요.");
         }
     });
 
-    // 저장된 장바구니 아이템을 UI에 추가
-    cartItems.forEach(item => addItemToCart(item));
-
     function addItemToCart(item) {
         const li = document.createElement("li");
-        li.textContent = `${item.name} - ${item.price} P`;
-
-        const deleteButton = document.createElement("button");
-        deleteButton.textContent = "삭제";
-        deleteButton.classList.add("delete-button");
-        deleteButton.addEventListener("click", function() {
-            cartList.removeChild(li);
-            cartItems = cartItems.filter(i => i !== item);
-            total -= item.price;
-            updateTotalPrice();
-            saveCartItems();
-        });
-
-        li.appendChild(deleteButton);
+        li.innerHTML = `${item.name} - ${item.price} P <button class="delete-button">삭제</button>`;
         cartList.appendChild(li);
 
         total += item.price;
+
+        const deleteButton = li.querySelector(".delete-button");
+        deleteButton.addEventListener("click", function() {
+            showDeleteConfirmPopup(item, li);
+        });
+    }
+
+    function showDeleteConfirmPopup(itemToDelete, itemElement) {
+        deleteConfirmPopup.classList.remove("hidden");
+        deleteConfirmPopup.classList.add("visible");
+
+        document.getElementById("confirmDeleteButton").onclick = function() {
+            cartList.removeChild(itemElement);
+            cartItems = cartItems.filter(item => item !== itemToDelete);
+            total -= itemToDelete.price;
+            updateTotalPrice();
+            saveCartItems();
+            hideDeleteConfirmPopup();
+        };
+
+        document.getElementById("cancelDeleteButton").onclick = function() {
+            hideDeleteConfirmPopup();
+        };
+    }
+
+    function hideDeleteConfirmPopup() {
+        deleteConfirmPopup.classList.remove("visible");
+        deleteConfirmPopup.classList.add("hidden");
     }
 
     function updateTotalPrice() {
-        totalElement.textContent = `총 합계: ${total} P`;
+        totalElement.innerHTML = `${total} P`;
 
-        // 장바구니가 비었을 때 메시지 표시
         if (total === 0) {
             emptyCartMessage.style.display = "block";
         } else {
@@ -67,12 +79,11 @@ document.addEventListener("DOMContentLoaded", function() {
         localStorage.setItem('cartItems', JSON.stringify(cartItems));
     }
 
-    // 결제 기능
     document.getElementById("checkoutButton").addEventListener("click", function() {
         if (points >= total && total > 0) {
-            const newPoints = points - total;
-            localStorage.setItem('gamePoints', newPoints);
-            pointsElement.innerHTML = `${newPoints} P`;
+            points -= total;
+            localStorage.setItem('gamePoints', points);
+            pointsElement.innerHTML = `${points} P`;
             alert("결제가 완료되었습니다!");
             cartItems = [];
             cartList.innerHTML = '';
@@ -85,6 +96,4 @@ document.addEventListener("DOMContentLoaded", function() {
             alert("포인트가 부족합니다.");
         }
     });
-
-    updateTotalPrice();
 });
