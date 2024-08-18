@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const emptyCartMessage = document.getElementById("emptyCartMessage");
     const deleteConfirmPopup = document.getElementById("deleteConfirmPopup");
 
-    let points = parseInt(localStorage.getItem('gamePoints')) || 1000;
+    let points = parseInt(localStorage.getItem('gamePoints')) || 0;
     let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
     let total = 0;
 

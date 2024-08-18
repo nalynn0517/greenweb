@@ -48,6 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const carbonDisplay = document.getElementById('carbon');
     const livesContainer = document.querySelector('.lives-container');
     const restartButton = document.getElementById('restartButton');
+    const mallButton = document.getElementById('mallButton');
     const helpButton = document.getElementById('helpButton');
     const gameRules = document.getElementById('gameRules');
     const closeButton = document.getElementById('closeButton');
@@ -75,7 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
     function dragOver(e) {
         e.preventDefault();
         const binType = e.currentTarget.getAttribute('data-type');
-        // 드래그 중에만 쓰레기통 이미지를 열린 이미지로 변경
         e.currentTarget.querySelector('img').src = `../gamepage/img/${binType}_open.png`;
     }
 
@@ -143,26 +143,39 @@ document.addEventListener('DOMContentLoaded', () => {
         resultMessage.textContent = "게임 종료!";
         const carbonReduction = correctCount * 0.21;
         carbonDisplay.textContent = carbonReduction.toFixed(2);
-        trashContainer.innerHTML = '';
+
+        // .trash-container 요소를 숨깁니다.
+        trashContainer.style.display = 'none';
+
+        // bins에서 dragover, dragleave, drop 이벤트 리스너를 제거합니다.
         bins.forEach(bin => {
             bin.removeEventListener('dragover', dragOver);
             bin.removeEventListener('dragleave', dragLeave);
             bin.removeEventListener('drop', drop);
         });
-        showRestartButton();
 
+        // "다시 시작하기" 버튼과 "몰 버튼"만 표시
+        showRestartButton();
+        showMallButton();
+
+        // 포인트를 로컬 스토리지에 저장합니다.
         const points = calculatePoints(); // 포인트 계산 로직 (예시)
-            
-        // localStorage에 포인트 저장
         localStorage.setItem('gamePoints', points);
-            
-        // 장바구니 테스트 버튼을 표시
-        document.getElementById('testCartButton').style.display = 'block';    
+
+        // 장바구니 테스트 버튼을 숨깁니다.
+        document.getElementById('testCartButton').style.display = 'none';
     }
 
     function showRestartButton() {
         restartButton.classList.remove('hidden');
-        trashContainer.appendChild(restartButton);
+        restartButton.style.display = 'block';
+        trashContainer.parentElement.appendChild(restartButton); // trashContainer의 부모 요소에 추가
+    }
+
+    function showMallButton() {
+        mallButton.classList.remove('hidden');
+        mallButton.style.display = 'block';
+        trashContainer.parentElement.appendChild(mallButton); // trashContainer의 부모 요소에 추가
     }
 
     function toggleGameRules() {
@@ -174,14 +187,19 @@ document.addEventListener('DOMContentLoaded', () => {
         bin.addEventListener('drop', drop);
     });
     
-    
-    // 다시 시작하기 버튼을 숨김
+    // 게임 시작 시에는 쓰레기 버튼과 관련된 요소만 보이도록 설정
     restartButton.classList.add('hidden');
-
+    mallButton.classList.add('hidden');
+    document.getElementById('testCartButton').style.display = 'none';
+    
     // 다시 시작하기 버튼 클릭 이벤트 리스너 등록
     restartButton.addEventListener('click', () => {
         location.reload(); // 페이지 새로고침하여 게임 다시 시작
     });
+
+    document.getElementById('mallButton').onclick = function() {
+        window.location.href = "https://www.naver.com";
+    };
 
     // 게임 규칙 버튼 클릭 이벤트 리스너 등록
     helpButton.addEventListener('click', toggleGameRules);
@@ -189,6 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 게임 시작 시 쓰레기 아이템 생성
     createTrashItem();
+    
     
     function getCorrectExplanation(trashItem) {
         const explanations = {
@@ -306,7 +325,13 @@ document.addEventListener('DOMContentLoaded', () => {
             closeModal();
         }
     });
+    function onGameEnd() {
+        const restartWrapper = document.querySelector('.restart-wrapper');
+        const mallWrapper = document.querySelector('.mall-wrapper');
     
+        restartWrapper.classList.remove('hidden');
+        mallWrapper.classList.remove('hidden');
+    }
     
     function calculatePoints() {
         return score; // 예시 값
@@ -321,6 +346,5 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error('포인트가 설정되지 않았습니다.');
         }
     });
-    
 
 });
