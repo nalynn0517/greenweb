@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: white;
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+    background-color: white;
+}
+
+
+.header-divider {
+    margin-top: 15px;
+    height: 25px;
+    background-color: #4CAF50;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.left-section, .right-section {
+    width: 48%;
+}
+
+.vertical-divider {
+    width: 2px;
+    background-color: #4CAF50;
+    margin: 0 15px;
+}
+
+.left-section h2, .right-section h2 {
+    font-size: 22px;
+    color: #4CAF50;
+    margin-bottom: 10px;
+}
+
+.best-title {
+    text-align: center;
+    margin-top: 22px;
+    margin-left: 0; /* 가운데 정렬을 위한 값 조정 */
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px;
+}
+
+.best-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2열로 변경 */
+    grid-gap: 10px; /* 간격을 줄임 */
+    justify-content: center; /* 가운데 정렬 */
+}
+
+.product-item {
+    background-color: white;
+    border: 1px solid #4CAF50;
+    padding: 10px;
+    text-align: center;
+    max-width: 180px;
+    max-height: 180px;
+}
+
+.best-grid .product-item {
+    max-width: 300px;
+    max-height: 300px;
+}
+
+.product-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom:2px;
+}
+
+.best-grid .product-item img {
+    width: 200px;
+    height: 200px;
+}
+
+.product-item h3 {
+    font-size: 14px;
+    color: #333;
+    margin: 5px 0;
+}
+
+.product-item button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.product-item button:hover {
+    background-color: #388E3C;
+}

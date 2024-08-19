@@ -3,154 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>쇼핑몰</title>
-    <style>
-        /* 기본 스타일 */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #ffffff;
-            color: #333333;
-        }
-
-        header {
-            background-color: #ffffff; 
-            color: #ffffff;
-            padding: 20px;
-            text-align: center;
-        }
-
-        nav {
-            background-color: #66BB6A; 
-            padding: 10px;
-            text-align: center;
-        }
-
-        nav a {
-            color: #ffffff;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .container {
-            padding: 20px;
-        }
-
-        h2 {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #4CAF50;
-        }
-
-        .product-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
-
-        .product-item {
-            background-color: #ffffff;
-            border: 1px solid #4CAF50; 
-            margin: 5px;
-            padding: 5px;
-            width: 20%; 
-            text-align: center;
-            box-sizing: border-box; 
-        }
-
-        .product-item img {
-            max-width: 100%;
-            height: auto;
-            width: 150px; 
-            height: 150px; 
-            object-fit: cover;
-        }
-
-        .product-item h3 {
-            font-size: 1em;
-            margin: 5px 0;
-            color: #333333;
-        }
-
-        .product-item p {
-            margin: 5px 0;
-            color: #333333;
-        }
-
-        .product-item button {
-            background-color: #4CAF50;
-            color: #ffffff;
-            border: none;
-            padding: 5px;
-            cursor: pointer;
-            margin-top: 5px;
-        }
-
-        .product-item button:hover {
-            background-color: #388E3C;
-        }
-    </style>
+    <title>바른 쇼핑몰</title>
+    <link rel="stylesheet" href="shop.css">
 </head>
 <body>
 
-<header>
-    <div class="logo"><a href="index.html"><img src="img/logo1.png" alt="로고" width="165" height="112"></a></div>
-</header>
+    <header>
+        <div class="logo"><a href="index.html"><img src="img/logo1.png" alt="로고" width="85" height="65"></a></div>
+        <div class="header-divider"></div> 
+    </header>
 
-<nav>
-    <a href="#">홈</a>
-    <a href="#">제품</a>
-    <a href="#">카테고리</a>
-    <a href="#">문의하기</a>
-</nav>
+    <main>
+        <div class="container">
+            <section class="left-section">
+                <h2>쇼핑몰1</h2>
+                <div class="product-grid">
+                    <!-- 쇼핑몰1 -->
+                    <div class="product-item">
+                        <img src="https://via.placeholder.com/100" alt="사이트명 1">
+                        <h3>사이트명 1</h3>
+                        <button>사이트 이동</button>
+                    </div>
+                    <div class="product-item">
+                        <img src="https://via.placeholder.com/100" alt="사이트명 2">
+                        <h3>사이트명 2</h3>
+                        <button>사이트 이동</button>
+                    </div>
+                    <div class="product-item">
+                        <img src="https://via.placeholder.com/100" alt="사이트명 3">
+                        <h3>사이트명 3</h3>
+                        <button>사이트 이동</button>
+                    </div>
+                    <div class="product-item">
+                        <img src="https://via.placeholder.com/100" alt="사이트명 4">
+                        <h3>사이트명 4</h3>
+                        <button>사이트 이동</button>
+                    </div>
+                </div>
 
-<div class="container">
-    <h2>BEST</h2>
-    <div class="product-list">
-        <div class="product-item">
-            <img src="https://via.placeholder.com/150" alt="제품 이미지">
-            <h3>사이트명 1</h3>
-            <button>사이트 이동</button>
+                <h2>쇼핑몰2</h2>
+                <div class="product-grid">
+                    <!-- 쇼핑몰2 -->
+                    <div class="product-item">
+                        <img src="https://via.placeholder.com/100" alt="사이트명 5">
+                        <h3>사이트명 5</h3>
+                        <button>사이트 이동</button>
+                    </div>
+                    <div class="product-item">
+                        <img src="https://via.placeholder.com/100" alt="사이트명 6">
+                        <h3>사이트명 6</h3>
+                        <button>사이트 이동</button>
+                    </div>
+                    <div class="product-item">
+                        <img src="https://via.placeholder.com/100" alt="사이트명 7">
+                        <h3>사이트명 7</h3>
+                        <button>사이트 이동</button>
+                    </div>
+                    <div class="product-item">
+                        <img src="https://via.placeholder.com/100" alt="사이트명 8">
+                        <h3>사이트명 8</h3>
+                        <button>사이트 이동</button>
+                    </div>
+                </div>
+
+                <h2>쇼핑몰3</h2>
+                <div class="product-grid">
+                    <!-- 쇼핑몰3 -->
+                    <div class="product-item">
+                        <img src="https://via.placeholder.com/100" alt="사이트명 9">
+                        <h3>사이트명 9</h3>
+                        <button>사이트 이동</button>
+                    </div>
+                    <div class="product-item">
+                        <img src="https://via.placeholder.com/100" alt="사이트명 10">
+                        <h3>사이트명 10</h3>
+                        <button>사이트 이동</button>
+                    </div>
+                    <div class="product-item">
+                        <img src="https://via.placeholder.com/100" alt="사이트명 11">
+                        <h3>사이트명 11</h3>
+                        <button>사이트 이동</button>
+                    </div>
+                    <div class="product-item">
+                        <img src="https://via.placeholder.com/100" alt="사이트명 12">
+                        <h3>사이트명 12</h3>
+                        <button>사이트 이동</button>
+                    </div>
+                </div>
+            </section>
+
+            <div class="vertical-divider"></div> 
+
+            <section class="right-section">
+                <h2 class="best-title">BEST</h2> 
+                <div class="best-grid">
+                    <div class="product-item">
+                        <img src="https://via.placeholder.com/200" alt="사이트명 3">
+                        <h3>사이트명 1</h3>
+                        <button>사이트 이동</button>
+                    </div>
+                    <div class="product-item">
+                        <img src="https://via.placeholder.com/200" alt="사이트명 4">
+                        <h3>사이트명 2</h3>
+                        <button>사이트 이동</button>
+                    </div>
+                    <div class="product-item">
+                        <img src="https://via.placeholder.com/200" alt="사이트명 7">
+                        <h3>사이트명 3</h3>
+                        <button>사이트 이동</button>
+                    </div>
+                    <div class="product-item">
+                        <img src="https://via.placeholder.com/200" alt="사이트명 8">
+                        <h3>사이트명 4</h3>
+                        <button>사이트 이동</button>
+                    </div>
+                </div>
+            </section>
         </div>
-        <div class="product-item">
-            <img src="https://via.placeholder.com/150" alt="제품 이미지">
-            <h3>사이트명 2</h3>
-            <button>사이트 이동</button>
-        </div>
-        <div class="product-item">
-            <img src="https://via.placeholder.com/150" alt="제품 이미지">
-            <h3>사이트명 3</h3>
-            <button>사이트 이동</button>
-        </div>
-        <div class="product-item">
-            <img src="https://via.placeholder.com/150" alt="제품 이미지">
-            <h3>사이트명 4</h3>
-            <button>사이트 이동</button>
-        </div>
-        <div class="product-item">
-            <img src="https://via.placeholder.com/150" alt="제품 이미지">
-            <h3>사이트명 5</h3>
-            <button>사이트 이동</button>
-        </div>
-        <div class="product-item">
-            <img src="https://via.placeholder.com/150" alt="제품 이미지">
-            <h3>사이트명 6</h3>
-            <button>사이트 이동</button>
-        </div>
-        <div class="product-item">
-            <img src="https://via.placeholder.com/150" alt="제품 이미지">
-            <h3>사이트명 7</h3>
-            <button>사이트 이동</button>
-        </div>
-        <div class="product-item">
-            <img src="https://via.placeholder.com/150" alt="제품 이미지">
-            <h3>사이트명 8</h3>
-            <button>사이트 이동</button>
-        </div>
-    </div>
-</div>
+    </main>
 
 </body>
 </html>
