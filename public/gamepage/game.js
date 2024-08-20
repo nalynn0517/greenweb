@@ -198,7 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.getElementById('mallButton').onclick = function() {
-        window.location.href = "https://www.naver.com";
+        window.location.href = "../shop/shop.html";
     };
 
     // 게임 규칙 버튼 클릭 이벤트 리스너 등록
@@ -325,19 +325,20 @@ document.addEventListener('DOMContentLoaded', () => {
             closeModal();
         }
     });
+    // 예: 게임이 끝났을 때 실행되는 함수
     function onGameEnd() {
-        const restartWrapper = document.querySelector('.restart-wrapper');
-        const mallWrapper = document.querySelector('.mall-wrapper');
-    
-        restartWrapper.classList.remove('hidden');
-        mallWrapper.classList.remove('hidden');
+        const points = calculatePoints();  // 예: 게임에서 얻은 포인트 계산
+        savePoints(points);  // 포인트 저장
     }
-    
+
     function calculatePoints() {
-        return score; // 예시 값
+        return points;  // 예: 얻은 포인트 예시 (실제 게임에서 계산)
     }
-    
-    // 장바구니 테스트 버튼 클릭 시 장바구니 페이지로 이동
+
+    function savePoints(points) {
+        localStorage.setItem('gamePoints', points);  // 'gamePoints'라는 키로 포인트 저장
+    }
+
     document.getElementById("testCartButton").addEventListener("click", function() {
         const points = localStorage.getItem('gamePoints');
         if (points) {

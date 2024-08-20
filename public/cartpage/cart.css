@@ -1,91 +1,176 @@
+/* 공통 스타일 */
 body {
     font-family: 'Arial', sans-serif;
-    margin: 20px;
-    background-color: #f8f9fa;
-}
-
-h2 {
-    color: #007bff;
-    margin-top: 20px;
-}
-
-p, ul {
-    margin: 10px 0;
-}
-
-ul {
-    list-style-type: none;
+    margin: 0;
     padding: 0;
+    background-color: #f9f9f9; /* 밝은 회색 배경 */
+    color: #333;
 }
 
-li {
-    background-color: #f1f1f1;
-    margin: 10px 0;
-    padding: 10px;
-    border-radius: 5px;
+/* 컨테이너 스타일 */
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+    background-color: white;
+}
+.header-divider {
+    margin-top: 15px;
+    height: 25px;
+    background-color: #4CAF50;
+}
+/* 제목 스타일 */
+h2 {
+    color: #28a745; /* 초록색 */
+    font-size: 1.6em;
+    font-weight: bold;
+    margin: 20px 0 10px;
+    border-bottom: 2px solid #28a745;
+    padding-bottom: 10px;
+}
+
+/* 장바구니 목록 스타일 */
+.cart-items {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column; /* 항목들을 세로로 배치 */
+    margin-bottom: 20px;
 }
 
-#emptyCartMessage {
-    color: #888;
-    margin-top: 20px;
-    display: none;
+.cart-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
 }
 
-button {
-    padding: 10px 20px;
+.cart-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+
+.cart-item .info {
+    flex: 1;
+}
+
+.cart-item h3 {
+    margin: 0 0 10px;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.cart-item p {
+    margin: 0;
+    color: #666;
+}
+
+.cart-item button {
+    background-color: #dc3545; /* 빨간색 */
+    color: white;
     border: none;
+    padding: 8px 12px;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1em;
-    margin-top: 10px;
+    font-size: 0.9em;
     transition: background-color 0.3s ease;
 }
 
-#checkoutButton {
-    background-color: #28a745;
-    color: white;
-    width: auto;
+.cart-item button:hover {
+    background-color: #c82333; /* 짙은 빨간색 */
 }
 
-#checkoutButton:hover {
-    background-color: #218838;
+.quantity-control {
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px; /* 아래로 내리는 효과 */
 }
 
-input[type="text"], input[type="number"] {
-    width: calc(50% - 10px);
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.delete-button {
-    background-color: #dc3545;
-    color: white;
+.quantity-control button {
     padding: 5px 10px;
-    border-radius: 5px;
+    background-color: #c82333;
+    border: 1px solid #c82333;
     cursor: pointer;
 }
 
-.delete-button:hover {
-    background-color: #c82333;
+.quantity-control .quantity {
+    margin: 0 10px;
+    font-size: 16px;
 }
 
-.popup {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    z-index: 1000;
+/* 결제 버튼 스타일 */
+#checkoutButton {
+    background-color: #28a745; /* 초록색 */
+    color: white;
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
 }
 
-.popup.hidden {
-    display: none;
+#checkoutButton:hover {
+    background-color: #218838; /* 짙은 초록색 */
+}
+
+/* 총합계 및 포인트 스타일 */
+.total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    font-size: 1.2em;
+    border-top: 2px solid #28a745;
+    border-bottom: 2px solid #28a745;
+    margin-top: 20px;
+}
+
+.total .amount {
+    font-weight: bold;
+    color: #28a745; /* 초록색 */
+}
+
+/* 아이템 추가 입력 스타일 */
+.add-item {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.add-item input[type="text"], 
+.add-item input[type="number"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.add-item button {
+    background-color: #28a745; /* 초록색 */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.add-item button:hover {
+    background-color: #218838; /* 짙은 초록색 */
 }

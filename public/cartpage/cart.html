@@ -1,37 +1,121 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>장바구니</title>
-    <link rel="stylesheet" href="cart.css">
-</head>
+    <header>
+        <div class="logo"><a href="index.html"><img src="./img/logo1.png" alt="로고" width="85" height="65"></a></div>
+        <div class="header-divider"></div> 
+        <link rel="stylesheet" href="cart.css">
+    </header>     
 <body>
+    <div class="container">
+        <div class="points">
+            <span>보유 포인트: </span>
+            <span class="point-amount">P</span>
+        </div>
+        <h2>장바구니 목록</h2>
+        <div class="cart-items" id="cartList">
+            <!-- 장바구니 아이템이 여기에 추가됩니다 -->
+        </div>
 
-    <h2>포인트 잔액</h2>
-    <p>획득한 포인트: <span id="points"></span></p>
-
-    <h2>장바구니 목록</h2>
-    <ul id="cartList">
-        <!-- 장바구니 아이템이 여기에 추가됩니다 -->
-    </ul>
-    <p id="emptyCartMessage">장바구니에 담은 목록이 없습니다.</p>
-
-    <h2>총 합계</h2>
-    <p id="totalPrice">0 P</p>
-    <button id="checkoutButton">결제하기</button>
-
-    <h2>아이템 추가하기</h2>
-    <input type="text" id="itemName" placeholder="아이템 이름">
-    <input type="number" id="itemPrice" placeholder="아이템 가격">
-    <button id="addItemButton">추가하기</button>
-
-    <div id="deleteConfirmPopup" class="popup hidden">
-        <p>이 항목을 삭제하시겠습니까?</p>
-        <button id="confirmDeleteButton">예</button>
-        <button id="cancelDeleteButton">아니오</button>
+        <div class="total">
+            <span>총 합계</span>
+            <span class="amount">0P</span>
+        </div>
+        <button id="checkoutButton">결제하기</button>
     </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            function updateCart() {
+                const cartList = document.getElementById('cartList');
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                cartList.innerHTML = '';
+                let total = 0;
 
-    <script src="cart.js"></script>
+                cart.forEach((product, index) => {
+                    // 수량이 undefined거나 0 이하일 경우 1로 초기화
+                    if (!product.quantity || product.quantity < 1) {
+                        product.quantity = 1;
+                    }
+
+                    const cartItem = document.createElement('div');
+                    cartItem.classList.add('cart-item');
+                    cartItem.innerHTML = `
+                        <img src="https://via.placeholder.com/100" alt="제품 이미지">
+                        <div class="info">
+                            <h3>${product.name}</h3>
+                            <p>가격: ${parseInt(product.price).toLocaleString()}P</p>
+                            <div class="quantity-control">
+                                <button class="decrease-qty" data-index="${index}">-</button>
+                                <span class="quantity">${product.quantity}</span>
+                                <button class="increase-qty" data-index="${index}">+</button>
+                            </div>
+                        </div>
+                        <button class="remove-item" data-index="${index}">삭제</button>
+                    `;
+                    cartList.appendChild(cartItem);
+                    total += parseInt(product.price) * product.quantity;
+                });
+
+                document.querySelector('.total .amount').textContent = `${total.toLocaleString()}P`;
+
+                const removeButtons = cartList.querySelectorAll('.remove-item');
+                removeButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        const index = this.getAttribute('data-index');
+                        cart.splice(index, 1);
+                        localStorage.setItem('cart', JSON.stringify(cart));
+                        updateCart();
+                    });
+                });
+
+                const increaseButtons = cartList.querySelectorAll('.increase-qty');
+                const decreaseButtons = cartList.querySelectorAll('.decrease-qty');
+
+                increaseButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        const index = this.getAttribute('data-index');
+                        cart[index].quantity += 1;
+                        localStorage.setItem('cart', JSON.stringify(cart));
+                        updateCart();
+                    });
+                });
+
+                decreaseButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        const index = this.getAttribute('data-index');
+                        if (cart[index].quantity > 1) {
+                            cart[index].quantity -= 1;
+                            localStorage.setItem('cart', JSON.stringify(cart));
+                            updateCart();
+                        }
+                    });
+                });
+            }
+            const points = parseInt(localStorage.getItem('gamePoints')) || 0;  // 'gamePoints' 키로 불러옴
+            console.log('불러온 포인트:', points);  // 콘솔에 불러온 포인트를 출력해 확인
+            document.querySelector('.points .point-amount').textContent = `${points.toLocaleString()} P`;
+
+            updateCart();
+
+            document.getElementById('checkoutButton').addEventListener('click', function() {
+                const totalAmount = parseInt(document.querySelector('.total .amount').textContent.replace(/,/g, '').replace('P', ''));
+                
+                if (points < totalAmount) {
+                    alert('포인트가 부족합니다.');
+                } else {
+                    // 포인트 차감
+                    const newPoints = points - totalAmount;
+                    localStorage.setItem('gamePoints', newPoints);
+                    document.querySelector('.points .point-amount').textContent = `${newPoints.toLocaleString()} P`;
+
+                    // 장바구니 비우기
+                    localStorage.removeItem('cart');
+                    updateCart();
+
+                    alert('결제가 완료되었습니다.');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
