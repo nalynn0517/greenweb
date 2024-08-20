@@ -25,6 +25,24 @@ header {
     height: 100%;
     object-fit: contain;
 }
+.quantity-control {
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px; /* 아래로 내리는 효과 */
+}
+
+.quantity-control button {
+    padding: 5px 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.quantity-control .quantity {
+    margin: 0 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
 
 .header-divider {
     margin-top: 15px;
