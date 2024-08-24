@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>장바구니</title>
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body>
     <header>
         <div class="logo"><a href="index.html"><img src="./img/logo1.png" alt="로고" width="85" height="65"></a></div>
         <div class="header-divider"></div> 
-        <link rel="stylesheet" href="cart.css">
-    </header>     
-<body>
+    </header>
     <div class="container">
         <div class="points">
             <span>보유 포인트: </span>
@@ -32,7 +37,6 @@
                 let total = 0;
 
                 cart.forEach((product, index) => {
-                    // 수량이 undefined거나 0 이하일 경우 1로 초기화
                     if (!product.quantity || product.quantity < 1) {
                         product.quantity = 1;
                     }
@@ -91,8 +95,8 @@
                     });
                 });
             }
-            const points = parseInt(localStorage.getItem('gamePoints')) || 0;  // 'gamePoints' 키로 불러옴
-            console.log('불러온 포인트:', points);  // 콘솔에 불러온 포인트를 출력해 확인
+
+            const points = parseInt(localStorage.getItem('gamePoints')) || 0;
             document.querySelector('.points .point-amount').textContent = `${points.toLocaleString()} P`;
 
             updateCart();
@@ -105,12 +109,10 @@
                 } else if (points < totalAmount) {
                     alert('포인트가 부족합니다.');
                 } else {
-                    // 포인트 차감
                     const newPoints = points - totalAmount;
                     localStorage.setItem('gamePoints', newPoints);
                     document.querySelector('.points .point-amount').textContent = `${newPoints.toLocaleString()} P`;
 
-                    // 장바구니 비우기
                     localStorage.removeItem('cart');
                     updateCart();
 
