@@ -89,7 +89,6 @@ header .logo img {
 .best-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2열로 변경 */
-    grid-gap: 10px; /* 간격을 줄임 */
     justify-content: center; /* 가운데 정렬 */
 }
 .product-item {
