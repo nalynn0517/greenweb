@@ -36,16 +36,121 @@
                 const cart = JSON.parse(localStorage.getItem('cart')) || [];
                 cartList.innerHTML = '';
                 let total = 0;
-
+    
                 cart.forEach((product, index) => {
                     if (!product.quantity || product.quantity < 1) {
                         product.quantity = 1;
                     }
-
+                    const products = {
+                        // 동구밭 제품
+                        dgb1: {
+                            image: './img/dgb1.png',
+                            name: '올바른 샴푸바 중건성용',
+                            price: 95,
+                            url: 'https://www.donggubat.co.kr/goods/goods_view.php?goodsNo=1000000010&mtn=7%5E%7C%5E%EB%B2%A0%EC%8A%A4%ED%8A%B8%EC%83%81%ED%92%88%5E%7C%5En'
+                        },
+                        dgb2: {
+                            image: './img/dgb2.png',
+                            name: '올바른 설거지 워싱바',
+                            price: 54,
+                            url: 'https://www.donggubat.co.kr/goods/goods_view.php?goodsNo=1000000019&mtn=7%5E%7C%5E%EB%B2%A0%EC%8A%A4%ED%8A%B8%EC%83%81%ED%92%88%5E%7C%5En'
+                        },
+                        dgb3: {
+                            image: './img/dgb3.png',
+                            name: '씹는 고체치약',
+                            price: 99,
+                            url: 'https://www.donggubat.co.kr/goods/goods_view.php?goodsNo=1000000176&mtn=7%5E%7C%5E%EB%B2%A0%EC%8A%A4%ED%8A%B8%EC%83%81%ED%92%88%5E%7C%5En'
+                        },
+                        dgb4: {
+                            image: './img/dgb4.png',
+                            name: '베러 댄 리퀴드 여행용 키트',
+                            price: 80,
+                            url: 'https://www.donggubat.co.kr/goods/goods_view.php?goodsNo=1000000090&mtn=7%5E%7C%5E%EB%B2%A0%EC%8A%A4%ED%8A%B8%EC%83%81%ED%92%88%5E%7C%5En'
+                        },
+                    
+                        // 내몸에안심 제품
+                        nma1: {
+                            image: './img/nma1.png',
+                            name: '우드칩 트리플 양면미세모 칫솔',
+                            price: 45,
+                            url: 'https://www.myansim.com/goods/goods_view.php?goodsNo=1000000248'
+                        },
+                        nma2: {
+                            image: './img/nma2.png',
+                            name: '천연 비누망',
+                            price: 30,
+                            url: 'https://www.myansim.com/goods/goods_view.php?goodsNo=1000000178'
+                        },
+                        nma3: {
+                            image: './img/nma3.png',
+                            name: '올인원 샴푸바 차콜 블랙',
+                            price: 60,
+                            url: 'https://www.myansim.com/goods/goods_view.php?goodsNo=1000000200'
+                        },
+                        nma4: {
+                            image: './img/nma4.png',
+                            name: '주방 브러쉬',
+                            price: 63,
+                            url: 'https://www.myansim.com/goods/goods_view.php?goodsNo=1000000177'
+                        },
+                    
+                        // 자연상점 제품
+                        jys1: {
+                            image: './img/jys1.png',
+                            name: '충전기 스트랩',
+                            price: 85,
+                            url: 'https://onlyeco.co.kr/product/project1907-%EC%B6%A9%EC%A0%84%EA%B8%B0-%EC%8A%A4%ED%8A%B8%EB%9E%A9/1079/category/66/display/1/'
+                        },
+                        jys2: {
+                            image: './img/jys2.png',
+                            name: '여권케이스',
+                            price: 130,
+                            url: 'https://onlyeco.co.kr/product/project1907-%EC%97%AC%EA%B6%8C%EC%BC%80%EC%9D%B4%EC%8A%A4-passport-case/840/category/83/display/1/'
+                        },
+                        jys3: {
+                            image: './img/jys3.jpg',
+                            name: '코코넛야자 병세척솔',
+                            price: 45,
+                            url: 'https://onlyeco.co.kr/product/%ED%80%B8%EB%B9%84%EC%8A%A4%ED%86%A0%EC%96%B4-%EC%BD%94%EC%BD%94%EB%84%9B%EC%95%BC%EC%9E%90-%EB%B3%91%EC%84%B8%EC%B2%99%EC%86%94/644/category/51/display/1/'
+                        },
+                        jys4: {
+                            image: './img/jys4.jpg',
+                            name: '유기농 핸드타월',
+                            price: 69,
+                            url: 'https://onlyeco.co.kr/product/%EC%A7%80%EA%B5%AC%EC%83%B5-%EC%9C%A0%EA%B8%B0%EB%86%8D-%ED%95%B8%EB%93%9C%ED%83%80%EC%9B%94/783/category/68/display/1/'
+                        },
+                    
+                        // 어슬링 제품
+                        asl1: {
+                            image: './img/asl1.png',
+                            name: '다회용 실리콘 팩 브러쉬',
+                            price: 19,
+                            url: 'https://smartstore.naver.com/horanmalko/products/5174744029'
+                        },
+                        asl2: {
+                            image: './img/asl2.png',
+                            name: '대나무 섬유 다회용 화장솜',
+                            price: 7,
+                            url: 'https://smartstore.naver.com/horanmalko/products/5095854214'
+                        },
+                        asl3: {
+                            image: './img/asl3.png',
+                            name: '규조토 비누받침대',
+                            price: 19,
+                            url: 'https://smartstore.naver.com/horanmalko/products/5601061813'
+                        },
+                        asl4: {
+                            image: './img/asl4.png',
+                            name: '생분해 루파 수세미 3종',
+                            price: 7,
+                            url: 'https://smartstore.naver.com/horanmalko/products/5110803570'
+                        }  
+                    };
+                    
                     const cartItem = document.createElement('div');
                     cartItem.classList.add('cart-item');
                     cartItem.innerHTML = `
-                        <img src="https://via.placeholder.com/100" alt="제품 이미지">
+                        <img src="${product.image}" alt="${product.name}" style="width: 100px; height: 100px;">
                         <div class="info">
                             <h3>${product.name}</h3>
                             <p>가격: ${parseInt(product.price).toLocaleString()}P</p>
@@ -60,9 +165,9 @@
                     cartList.appendChild(cartItem);
                     total += parseInt(product.price) * product.quantity;
                 });
-
+    
                 document.querySelector('.total .amount').textContent = `${total.toLocaleString()}P`;
-
+    
                 const removeButtons = cartList.querySelectorAll('.remove-item');
                 removeButtons.forEach(button => {
                     button.addEventListener('click', function() {
@@ -72,10 +177,10 @@
                         updateCart();
                     });
                 });
-
+    
                 const increaseButtons = cartList.querySelectorAll('.increase-qty');
                 const decreaseButtons = cartList.querySelectorAll('.decrease-qty');
-
+    
                 increaseButtons.forEach(button => {
                     button.addEventListener('click', function() {
                         const index = this.getAttribute('data-index');
@@ -84,7 +189,7 @@
                         updateCart();
                     });
                 });
-
+    
                 decreaseButtons.forEach(button => {
                     button.addEventListener('click', function() {
                         const index = this.getAttribute('data-index');
@@ -96,12 +201,12 @@
                     });
                 });
             }
-
+    
             const points = parseInt(localStorage.getItem('gamePoints')) || 0;
             document.querySelector('.points .point-amount').textContent = `${points.toLocaleString()} P`;
-
+    
             updateCart();
-
+    
             document.getElementById('checkoutButton').addEventListener('click', function() {
                 const totalAmount = parseInt(document.querySelector('.total .amount').textContent.replace(/,/g, '').replace('P', ''));
                 
@@ -113,14 +218,14 @@
                     const newPoints = points - totalAmount;
                     localStorage.setItem('gamePoints', newPoints);
                     document.querySelector('.points .point-amount').textContent = `${newPoints.toLocaleString()} P`;
-
+    
                     localStorage.removeItem('cart');
                     updateCart();
-
+    
                     alert('결제가 완료되었습니다.');
                 }
             });
         });
-    </script>
+    </script>    
 </body>
 </html>
