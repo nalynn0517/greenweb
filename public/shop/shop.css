@@ -72,26 +72,32 @@ header .logo img {
     margin-bottom: 10px;
 }
 
-.best-title {
-    text-align: center;
-    margin-top: 22px;
-    margin-left: auto; 
-    margin-right: auto; 
-    width: 100%;
-}
-
 .product-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 15px;
 }
 
+.right-section {
+    width: 100%;
+    text-align: center;
+}
+
+.best-title {
+    grid-column: 1 / -1; /* 그리드의 전체 열을 차지 */
+    text-align: center;
+    margin-bottom: 2%; /* 그리드 항목과의 간격을 비율로 조정 */
+    font-size: 2.5vw; /* 텍스트 크기를 비율로 설정 */
+}
+
 .best-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2열로 변경 */
-    grid-gap: 30px; /* 간격을 줄임 */
-    justify-content: center; /* 가운데 정렬 */
+    grid-template-columns: repeat(2, 1fr); /* 2열 구성 유지 */
+    grid-gap: 3%; /* 그리드 항목 간의 간격을 비율로 조정 */
+    width: 90%; /* 그리드 너비를 비율로 설정 */
+    margin: 0 auto; /* 그리드 자체를 가운데 정렬 */
 }
+
 .product-item {
     background-color: white;
     border: 1px solid #4CAF50;
@@ -103,7 +109,6 @@ header .logo img {
 .best-grid .product-item {
     max-width: 300px;
     max-height: 300px;
-    margin-left: 13px;
 }
 
 .product-item img {
