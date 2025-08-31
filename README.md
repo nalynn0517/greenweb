@@ -45,9 +45,8 @@
 ---
 
 ## 🛠️ 기술 스택
-- **Frontend:** React, Tailwind CSS, Redux/Context API  
-- **Backend:** Node.js (Express), MySQL / MongoDB, JWT  
-- **Deployment:** (추가 가능: AWS, Vercel, Docker 등)  
+- **Frontend:** React, CSS, API  
+- **Backend:** Node.js (Express)
 
 ---
 
